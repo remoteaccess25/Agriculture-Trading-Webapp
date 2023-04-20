@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Home.css";
 
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
+
+
+//importing admin data
+
+import { AdminContext } from "../Components/context/Admin/Admin";
+
+
 export default function Home() {
+
+//navigate
+const navigate=useNavigate()
+
+
   const [search, setSearch] = useState("");
   const [searchdata, setSearchdata] = useState([]);
   
@@ -18,6 +31,17 @@ export default function Home() {
       console.log(error);
     }
   };
+
+
+
+  //admin context
+
+  const {auth}=useContext(AdminContext)
+
+
+  const NavigateToCreatePage=()=>{
+    navigate("/admin/create")
+  }
 
   return (
     <>
@@ -34,11 +58,13 @@ export default function Home() {
       </div>
 
       <div className="main-div">
-        <div className="home_image1"></div>
+        <div className="home_image1">
+        <img className="image1" src={""} alt="home image 2" />
+        </div>
        
         <div className="cards_div">
 
-         <Link to="/recomended/fruits">
+         <Link to="/product/recomended/fruits">
          <div className="card_one">
           
               <img className="home_images" src={fruitsimage} alt="fruits image" />
@@ -48,7 +74,7 @@ export default function Home() {
           
           </Link>
           
-        <Link to="/recomended/vegetables">
+        <Link to="/product/recomended/vegetables">
 
         <div className="card_second">
             <img className="home_images" src={vegetableimage} alt="vegetables image" />
@@ -66,24 +92,20 @@ export default function Home() {
           <img className="image2" src={""} alt="home image 2" />
 
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
       </div>
 
 
+
+
+      {/* create Page for Admin */}
+            
+
+            {auth && <div className="cretae_divert">
+
+            <button onClick={NavigateToCreatePage}>Create Products </button>
+
+            </div> }
 
 
 

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
+
+
 export default function Register() {
+
+    const navigate=useNavigate();
+
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,6 +35,12 @@ export default function Register() {
     setPhone("");
     setAddress("");
   };
+
+
+    const GoTOLogin=()=>{
+      navigate("/login")
+    }
+
 
   return (
     <>
@@ -89,6 +102,8 @@ export default function Register() {
           <button type="submit">Register</button>
         </form>
       </div>
+            
+            <button onClick={GoTOLogin}>Login Page</button>
     </>
   );
 }

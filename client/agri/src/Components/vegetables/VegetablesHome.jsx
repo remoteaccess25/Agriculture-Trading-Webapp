@@ -25,7 +25,11 @@ const {id}=useParams()
       {recomendedVegetables.map((item,index)=>{
         return (
           <div key={index}>
+<<<<<<< HEAD
+        <Link to={`/product/vegetables/${id}`}>  <h3>{item.productName}</h3></Link>
+=======
         <Link to={`/vegetables/${id}`}>  <h3>{item.productName}</h3></Link>
+>>>>>>> d336e31e8cdb090c8ad90cc3f62323727e92c0f5
                 <p>{item.marketName}</p>
           </div>
         )

@@ -5,19 +5,24 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import CreatePage from "./Pages/CreatePage"
+
+import { AdminContextProvider } from "./Components/context/Admin/Admin";
 
 import Navbar from "./Components/Navbar/Navbar";
-import VegetablesHome from "./Components/vegetables/VegetablesHome";
-import FruitsHome from "./Components/fruits/FruitsHome"
-import Market from "./Components/market/Market"
+
 import { VegitableContextProvider } from "./Components/context/vegetablecontext/VegitableContext";
 import {FruitsContextProvider} from "./Components/context/fruitscontext/FruitsContext"
-import SinglePage from "./Pages/SinglePage";
+import SingleFruit from "./Pages/SingleFruit";
+import SingleVegetable from "./Pages/SingleVegetable";
 import Footer from "./Components/Footer/Footer";
-import AllMarkets from "./Pages/AllMarkets";
+import AllFruits from "./Pages/AllFruits";
+import AllVegetables from "./Pages/AllVegetables";
+import RecomendedPage from "./Pages/RecomendedPage";
 function App() {
   return (
     <>
+    <AdminContextProvider>
     <VegitableContextProvider>
     <FruitsContextProvider>
       <Navbar></Navbar>
@@ -28,18 +33,25 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
        
-        <Route path="/recomended/vegetables" element={<VegetablesHome/>}></Route>
-        <Route path="/recomended/fruits" element={<FruitsHome />}></Route>
-        <Route path="/market" element={<Market/>}></Route>
-        <Route path="/fruits/:id" element={<AllMarkets/>}></Route>
-        {/* <Route path="/fruits/:productName" element={<AllMarkets/>}></Route> */}
-        <Route path="/vegetables/:id" element={<AllMarkets/>}></Route>
-        
+        <Route path="/product/recomended/vegetables" element={<RecomendedPage/>}></Route>
+        <Route path="/product/recomended/fruits" element={<RecomendedPage/>}></Route>
+
+        <Route path="/product/fruits/:id" element={<SingleFruit/>}></Route>
+        <Route path="/product/vegetables/:id" element={<SingleVegetable/>}></Route>
+
+        <Route path="/products/fruits" element={<AllFruits/>}></Route>
+        <Route path="/products/vegetables" element={<AllVegetables/>}></Route>
+
+
+        {/* navigate to create page for admin */}
+        <Route path="/admin/create" element={<CreatePage/>}></Route>
+
       </Routes>
       <Footer></Footer>
     
       </FruitsContextProvider>
       </VegitableContextProvider>
+      </AdminContextProvider>
     </>
   );
 }

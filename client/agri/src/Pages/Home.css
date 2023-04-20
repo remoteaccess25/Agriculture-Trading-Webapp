@@ -78,7 +78,7 @@
 
  /* home_image2 */
 
- .home_image2{
+ .home_image2,.home_image1{
     border: 1px solid black;
     height: 15rem;
     width: 100%;
