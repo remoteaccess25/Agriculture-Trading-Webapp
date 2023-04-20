@@ -1,22 +1,39 @@
 const User = require('../models/user');
 const { StatusCodes } = require('http-status-codes');
 const { UnauthenticatedError } = require('../errors/index');
-const jwt = require('jsonwebtoken')
+const { admin } = require('./access-key');
 
 const register = async (req, res) => {
+
+    // check if the key provided is correct key or not
+    if (!admin(req.body.accessKey)) {
+        throw new UnauthenticatedError('Invalid AccessKey')
+    }
+
+    // delete the accessKey from the body..
+    
+    // delete req.body.accessKey // not needed as we creating user with mongoose schema
+
+    // create user
     const user = await User.create({ ...req.body })
+
+    // create JWT
     const token = user.createJWT()
-    console.log(user)
+
+    // console.log(user)
+
+    // send response
     res.status(StatusCodes.CREATED)
         .json({ user: { name: user.name }, token })
 }
 
-const login = async (req, res)=>{
+const login = async (req, res) => {
+
     // destructure the req.body
     const { email, password } = req.body
 
     // find the user using findOne method
-    const user = await User.findOne({email})
+    const user = await User.findOne({ email })
 
     // throw error if user not present
     if (!user) {
@@ -30,12 +47,11 @@ const login = async (req, res)=>{
     if (!isPasswordCorrect) {
         throw new UnauthenticatedError('Incorrect password.. Please try again')
     }
-    
+
     // create token
     const token = user.createJWT()
 
-    console.log(user)
-
+    // console.log(user)
 
     // send response
     res

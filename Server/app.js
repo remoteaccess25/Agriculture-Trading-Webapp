@@ -26,8 +26,8 @@ const productsRoute = require('./routes/product')
 app.use(express.json())
 
 // Routing
-app.use('/api/v1/auth',authRoute)
-app.use('/api/v1/products', productsRoute)
+app.use('/admin',authRoute)
+app.use('/products', productsRoute)
 
 // use middleware
 app.use(notFound)
@@ -35,16 +35,17 @@ app.use(errorHandlerMiddleware)
 
 
 // port variable
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8000
 
 
 // app starting function
 const start = async () => {
     try {
         // connect to the DB
-        await conenctDB(process.env.MONGO_URI);
+        await conenctDB(process.env.MONGO_URI2);
         
         app.listen(port, () => console.log(`Server is listening on port : ${port}`))
+        // console.log(1)
     } catch (err) {
         console.log(err);
     }
