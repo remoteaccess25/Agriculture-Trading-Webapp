@@ -1,5 +1,6 @@
 const Product = require('../models/product')
 const { BadRequestError } = require('../errors/index')
+const product = require('../models/product')
 
 
 // Get all products of perticular type
@@ -56,16 +57,24 @@ const getFruit = async (req, res) => {
 const getFruitsRec = async (req, res) => {
 
     // find recomended produts
-    let result = Product.find({ recomended: 'true', productType: 'fruit' })
+    // const result =await Product.find({ recomended: 'true', productType: 'fruit' })
 
-    // sort them based on name
-    result = result.sort('productName')
+    // // sort them based on name
+    // // const finalresult = result.sort('productName')
+    // console.log(result)
 
-    // get the products
-    const products = await result
+    // // get the products
+    // // const products = await result
 
-    // send response
-    res.status(200).json({ products, nbHits: products.length })
+    // // send response
+    // res.send("products",result)
+    // res.status(200).json({ products, nbHits: products.length })
+    
+    // let result= await product.find({recomended:true,productType:"fruit"})
+    let result=await product.find({recomended:true,productType:"fruit"})
+    
+    res.status(200).json({ stauts: 'success', result})
+    // res.send(result)
 }
 
 

@@ -11,21 +11,24 @@ export function VegitableContextProvider({children}){
   
     const initialVegetables={
     allVegetables:[],
-    recomendedVegetables:[]
+    allVegetablesPresent:false,
+    recomendedVegetables:[],
+    isLoadingVegi:true,
+    VegetablePresent:false
 
    }
 
    const [state,dispatch]=useReducer(vegetableReducer,initialVegetables)
 
-const getallvegi=async()=>{
+const getallRecomendedVegi=async()=>{
 
 
     try {
-        const res=await axios.get("http://localhost:3004/data")
+        const res=await axios.get("http://localhost:8000/products/recomended/vegetables")
     const allvegi=res.data
     
 
-    dispatch({type:"SET_ALL_VEGIS",payload:allvegi})
+    
     dispatch({type:"SET_RECOMENDED_VEGETABLES",payload:allvegi})
         
     } catch (error) {
@@ -34,9 +37,32 @@ const getallvegi=async()=>{
 
    
 }
+
+
+const getallvegi=async()=>{
+
+
+    try {
+        const res=await axios.get("http://localhost:8000/products/recomended/vegetables")
+    const allvegi=res.data
+    
+
+    dispatch({type:"SET_ALL_VEGIS",payload:allvegi})
+    
+        
+    } catch (error) {
+        console.log(error)
+    }
+
+   
+}
+
+
+
  
 
    useEffect(()=>{
+    getallRecomendedVegi()
     getallvegi()
 
    },[])

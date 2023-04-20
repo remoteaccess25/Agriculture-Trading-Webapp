@@ -3,24 +3,28 @@ switch(action.type){
 
     case "SET_ALL_VEGIS":
 
-    const allVegetable=action.payload.filter((item)=>{
+    // const allVegetable=action.payload.filter((item)=>{
         
-            return item.productType==="vegetable"
-        })
+    //         return item.productType==="vegetable"
+    //     })
 
         
         return {
             ...state,
-            allVegetables:allVegetable
+            allVegetables:action.payload,
+            isLoadingVegi:false,
+            VegetablePresent:true
         }
         
         case "SET_RECOMENDED_VEGETABLES":
-            const recomendedVegetables=action.payload.filter((item)=>{
-                return item.recomended===true && item.productType==="vegetable"
-            })  
+            // const recomendedVegetables=action.payload.filter((item)=>{
+            //     return item.recomended===true && item.productType==="vegetable"
+            // })  
             return{
                 ...state,
-                recomendedVegetables:recomendedVegetables
+                recomendedVegetables:action.payload,
+                isLoadingVegi:false,
+                VegetablePresent:true
             }
 
     default:

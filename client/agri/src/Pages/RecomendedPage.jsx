@@ -1,7 +1,86 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { FruitContext } from '../Components/context/fruitscontext/FruitsContext'
+import Cards from '../Components/Cards/Cards'
+import {Vegicontext} from "../Components/context/vegetablecontext/VegitableContext"
+import { useParams } from 'react-router-dom'
 
 export default function RecomendedPage() {
+
+  //getting which card is clicekd
+  const {name}=useParams()
+  // console.log("params",name)
+
+  const { isLoadingVegi,VegetablePresent,recomendedVegetables}=useContext(Vegicontext)
+
+
+  const {FruitPresent,isLoading,recomendedFruits}=useContext(FruitContext)
+  
+  
+
+const showData=()=>{
+  if(isLoading===false || isLoadingVegi===false ){
+    // console.log(recomendedFruits.result)
+
+    if(FruitPresent===true && name==="fruits"){
+
+      return(
+        
+        recomendedFruits.result.map((item)=>{
+          return(
+            <div key={item._id} >
+              <Cards data= {item}></Cards>
+             
+            </div>
+          )
+        })
+        
+        )
+      }
+  
+  
+  if( VegetablePresent===true && name==="vegetables"){
+    
+    // return(
+      //  
+      //   recomendedVegetables.result.map((item)=>{
+        //     return(
+          //       <div key={item._id} >
+          //         <Cards data= {item}></Cards>
+          
+          //       </div>
+          //     )
+          //   })
+          // )
+          
+        }
+        
+      
+  }
+  else{
+    return(
+      <div>...Loading</div>
+    )
+    
+  }
+}
+  
+  
   return (
-    <div>RecomendedPage</div>
+    <>    
+    <div className="recomended_heading">
+      <h1>Our Recomended</h1>
+    </div>
+
+{
+
+showData()
+
+
+}
+
+    </>
+      
+   
+    
   )
 }
