@@ -1,0 +1,89 @@
+
+
+.search-div{
+    /* border: 2px solid black; */
+
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.home-search-box{
+    width: 50vw;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+
+
+
+.main-div{
+    /* padding: 100px; */
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   
+}
+
+.home_image1{
+    border: 1px solid black;
+    height: 20rem;
+    width: 100%;
+}
+.cards_div{
+    /* border: 2px solid red; */
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+
+
+
+
+.home_images{
+    height:100%;
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+}
+
+ .card_one,.card_second{
+    /* border: 1px solid green; */
+    height: 13rem;
+    width: 22rem;
+    margin: 12rem;
+   
+
+ }
+
+ .image_name{
+    /* border: 1px solid greenyellow; */
+    align-items: center;
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    height: 3rem;
+    width: 100%;
+    
+ }
+
+ /* home_image2 */
+
+ .home_image2{
+    border: 1px solid black;
+    height: 15rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+ }

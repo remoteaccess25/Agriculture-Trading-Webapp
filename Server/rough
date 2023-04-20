@@ -1,0 +1,20 @@
+
+1. onion : 100kg 
+2. tomato : 1kg
+3. cucumber : 1kg
+4. groungnut : 100kg
+5. 
+6.
+7.
+8.
+
+
+localhost:3000/products/{fruits,vegetables,markets} - all products (but only recomended versions)
+localhost:3000/products/{fruits,vegetables,markets}/:id - specific products
+
+localhost:3000/products/{fruits,vegetables,markets} - all create
+localhost:3000/products/{fruits,vegetables,markets}/:id - update and delete
+
+
+getall - 
+
