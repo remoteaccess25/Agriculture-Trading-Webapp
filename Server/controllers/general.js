@@ -1,132 +1,115 @@
 const Product = require('../models/product')
-const {BadRequestError} = require('../errors/index')
+const { BadRequestError, InternalServerError, NotFoundError } = require('../errors/index')
+const { getProduct } = require('./utils');
+const { StatusCodes } = require('http-status-codes');
 
 
-// Get all products of perticular type
-const getAllProducts = async (req, res) => {
+// search bar - searching product by name
+// url - products/
+const searchProduct = async (req, res) => {
 
-    // get the type
-    const productID = req.params.id
+    // search criteria
+    const search = req.body
+    const sort = 'productName'
 
-    // find the product
-    const product = await Product.findById(productID)
+    // make the search case insensitive
+    if (search.productName) {
+        search.productName = { $regex: search.productName, $options: 'i' }
+    }
 
-    // throw error if bad request
+    // get products
+    const products = await getProduct(search, sort)
+
+    // if no product found throw Badrequest error
+    if (!products) {
+        throw new BadRequestError('Product Not found')
+    }
+
+    // send response
+    res
+        .status(StatusCodes.OK)
+        .json({ status: 'success', products, nbHits: products.length })
+}
+
+
+
+// create new entry (product) - authenticated only
+// url - /admin/create
+const createProduct = async (req, res) => {
+
+    // set createdBy and updatedBy to userID
+    req.body.createdBy = req.user.userId
+    req.body.updatedBy = req.user.userId
+
+    // create the new product
+    const product = await Product.create(req.body)
+
+    // throw error if unable to create product
     if (!product) {
-        throw new BadRequestError('Product not found')
+        throw new InternalServerError('Unable to create product')
     }
 
-    // send the response 
-    res.status(200).json({ stauts: 'success', product })
+    // send response
+    res
+        .status(StatusCodes.CREATED)
+        .json({ status: 'success', msg: 'Product created', product })
+
 }
 
+// update product - authenticated only
+// url - /admin/update
+const updateProduct = async (req, res) => {
 
-
-
-const getProductsRec = async (req, res) => {
-    const { name, /* type, */ city/* , recomended */ } = req.query
-    console.log(req.query)
-    
-    let queryObject = {}
-    if (name) {
-        queryObject.productName = { $regex: name, $options: 'i' }
+    // check if the body is empty or not. If yes throw error
+    if (!req.body.length) {
+        throw new BadRequestError('Please provide data')
     }
-    /* if (type) {
-        queryObject.productType = { $regex: type, $options: 'i' }
-    } */
-    if (city) {
-        queryObject.city = { $regex: city, $options: 'i' }
-    }
-    /*    if (recomended) {
-        queryObject.recomended = recomended === 'true' ? true : false
-    } */
-    let result = Product.find(queryObject)
-    /*     if (recomended)
-    result = result.sort('productName')
-    else  */if (name)
-    result = result.sort('-recomended -maxPrice -minPrice')
-    else
-    result = result.sort('name -recomended')
-    const products = await result
-    res.status(200).json({ products, nbHits: products.length })
-}
 
+    // destructure the request
+    const { user: { userId }, params: { id: productId } } = req
 
+    // set updated by to userId
+    req.body.updatedBy = userId
 
-// single product request (cards)
-const getProduct = async (req, res) => {
+    // findAndUpdate
+    const product = await Product.findByIdAndUpdate(
+        { _id: productId },
+        req.body,
+        { new: true, runValidators: true }
+    )
 
-    // get the id
-    const productID = req.params.id
-    
-    // find the product
-    const product = await Product.findById(productID)
-    
-    // product not found, throw error
+    // if product does not exit throw notFoundError
     if (!product) {
-        throw new BadRequestError('Product not found')
+        throw new NotFoundError(`No Product with id ${productId}`)
     }
-    
-    // send response if the product is found
-    res.status(200).json({ stauts: 'success', product })
-}
 
-
-
-const getFruits = () => {
-
-    // get id 
-    const fruitId = req.params.id
-    
-    // check if id is present or not
-    if (!fruitId) {
-        
-    }
+    // send response of successfull operation
+    res
+        .status(StatusCodes.OK)
+        .json({ status: 'success', msg: 'Product data updated successfully', product })
 
 }
 
 
+// delete product - authenticated only
+// url - /admin/delete
+const deleteProduct = async (req, res) => {
+
+    // destructure req
+    const { params: { id: productId } } = req
+
+    // delete product
+    const product = await Product.findOneAndRemove({ _id: productId })
+
+    // throw error if no product with the respective id exists
+    if (!product) {
+        throw new NotFoundError(`No product with id ${productId}`)
+    }
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-// const createProduct = async (req, res) => {
-//     const product = await Product.create(req.body)
-//     res.status(201).json({ status:'success',msg:"Product added sucessfully" })
-// }
-
-// const deleteProduct = async (req, res) => {
-//     const productID = req.params.id
-//     const product = await Product.findOneAndDelete({ _id: productID })
-//     if (!product) {
-//         return res.status(400).json({ stauts: 'failed', msg: 'Product not found' })
-//     }
-//     res.status(200).json({stauts:'success',msg:'Product deleted sucessfully'})
-
-// }
-
-// const updateProduct = async (req, res) => {
-//     const productID = req.params.id
-//     const product = await Product.findByIdAndUpdate({ _id: productID }, req.body, { new: true, runValidators: true })
-//     if (!product) {
-//         return res.status(400).json({ stauts: 'failed', msg: 'Product not found' })
-//     }
-//     res.status(200).json({ stauts: 'success', msg: 'Product Updated sucessfully' })
-// }
-
-
-module.exports = { getAllProducts,/*  createProduct, deleteProduct, updateProduct, */ getProduct }
+module.exports = { searchProduct, createProduct, updateProduct, deleteProduct }
 
 
 

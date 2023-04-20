@@ -6,10 +6,9 @@ const { register, login } = require('../controllers/auth');
 const express = require('express')
 const router = express.Router()
 
-// create routes
-router.route('/register').post(register)
-router.route('/login').post(login)
-
+// registration and login routes
+router.route('/register').post(register) // register route
+router.route('/login').post(login) // login route 
 
 
 

@@ -7,9 +7,7 @@ require('express-async-errors')
 // express app initiation
 const express = require('express')
 const app = express();
-const cors=require("cors")
 
-app.use(cors())
 
 // require middlewares
 const errorHandlerMiddleware = require('./middleware/error-handler')
@@ -21,18 +19,17 @@ const conenctDB = require('./db/connect')
 
 // Require Routes
 const authRoute = require('./routes/auth');
-const productsRoute = require('./routes/product')
+const productsRoute = require('./routes/get-products')
+const operationRoute = require('./routes/auth-products');
 
 
 // parse the incomming json
 app.use(express.json())
 
 // Routing
-// app.use("/",(req,res)=>{
-//         res.send("hi")    
-// })
-app.use('/admin',authRoute)
+app.use('/',authRoute)
 app.use('/products', productsRoute)
+app.use('/admin',authenticateUser,operationRoute)
 
 // use middleware
 app.use(notFound)
@@ -40,7 +37,7 @@ app.use(errorHandlerMiddleware)
 
 
 // port variable
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8000
 
 
 // app starting function

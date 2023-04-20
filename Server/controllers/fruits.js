@@ -1,13 +1,13 @@
 const Product = require('../models/product')
 const { BadRequestError } = require('../errors/index')
-const product = require('../models/product')
-
+const { getProduct } = require('./utils');
+const { StatusCodes } = require('http-status-codes')
 
 // Get all products of perticular type
 // url - products/fruits
 const getAllFruits = async (req, res) => {
 
-    // criteria to find products
+/*     // criteria to find products
     const type = { productType: 'fruit' }
 
     // find the product
@@ -17,15 +17,23 @@ const getAllFruits = async (req, res) => {
     retult = result.sort('productName')
 
     // get the result
-    const product = await result
+    const products = await result */
+
+    const find = { productType: 'fruit' }
+    const sort = 'productName'
+
+    // get the result
+    const products = await getProduct(find, sort)
 
     // throw error if bad request
-    if (!product) {
+    if (!products) {
         throw new BadRequestError('Product not found')
     }
 
     // send the response 
-    res.status(200).json({ stauts: 'success', product, nbHits: product.length })
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', products, nbHits: products.length })
 }
 
 
@@ -41,12 +49,14 @@ const getFruit = async (req, res) => {
     const product = await Product.findById(productID)
 
     // product not found, throw error
-    if (!product) {
+    if (!product || product.productType !== 'fruit') {
         throw new BadRequestError('Product not found')
     }
 
     // send response if the product is found
-    res.status(200).json({ stauts: 'success', product })
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', product })
 }
 
 
@@ -56,25 +66,25 @@ const getFruit = async (req, res) => {
 // url - products/recomended/fruits
 const getFruitsRec = async (req, res) => {
 
-    // find recomended produts
-    // const result =await Product.find({ recomended: 'true', productType: 'fruit' })
+    // // find recomended produts
+    // let result = Product.find({ recomended: 'true', productType: 'fruit' })
 
     // // sort them based on name
-    // // const finalresult = result.sort('productName')
-    // console.log(result)
+    // result = result.sort('productName')
 
     // // get the products
-    // // const products = await result
+    // const products = await result
 
-    // // send response
-    // res.send("products",result)
-    // res.status(200).json({ products, nbHits: products.length })
-    
-    // let result= await product.find({recomended:true,productType:"fruit"})
-    let result=await product.find({recomended:true,productType:"fruit"})
-    
-    res.status(200).json({ stauts: 'success', result})
-    // res.send(result)
+    const find = { recomended:true }
+    const sort = 'productName'
+
+    // get the result
+    const products = await getProduct(find, sort)
+
+    // send response
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', products, nbHits: products.length })
 }
 
 

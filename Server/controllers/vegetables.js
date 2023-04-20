@@ -1,30 +1,36 @@
 const Product = require('../models/product')
 const { BadRequestError } = require('../errors/index')
-
+const { getProduct } = require('./utils');
+const { StatusCodes } = require('http-status-codes')
 
 // Get all products of perticular type
 // url - products/vegetables
 const getAllVegetables = async (req, res) => {
 
-    // criteria to find products
-    const type = { productType: 'fruit' }
+/*     // criteria to find products
+    const type = { productType: 'vegetable' }
 
     // find the product
     const result = Product.find(type)
 
     // sort the by name and size
-    retult = result.sort('productName')
+    retult = result.sort('productName') */
+
+    const find = { productType: 'vegetable' }
+    const sort = 'productName'
 
     // get the result
-    const product = await result
+    const products = await getProduct(find,sort)
 
     // throw error if bad request
-    if (!product) {
+    if (!products) {
         throw new BadRequestError('Product not found')
     }
 
     // send the response 
-    res.status(200).json({ stauts: 'success', product, nbHits: product.length })
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', products, nbHits: products.length })
 }
 
 
@@ -40,12 +46,14 @@ const getVegetable = async (req, res) => {
     const product = await Product.findById(productID)
 
     // product not found, throw error
-    if (!product) {
+    if (!product || product.productType !== 'vegetable') {
         throw new BadRequestError('Product not found')
     }
 
     // send response if the product is found
-    res.status(200).json({ stauts: 'success', product })
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', product })
 }
 
 
@@ -55,23 +63,30 @@ const getVegetable = async (req, res) => {
 // url - products/recomended/vegetables
 const getVegetablesRec = async (req, res) => {
 
-    // find recomended produts
-    let result = Product.find({ recomended: 'true' })
+    /*     // find recomended produts
+        let result = Product.find({ recomended: 'true' })
+    
+        // sort them based on name
+        result = result.sort('productName')
+    
+        // get the products
+        const products = await result */
 
-    // sort them based on name
-    result = result.sort('productName')
+    const find = { recomended:true }
+    const sort = 'productName'
 
-    // get the products
-    const products = await result
+    const products = await getProduct(find,sort)
 
     // send response
-    res.status(200).json({ products, nbHits: products.length })
+    res
+        .status(StatusCodes.OK)
+        .json({ stauts: 'success', products, nbHits: products.length })
 }
 
 
 
 
-module.exports = { getAllFruits, getFruitsRec, getFruit }
+module.exports = { getAllVegetables, getVegetable, getVegetablesRec }
 
 
 
