@@ -18,7 +18,7 @@ const notFound = require('./middleware/not-found')
 const authenticateUser = require('./middleware/auth');
 
 // require connection to the database(MONGO DB)
-const conenctDB = require('./db/connect')
+const conncetDB = require('./db/connect')
 
 // Require Routes
 const authRoute = require('./routes/auth');
@@ -47,7 +47,7 @@ const port = process.env.PORT || 8000
 const start = async () => {
     try {
         // connect to the DB
-        await conenctDB(process.env.MONGO_URI2);
+        await conncetDB(process.env.MONGO_URI2);
 
         app.listen(port, () => console.log(`Server is listening on port : ${port}`))
         // console.log(1)
