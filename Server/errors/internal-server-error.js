@@ -1,5 +1,6 @@
-const CustomAPIError = require('../../../VS Code/Web D/Projects/Job-Api/errors/custom-errors');
+
 const { StatusCodes } = require('http-status-codes');
+const CustomAPIError=require("./custom-error")
 
 class InternalServerError extends CustomAPIError{
     constructor(message) {
