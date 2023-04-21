@@ -64,6 +64,10 @@ const productSchema = new mongoose.Schema({
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: [true, 'Please provide user']
+    },
+    image: {
+        data: Buffer,
+        contentType: String
     }
 
 },{timestamps:true})
