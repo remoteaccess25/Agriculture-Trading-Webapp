@@ -8,6 +8,9 @@ require('express-async-errors')
 const express = require('express')
 const app = express();
 
+// requre cors
+const cors = require('cors');
+app.use(cors())
 
 // require middlewares
 const errorHandlerMiddleware = require('./middleware/error-handler')
@@ -27,9 +30,9 @@ const operationRoute = require('./routes/auth-products');
 app.use(express.json())
 
 // Routing
-app.use('/',authRoute)
+app.use('/', authRoute)
 app.use('/products', productsRoute)
-app.use('/admin',authenticateUser,operationRoute)
+app.use('/admin', authenticateUser, operationRoute)
 
 // use middleware
 app.use(notFound)
@@ -45,7 +48,7 @@ const start = async () => {
     try {
         // connect to the DB
         await conenctDB(process.env.MONGO_URI2);
-        
+
         app.listen(port, () => console.log(`Server is listening on port : ${port}`))
         // console.log(1)
     } catch (err) {
