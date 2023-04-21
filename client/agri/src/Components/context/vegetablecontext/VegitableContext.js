@@ -14,7 +14,8 @@ export function VegitableContextProvider({children}){
     allVegetablesPresent:false,
     recomendedVegetables:[],
     isLoadingVegi:true,
-    VegetablePresent:false
+    VegetablePresent:false,
+    singleVegiData:[]
 
    }
 
@@ -27,7 +28,7 @@ const getallRecomendedVegi=async()=>{
         const res=await axios.get("http://localhost:8000/products/recomended/vegetables")
     const allvegi=res.data
     
-
+    // console.log("rec vegetables",allvegi)
     
     dispatch({type:"SET_RECOMENDED_VEGETABLES",payload:allvegi})
         
@@ -43,9 +44,10 @@ const getallvegi=async()=>{
 
 
     try {
-        const res=await axios.get("http://localhost:8000/products/recomended/vegetables")
+        const res=await axios.get("http://localhost:8000/products/vegetables")
     const allvegi=res.data
     
+   
 
     dispatch({type:"SET_ALL_VEGIS",payload:allvegi})
     
@@ -56,6 +58,7 @@ const getallvegi=async()=>{
 
    
 }
+
 
 
 
@@ -71,7 +74,7 @@ const getallvegi=async()=>{
   
 
     return(
-            < Vegicontext.Provider  value={{...state}}>
+            < Vegicontext.Provider  value={{...state,dispatch}}>
                 {children}
             </Vegicontext.Provider>
     )

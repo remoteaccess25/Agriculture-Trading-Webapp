@@ -22,7 +22,7 @@ export function AdminContextProvider({children}){
         // },[])
 
     return(
-        <AdminContext.Provider value={{...state}}>
+        <AdminContext.Provider value={{...state,dispatch}}>
             {children}
         </AdminContext.Provider>
     )

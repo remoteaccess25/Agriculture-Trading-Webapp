@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {FruitContext} from "../Components/context/fruitscontext/FruitsContext"
 import Cards from '../Components/Cards/Cards'
-
+import { Link } from 'react-router-dom'
 
 export default function AllFruits() {
 
@@ -16,11 +16,12 @@ const showAllFruits=()=>{
     if(allFruitsPresent===true ){
 
       return(
-        allFruits.product.map((item)=>{
+        allFruits.products.map((item)=>{
           return(
 
             <div key={item._id}>
-          <Cards data={item}></Cards>
+              <Link to={`/product/fruits/${item._id}`}> <Cards data={item}></Cards></Link>
+         
 
         </div>
             )

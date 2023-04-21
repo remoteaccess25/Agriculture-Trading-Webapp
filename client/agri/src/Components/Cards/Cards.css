@@ -1,0 +1,41 @@
+.dummycards_div{
+    /* border: 1px solid black; */
+    height: 14rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+}
+
+.cards_upper_div{
+    /* border: 1px solid red; */
+    height: 80%;
+    width: 80%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.cards_image{
+    border: 1px solid green;
+    height: 80%;
+    width: 40%;
+    margin: 1rem;
+}
+
+.cards_info{
+    margin-right: 3rem;
+}
+
+.cards_lower_div{
+    width: 80%;
+    text-align: center;
+    height: 45px;
+    background: linear-gradient(90deg, #3BAF3D 0%, #5DC234 100%);
+    border-radius: 12px 12px 0px 0px;
+}

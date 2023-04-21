@@ -14,7 +14,8 @@ export function FruitsContextProvider({children}){
        allFruitsPresent:false,
         recomendedFruits:[],
         isLoading:true,
-        FruitPresent:false
+        FruitPresent:false,
+        singleFruitData:[]
 
     }
 
@@ -28,7 +29,7 @@ export function FruitsContextProvider({children}){
             const res=await axios.get("http://localhost:8000/products/recomended/fruits")
             const  allFruits=res.data
 
-            
+            // console.log("all fruits",allFruits)
             
             dispatch({type:"SET_RECOMENDED_FRUITS",payload:allFruits})
             
@@ -49,7 +50,7 @@ export function FruitsContextProvider({children}){
             const res=await axios.get("http://localhost:8000/products/fruits")
             const  allFruits=res.data
 
-            console.log("getallfruits",allFruits)
+            // console.log("getallfruits",allFruits)
             dispatch({type:"SET_ALL_FRUITS",payload:allFruits})
             
             
@@ -76,7 +77,7 @@ export function FruitsContextProvider({children}){
     
    
     return(
-        <FruitContext.Provider value={{...state}}>
+        <FruitContext.Provider value={{...state,dispatch}}>
             {children}
         </FruitContext.Provider>
 

@@ -3,6 +3,7 @@ import { FruitContext } from '../Components/context/fruitscontext/FruitsContext'
 import Cards from '../Components/Cards/Cards'
 import {Vegicontext} from "../Components/context/vegetablecontext/VegitableContext"
 import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function RecomendedPage() {
 
@@ -15,7 +16,7 @@ export default function RecomendedPage() {
 
   const {FruitPresent,isLoading,recomendedFruits}=useContext(FruitContext)
   
-  
+  console.log("rec fruits",recomendedFruits.products)
 
 const showData=()=>{
   if(isLoading===false || isLoadingVegi===false ){
@@ -25,10 +26,11 @@ const showData=()=>{
 
       return(
         
-        recomendedFruits.result.map((item)=>{
+        recomendedFruits.products.map((item)=>{
           return(
             <div key={item._id} >
-              <Cards data= {item}></Cards>
+              <Link to={`/product/fruits/${item._id}`}><Cards data= {item}></Cards></Link>
+              
              
             </div>
           )
@@ -40,17 +42,18 @@ const showData=()=>{
   
   if( VegetablePresent===true && name==="vegetables"){
     
-    // return(
-      //  
-      //   recomendedVegetables.result.map((item)=>{
-        //     return(
-          //       <div key={item._id} >
-          //         <Cards data= {item}></Cards>
+    return(
+       
+      recomendedVegetables.products.map((item)=>{
+            return(
+                <div key={item._id} >
+                  <Link  to={`/product/vegetables/${item._id}`}><Cards data= {item}></Cards></Link>
+                  
           
-          //       </div>
-          //     )
-          //   })
-          // )
+                </div>
+              )
+            })
+          )
           
         }
         
