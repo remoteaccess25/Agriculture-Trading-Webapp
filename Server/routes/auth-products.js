@@ -1,4 +1,4 @@
-
+// require necessary controllers
 const { createProduct, deleteProduct, updateProduct } = require('../controllers/general');
 
 const express = require('express');

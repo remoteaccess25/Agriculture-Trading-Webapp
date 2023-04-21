@@ -61,9 +61,10 @@ const createProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
 
     // check if the body is empty or not. If yes throw error
-    if (!req.body.length) {
+    if (!Object.keys(req.body).length) {
         throw new BadRequestError('Please provide data')
     }
+    // console.log(req.body.length)
 
     // destructure the request
     const { user: { userId }, params: { id: productId } } = req

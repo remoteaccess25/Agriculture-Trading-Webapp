@@ -7,20 +7,20 @@ const { StatusCodes } = require('http-status-codes')
 // url - products/vegetables
 const getAllVegetables = async (req, res) => {
 
-/*     // criteria to find products
-    const type = { productType: 'vegetable' }
-
-    // find the product
-    const result = Product.find(type)
-
-    // sort the by name and size
-    retult = result.sort('productName') */
+    /*     // criteria to find products
+        const type = { productType: 'vegetable' }
+    
+        // find the product
+        const result = Product.find(type)
+    
+        // sort the by name and size
+        retult = result.sort('productName') */
 
     const find = { productType: 'vegetable' }
     const sort = 'productName'
 
     // get the result
-    const products = await getProduct(find,sort)
+    const products = await getProduct(find, sort)
 
     // throw error if bad request
     if (!products) {
@@ -72,10 +72,10 @@ const getVegetablesRec = async (req, res) => {
         // get the products
         const products = await result */
 
-    const find = { recomended:true }
+    const find = { productType: 'vegetable', recomended: true }
     const sort = 'productName'
 
-    const products = await getProduct(find,sort)
+    const products = await getProduct(find, sort)
 
     // send response
     res

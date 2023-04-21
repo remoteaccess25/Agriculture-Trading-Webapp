@@ -7,17 +7,17 @@ const { StatusCodes } = require('http-status-codes')
 // url - products/fruits
 const getAllFruits = async (req, res) => {
 
-/*     // criteria to find products
-    const type = { productType: 'fruit' }
-
-    // find the product
-    const result = Product.find(type)
-
-    // sort the by name and size
-    retult = result.sort('productName')
-
-    // get the result
-    const products = await result */
+    /*     // criteria to find products
+        const type = { productType: 'fruit' }
+    
+        // find the product
+        const result = Product.find(type)
+    
+        // sort the by name and size
+        retult = result.sort('productName')
+    
+        // get the result
+        const products = await result */
 
     const find = { productType: 'fruit' }
     const sort = 'productName'
@@ -75,7 +75,7 @@ const getFruitsRec = async (req, res) => {
     // // get the products
     // const products = await result
 
-    const find = { recomended:true }
+    const find = { productType: 'fruit', recomended: true }
     const sort = 'productName'
 
     // get the result
@@ -86,8 +86,6 @@ const getFruitsRec = async (req, res) => {
         .status(StatusCodes.OK)
         .json({ stauts: 'success', products, nbHits: products.length })
 }
-
-
 
 
 module.exports = { getAllFruits, getFruitsRec, getFruit }
