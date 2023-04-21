@@ -1,5 +1,5 @@
 const Product = require('../models/product')
-const { BadRequestError } = require('../errors/index')
+const { BadRequestError } = require('../errors/errors')
 const { getProduct } = require('./utils');
 const { StatusCodes } = require('http-status-codes')
 

@@ -1,5 +1,5 @@
 const Product = require('../models/product')
-const { BadRequestError, InternalServerError, NotFoundError } = require('../errors/index')
+const { BadRequestError, InternalServerError, NotFoundError } = require('../errors/errors')
 const { getProduct } = require('./utils');
 const { StatusCodes } = require('http-status-codes');
 

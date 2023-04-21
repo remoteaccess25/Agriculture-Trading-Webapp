@@ -1,6 +1,6 @@
 const User = require('../models/user');
 const { StatusCodes } = require('http-status-codes');
-const { UnauthenticatedError } = require('../errors/index');
+const { UnauthenticatedError } = require('../errors/errors');
 const { admin } = require('./access-key');
 
 const register = async (req, res) => {
