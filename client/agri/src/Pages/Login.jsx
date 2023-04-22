@@ -1,20 +1,53 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import {AdminContext} from "../Components/context/Admin/Admin"
+import { useContext } from "react";
+
+//importing react cookies
+import {useCookies} from "react-cookie"
+
 
 export default function Login() {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
+  
+  const navigate=useNavigate()
+
+  const {dispatch, email,password }=useContext(AdminContext)
+
+  
+  //cookies
+  const [cookies, setCookie, removeCookie] = useCookies(['admin']);
+
+
+
 
   const Login = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/", { name, password });
-    } catch (error) {
+      const response = await axios.post("http://localhost:8000/login", { 
+        email, password 
+       });
+
+       console.log("login data",response)
+
+       if(response.status===200){
+
+        //storing to cookies
+
+
+
+        navigate("/")
+       }
+
+
+    }
+    
+    
+    catch (error) {
       console.log(error);
     }
-    setName("");
-    setPassword("");
+    
   };
 
   return (
@@ -24,11 +57,11 @@ export default function Login() {
        
           <input
             type="text"
-            value={name}
+            value={email}
             required
-            placeholder="Name"
+            placeholder="EMAIL"
             onChange={(e) => {
-              setName(e.target.value);
+              {dispatch({type:"EMAIL",payload:e.target.value})}
             }}
           />
 
@@ -39,7 +72,7 @@ export default function Login() {
             required
             placeholder="Password"
             onChange={(e) => {
-              setPassword(e.target.value);
+              {dispatch({type:"PASSWORD",payload:e.target.value})}
             }}
           />
 

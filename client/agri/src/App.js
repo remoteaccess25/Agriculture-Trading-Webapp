@@ -19,6 +19,8 @@ import Footer from "./Components/Footer/Footer";
 import AllFruits from "./Pages/AllFruits";
 import AllVegetables from "./Pages/AllVegetables";
 import RecomendedPage from "./Pages/RecomendedPage";
+
+
 function App() {
   return (
     <>

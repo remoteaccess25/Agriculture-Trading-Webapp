@@ -9,8 +9,13 @@ export function AdminContextProvider({children}){
 
         const initialAdminData={
             name:"",
+            email:"",
+            password:"",
+            contactNum:Number,
+            accessKey:"",
             token:"",
-            auth:true
+            auth:false,
+            acessGranted:false
         }
 
 

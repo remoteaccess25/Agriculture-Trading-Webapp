@@ -1,39 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
+import {AdminContext} from "../Components/context/Admin/Admin"
+import { useContext } from "react";
 
 
 export default function Register() {
 
     const navigate=useNavigate();
 
+    const {dispatch, name,email,password,contactNum,accessKey,acessreply}=useContext(AdminContext)
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
+  
 
   const Register = async (e) => {
     e.preventDefault();
+
+   
     try {
-      const response = await axios.post("/", {
+      const response = await axios.post("http://localhost:8000/register", {
         name,
         email,
         password,
-        phone,
-        address,
+        contactNum,accessKey
       });
-    } catch (error) {
+
+      console.log("getting data",response.data.user)
+      if(response.status===201){
+        // dispatch({type:"ACESS_GRANTED",payload:response.data.acessGranted})
+        const ag=response.data.user.name
+        dispatch({type:"ACESS_GRANTED",payload:ag})
+        navigate("/login")
+      }
+    } 
+    catch (error) {
       console.log(error);
     }
 
-    setName("");
-    setEmail("");
-    setPassword("");
-    setPhone("");
-    setAddress("");
+   
   };
 
 
@@ -52,7 +57,7 @@ export default function Register() {
             required
             placeholder="Name"
             onChange={(e) => {
-              setName(e.target.value);
+              {dispatch({type:"NAME",payload:e.target.value})}
             }}
           />
 
@@ -63,7 +68,7 @@ export default function Register() {
             required
             placeholder="Email"
             onChange={(e) => {
-              setEmail(e.target.value);
+              {dispatch({type:"EMAIL",payload:e.target.value})}
             }}
           />
 
@@ -74,28 +79,28 @@ export default function Register() {
             required
             placeholder="Password"
             onChange={(e) => {
-              setPassword(e.target.value);
+              {dispatch({type:"PASSWORD",payload:e.target.value})}
             }}
           />
 
          <input
             type="text"
-            value={phone}
+            value={contactNum}
             required
-            placeholder="Phone"
+            placeholder="contact number"
             onChange={(e) => {
-              setPhone(e.target.value);
+              {dispatch({type:"CONTACT_NUM",payload:e.target.value})}
             }}
           />
 
          
           <input
             type="text"
-            value={address}
+            value={accessKey}
             required
-            placeholder="Address"
+            placeholder="AcessKey"
             onChange={(e) => {
-              setAddress(e.target.value);
+              {dispatch({type:"ACESS_KEY",payload:e.target.value})}
             }}
           />
 
@@ -103,7 +108,7 @@ export default function Register() {
         </form>
       </div>
             
-            <button onClick={GoTOLogin}>Login Page</button>
+           
     </>
   );
 }
