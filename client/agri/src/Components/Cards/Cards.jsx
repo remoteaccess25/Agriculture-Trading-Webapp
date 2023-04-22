@@ -1,12 +1,61 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Cards.css"
-
+import {AdminContext}from "../context/Admin/Admin"
+import { useContext } from 'react'
+import Cookies from 'js-cookie'
+import axios from 'axios'
 export default function Cards(props) {
+
+
+  const {dispatch,isLogedIn ,token}=useContext(AdminContext)
+
+  const mycookies=Cookies.get("admin")
+
+// console.log("token",token)
+const checkLogin=()=>{
+  const mycookies=Cookies.get("admin")
+  const localToken=localStorage.getItem("token")
+
+
+  if(mycookies!==undefined){
+    dispatch({type:"LOGIN"})
+    dispatch({type:"TOKEN",payload:localToken})
+  }else{
+    dispatch({type:"LOGOUT"})
+  }
+}
+
+
+useEffect(()=>{
+checkLogin()
+},[])
+
+
+const deleteProduct=async()=>{
+  const id=props.data._id
+  try {
+    // console.log("going")
+    const result=await axios.delete(`http://localhost:8000/admin/delete/${id}`,{
+      headers: { authorization: `Bearer ${token}` }
+    }
+    )
+    
+
+    console.log("delete result",result)
+    
+  } catch (error) {
+    console.log(error)
+  }
+        
+}
+
+//  /admin/delete/:id 
+// console.log(props.data._id)
   return (
     <>
-
+    <h1>{props.data._id}</h1>
      <div className="dummycards_div">
-
+      
       <div className="cards_upper_div">
         <img className='cards_image' src={""} alt="" />
         <div className="cards_info">
@@ -24,10 +73,14 @@ export default function Cards(props) {
 
 
       <div className="cards_lower_div">
-
+            see all
       </div>
+     
      </div>
 
+     {isLogedIn && 
+      <div className='admin_option'><button>update</button><button onClick={()=>deleteProduct()}>delete</button></div>
+      }
 
     
     </>

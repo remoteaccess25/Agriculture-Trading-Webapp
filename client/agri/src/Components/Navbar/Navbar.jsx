@@ -37,7 +37,7 @@ const show_register=()=>{
 
     dispatch({type:"LOGOUT"})
 
-    console.log("happens")
+    // console.log("happens")
  }
 
  const showLogout=()=>{

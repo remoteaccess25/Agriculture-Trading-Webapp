@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Home.css";
 
 import axios from "axios";
@@ -61,7 +61,7 @@ const navigate=useNavigate()
   const showCreateButton=()=>{
 
     const mycookies=Cookies.get("admin")
-    console.log("mycookies",mycookies)
+    // console.log("mycookies",mycookies)
 
     if(mycookies!==undefined){
 
@@ -75,11 +75,11 @@ const navigate=useNavigate()
 
     }
 
-
-
-
     
   }
+
+
+  
 
   const NavigateToCreatePage=()=>{
     navigate("/admin/create")
