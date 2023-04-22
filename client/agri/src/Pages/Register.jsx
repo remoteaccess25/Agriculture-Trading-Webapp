@@ -14,6 +14,11 @@ export default function Register() {
 
   
 
+    const GoTOLogin=()=>{
+      navigate("/login")
+    }
+
+
   const Register = async (e) => {
     e.preventDefault();
 
@@ -42,9 +47,7 @@ export default function Register() {
   };
 
 
-    const GoTOLogin=()=>{
-      navigate("/login")
-    }
+   
 
 
   return (
@@ -108,7 +111,9 @@ export default function Register() {
         </form>
       </div>
             
-           
+           <div className="already_user">
+            <button onClick={ GoTOLogin}>Login</button>
+           </div>
     </>
   );
 }

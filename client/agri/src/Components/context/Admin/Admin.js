@@ -15,7 +15,10 @@ export function AdminContextProvider({children}){
             accessKey:"",
             token:"",
             auth:false,
-            acessGranted:false
+            acessGranted:false,
+            isLogedIn:false,
+            
+    
         }
 
 

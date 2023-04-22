@@ -19,9 +19,42 @@ import Footer from "./Components/Footer/Footer";
 import AllFruits from "./Pages/AllFruits";
 import AllVegetables from "./Pages/AllVegetables";
 import RecomendedPage from "./Pages/RecomendedPage";
+// import { AdminContext } from "./Components/context/Admin/Admin";
+// import { useContext } from "react";
+// import Cookies from "js-cookie";
+
+import PrivateRoutes from "./Pages/PrivateRoutes/PrivateRoutes";
 
 
-function App() {
+ function App() {
+
+  // const { isLogedIn }=useContext(AdminContext)
+
+    // const myCookies=Cookies.get("admin")
+
+// const privateRoutes=()=>{
+
+//   if(myCookies!==undefined){
+
+//     return(
+
+// <Route path="/admin/create" element={<CreatePage/>}></Route>
+
+//     )
+
+//   }
+  // else{
+  //   return(
+  //     // alert("unauthorized user")
+  //     console.log("no admin")
+
+  //   )
+  // }
+
+
+// }
+
+
   return (
     <>
     <AdminContextProvider>
@@ -45,8 +78,14 @@ function App() {
         <Route path="/products/vegetables" element={<AllVegetables/>}></Route>
 
 
-        {/* navigate to create page for admin */}
-        <Route path="/admin/create" element={<CreatePage/>}></Route>
+        {/* navigate to create page for admin  private routes*/}
+           
+           <Route path="/admin/create" element={<PrivateRoutes/>}>
+            
+           <Route path="/admin/create" element={<CreatePage/>}></Route>
+            </Route>       
+            
+        {/* <Route path="/admin/create" element={<CreatePage/>}></Route> */}
 
       </Routes>
       <Footer></Footer>

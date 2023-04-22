@@ -49,10 +49,19 @@ const AdminReducer=(state,action)=>{
         
 
        
-        case "SEND_LOGIN":
+        case "LOGIN":
             return{
+                ...state,
+                isLogedIn:true
 
             }
+        
+        case "LOGOUT":
+                return{
+                    ...state,
+                    isLogedIn:false
+    
+                }
         
         
 

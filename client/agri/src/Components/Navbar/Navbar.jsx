@@ -25,8 +25,8 @@ const show_register=()=>{
 
 
  //admin context
- const {dispatch, email,password,token }=useContext(AdminContext)
-
+ const {dispatch,isLogedIn, email,password,token }=useContext(AdminContext)
+ 
 
  console.log(`my${email} email `)
 
@@ -34,6 +34,9 @@ const show_register=()=>{
  const logOut=()=>{
     Cookies.remove("admin")
     localStorage.removeItem("email")
+
+    dispatch({type:"LOGOUT"})
+
     console.log("happens")
  }
 
@@ -46,6 +49,12 @@ const show_register=()=>{
             )
     }
  }
+
+
+ //refreshing page on logout
+
+
+
 
 
   return (

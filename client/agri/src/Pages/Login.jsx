@@ -35,7 +35,7 @@ export default function Login() {
 
         //storing to cookies
         dispatch({type:"TOKEN",payload:response.data.token})
-        
+        dispatch({type:"LOGIN"})
 
         //storing email to local storage
         localStorage.setItem("email",email)
