@@ -13,10 +13,22 @@ import vegetableimage from "../Images/vegetables.jpg"
 import { AdminContext } from "../Components/context/Admin/Admin";
 
 
+
+//cookies
+// import {useCookies} from "react-cookie"
+import Cookies from "js-cookie";
+
+
 export default function Home() {
 
 //navigate
 const navigate=useNavigate()
+
+
+//cookies
+// const [cookies, setCookie, removeCookie] = useCookies(['admin']);
+
+
 
 
   const [search, setSearch] = useState("");
@@ -34,10 +46,40 @@ const navigate=useNavigate()
 
 
 
+
+
+
+
   //admin context
 
-  const {auth}=useContext(AdminContext)
+  const {dispatch, email,password,token }=useContext(AdminContext)
 
+  
+
+  //show create button for admin
+
+  const showCreateButton=()=>{
+
+    const mycookies=Cookies.get("admin")
+    console.log("mycookies",mycookies)
+
+    if(mycookies!==undefined){
+
+      return(
+         <div className="cretae_divert">
+
+        <button onClick={NavigateToCreatePage}>Create Products </button>
+
+        </div> 
+      )
+
+    }
+
+
+
+
+    
+  }
 
   const NavigateToCreatePage=()=>{
     navigate("/admin/create")
@@ -101,11 +143,7 @@ const navigate=useNavigate()
       {/* create Page for Admin */}
             
 
-            {auth && <div className="cretae_divert">
-
-            <button onClick={NavigateToCreatePage}>Create Products </button>
-
-            </div> }
+           {showCreateButton()}
 
 
 

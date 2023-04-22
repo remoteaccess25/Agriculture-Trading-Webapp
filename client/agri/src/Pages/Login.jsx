@@ -6,18 +6,18 @@ import {AdminContext} from "../Components/context/Admin/Admin"
 import { useContext } from "react";
 
 //importing react cookies
-import {useCookies} from "react-cookie"
-
+// import {useCookies} from "react-cookie"
+import Cookies from "js-cookie";
 
 export default function Login() {
   
   const navigate=useNavigate()
 
-  const {dispatch, email,password }=useContext(AdminContext)
+  const {dispatch, email,password,token }=useContext(AdminContext)
 
   
   //cookies
-  const [cookies, setCookie, removeCookie] = useCookies(['admin']);
+  // const [cookies, setCookie, removeCookie] = useCookies(['admin']);
 
 
 
@@ -34,9 +34,13 @@ export default function Login() {
        if(response.status===200){
 
         //storing to cookies
+        dispatch({type:"TOKEN",payload:response.data.token})
+        
 
-
-
+        //storing email to local storage
+        localStorage.setItem("email",email)
+        // setCookie("admin",{token,email})
+        Cookies.set("admin",token,email)
         navigate("/")
        }
 
