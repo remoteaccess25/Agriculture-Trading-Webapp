@@ -4,6 +4,10 @@ import {AdminContext}from "../context/Admin/Admin"
 import { useContext } from 'react'
 import Cookies from 'js-cookie'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+
+
+
 export default function Cards(props) {
 
 
@@ -54,6 +58,7 @@ const deleteProduct=async()=>{
   return (
     <>
     <h1>{props.data._id}</h1>
+    <Link to={`/product/${props.name}/${props.data._id}`}>
      <div className="dummycards_div">
       
       <div className="cards_upper_div">
@@ -77,6 +82,7 @@ const deleteProduct=async()=>{
       </div>
      
      </div>
+     </Link>
 
      {isLogedIn && 
       <div className='admin_option'><button>update</button><button onClick={()=>deleteProduct()}>delete</button></div>

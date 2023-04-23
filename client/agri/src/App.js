@@ -26,6 +26,9 @@ import RecomendedPage from "./Pages/RecomendedPage";
 import PrivateRoutes from "./Pages/PrivateRoutes/PrivateRoutes";
 
 
+//product context
+import ProductContextProvider from "./Components/context/Admin/Product";
+
  function App() {
 
   // const { isLogedIn }=useContext(AdminContext)
@@ -58,6 +61,7 @@ import PrivateRoutes from "./Pages/PrivateRoutes/PrivateRoutes";
   return (
     <>
     <AdminContextProvider>
+    <ProductContextProvider>
     <VegitableContextProvider>
     <FruitsContextProvider>
       <Navbar></Navbar>
@@ -92,6 +96,7 @@ import PrivateRoutes from "./Pages/PrivateRoutes/PrivateRoutes";
     
       </FruitsContextProvider>
       </VegitableContextProvider>
+      </ProductContextProvider>
       </AdminContextProvider>
     </>
   );

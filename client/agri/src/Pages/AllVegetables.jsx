@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import {Vegicontext} from "../Components/context/vegetablecontext/VegitableContext"
 import Cards from '../Components/Cards/Cards'
-import { Link } from 'react-router-dom'
 
 export default function AllVegetables() {
 
@@ -21,7 +20,7 @@ const showAllVegetables=()=>{
           return(
             
             <div key={item._id}>
-              <Link to={`/product/vegetables/${item._id}`}><Cards data={item}></Cards></Link>
+              <Cards name={"vegetables"} data={item}></Cards>
         
 
       </div>
@@ -45,6 +44,8 @@ const showAllVegetables=()=>{
     )
   }
 }
+
+
 
   return (
     <>

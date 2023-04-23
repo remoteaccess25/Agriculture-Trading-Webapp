@@ -20,7 +20,7 @@ const showAllFruits=()=>{
           return(
 
             <div key={item._id}>
-              <Link to={`/product/fruits/${item._id}`}> <Cards data={item}></Cards></Link>
+              <Cards name={"fruits"} data={item}></Cards>
          
 
         </div>

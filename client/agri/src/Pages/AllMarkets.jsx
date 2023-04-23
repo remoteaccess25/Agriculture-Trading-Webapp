@@ -7,7 +7,7 @@ export default function AllMarkets() {
 
     const {id}=useParams()
    
-const [allMarketdata,setAllMarketdata]=useState([])
+
 
     const getallmarket=async()=>{
 
@@ -25,9 +25,7 @@ const [allMarketdata,setAllMarketdata]=useState([])
 
     }
 
-    useEffect(()=>{
-        getallmarket()
-        },[])
+    
  
   return (
       <>
