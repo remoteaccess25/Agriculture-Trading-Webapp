@@ -68,7 +68,7 @@ const createProduct =  async (req, res) => {
     // set createdBy and updatedBy to userID
     req.body.createdBy = req.user.userId
     req.body.updatedBy = req.user.userId
-
+    console.log("server body",req.headers)
     // create the new product
     const product = await Product.create(req.body)
 

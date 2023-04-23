@@ -59,6 +59,7 @@ const deleteProduct=async()=>{
     <>
     <h1>{props.data._id}</h1>
     <Link to={`/product/${props.name}/${props.data._id}`}>
+     {/* {alert(props.name)} */}
      <div className="dummycards_div">
       
       <div className="cards_upper_div">

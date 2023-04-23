@@ -29,7 +29,7 @@ const showData=()=>{
         recomendedFruits.products.map((item)=>{
           return(
             <div key={item._id} >
-              <Link to={`/product/fruits/${item._id}`}><Cards data= {item}></Cards></Link>
+              <Link to={`/product/fruits/${item._id}`}><Cards name={"fruits"} data= {item}></Cards></Link>
               
              
             </div>
@@ -47,7 +47,7 @@ const showData=()=>{
       recomendedVegetables.products.map((item)=>{
             return(
                 <div key={item._id} >
-                  <Link  to={`/product/vegetables/${item._id}`}><Cards data= {item}></Cards></Link>
+                  <Link  to={`/product/vegetables/${item._id}`}><Cards name={"vegetables"} data= {item}></Cards></Link>
                   
           
                 </div>

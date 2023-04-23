@@ -7,7 +7,7 @@ import Cookies from 'js-cookie'
 export default function CreatePage() {
 
 const {dispatch,productName,productType,marketName,
-  city,minPrice,maxPrice,managerName,marketContact,recomended
+  city,minPrice,maxPrice,managerName,marketContact,recomended,productImage
   
   }=useContext(ProductContext)
 
@@ -17,31 +17,61 @@ const {dispatch,productName,productType,marketName,
 // const localToken=localStorage.getItem("token")
 
 
+//set temp recomended 
+const [rec,setRec]=useState(false)
+
+
+
+
+  //image handeling
+  const [image,setImage]=useState("")
+  const handelImage=(e)=>{
+      console.log(e.target.value)
+      setImage(e.target.files[0])
+      console.log(image)
+  }
 
 
   const handelSubmit=async(e)=>{
-    e.preventDefault()
+    e.preventDefault();
     // setToken(localToken)
     const token=Cookies.get("admin")
-    alert("hello create")
+    
     try {
-      const result=await axios.post("http://localhost:8000/admin/create",{
-        headers: { authorization:`Bearer ${token}` },
-       data:{
+      //seting recomended to reducer
+      dispatch({type:"RECOMENDED",payload:rec})
+      alert(token)
 
-         productName,productType,marketName,
-         city,minPrice,maxPrice,managerName,marketContact,recomended
-        }
-  
+      const sendingData={
+        productName,productType,marketName,
+        city,minPrice,maxPrice,managerName,
+        marketContact,recomended
       }
-      )
+
+
+      //form data for image
+      const formdata=new FormData()
+      FormData.append({"image":image})
+    
+      const result=await axios.post("http://localhost:8000/admin/create",sendingData,{
+        headers: { authorization: `Bearer ${token}` },
+        
+  
+      })
+
 
       console.log("create page response",result)
+      console.log("all data",productName,productType,marketName,
+      city,minPrice,maxPrice,managerName,marketContact)
+      console.log("recomended",recomended)
 
     } catch (error) {
       console.log(error)
     }
   }
+
+
+
  
   return (
     <>
@@ -49,7 +79,7 @@ const {dispatch,productName,productType,marketName,
         create page </div>
     
         <div className="create_form_div">
-          <form onSubmit={handelSubmit}>
+          <form className='duumy' onSubmit={handelSubmit}>
 
           <input type="text" value={productName} name='productName' required placeholder='ProductName' onChange={(e)=>{dispatch({type:"PRODUCTNAME",payload:e.target.value})}}/>
 
@@ -74,15 +104,18 @@ const {dispatch,productName,productType,marketName,
 
           <input type="number" value={marketContact} name='marketContact' required placeholder='marketContact' onChange={(e)=>{dispatch({type:"MARKETCONTACT",payload:e.target.value})}}/>
 
-          <label htmlFor="true">True
-          <input type="checkbox" value={recomended} name="true" id="" onChange={(e)=>{dispatch({type:"RECOMENDED",payload:e.target.value})}}  />
-          </label>
+         
 
-          <label htmlFor="false">
-          <input type="checkbox" value={recomended} name="false" id="" onChange={(e)=>{dispatch({type:"RECOMENDED",payload:e.target.value})}} />
 
-          </label>
+         <label htmlFor="recomended">
+          <input type="checkbox" name="recomended" value={true}  onClick={(e)=>{setRec(e.target.value)}}   />
+          <input type="checkbox" name="recomended" value={false}  onClick={(e)=>{setRec(e.target.value)}}   />
+         </label>
 
+
+         {/* image uploading */}
+         <input type="file" name="file" onChange={handelImage} />
+  
           <button type='submit'>Submit</button>
           </form>
         </div>

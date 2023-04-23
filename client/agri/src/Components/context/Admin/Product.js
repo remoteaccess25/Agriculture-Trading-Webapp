@@ -20,7 +20,9 @@ const initialProduct={
     maxPrice:Number,
     managerName:"",
     marketContact:Number,
-    recomended:false
+    recomended:false,
+    productImage:"",
+    productSize:""
     
 
 
