@@ -39,48 +39,48 @@ const searchProduct = async (req, res) => {
 // url - /admin/create
 const createProduct =  async (req, res) => {
 
-    // create(req, res, (err) => {
+    create(req, res, (err) => {
 
-    //     if (err) {
-    //         // throw new InternalServerError('Unable to create product')
-    //         console.log(err)
-    //     }
-    //     else {
-    //         req.body.image = {
-    //             data: req.file.filename,
-    //             contentType: 'image/png'
-    //         }
-    //         req.body.createdBy = req.user.userId
-    //         req.body.updatedBy = req.user.userId
-    //         const product = new Product(req.body);
+        if (err) {
+            // throw new InternalServerError('Unable to create product')
+            console.log(err)
+        }
+        else {
+            req.body.image = {
+                data: req.file.filename,
+                contentType: 'image/png'
+            }
+            req.body.createdBy = req.user.userId
+            req.body.updatedBy = req.user.userId
+            const product = new Product(req.body);
             
-    //         product.save()
-    //             .then(() => res
-    //                 .status(StatusCodes.CREATED)
-    //                 .json({ status: 'success', msg: 'Product created', product }))
-    //             .catch((err) => {
-    //                 // throw new InternalServerError('Unable to create product')
-    //                 console.log(err)
-    //             })
-    //     }
-    // })
+            product.save()
+                .then(() => res
+                    .status(StatusCodes.CREATED)
+                    .json({ status: 'success', msg: 'Product created', product }))
+                .catch((err) => {
+                    // throw new InternalServerError('Unable to create product')
+                    console.log(err)
+                })
+        }
+    })
 
-    // set createdBy and updatedBy to userID
-    req.body.createdBy = req.user.userId
-    req.body.updatedBy = req.user.userId
+    // // set createdBy and updatedBy to userID
+    // req.body.createdBy = req.user.userId
+    // req.body.updatedBy = req.user.userId
 
-    // create the new product
-    const product = await Product.create(req.body)
+    // // create the new product
+    // const product = await Product.create(req.body)
 
-    // throw error if unable to create product
-    if (!product) {
-        throw new InternalServerError('Unable to create product')
-    }
+    // // throw error if unable to create product
+    // if (!product) {
+    //     throw new InternalServerError('Unable to create product')
+    // }
 
-    // send response
-    res
-        .status(StatusCodes.CREATED)
-        .json({ status: 'success', msg: 'Product created', product })
+    // // send response
+    // res
+    //     .status(StatusCodes.CREATED)
+    //     .json({ status: 'success', msg: 'Product created', product })
 
 }
 
