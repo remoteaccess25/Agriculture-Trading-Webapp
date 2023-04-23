@@ -37,35 +37,35 @@ const searchProduct = async (req, res) => {
 
 // create new entry (product) - authenticated only
 // url - /admin/create
-const createProduct =  (req, res) => {
+const createProduct =  async (req, res) => {
 
-    create(req, res, (err) => {
+    // create(req, res, (err) => {
 
-        if (err) {
-            // throw new InternalServerError('Unable to create product')
-            console.log(err)
-        }
-        else {
-            req.body.image = {
-                data: req.file.filename,
-                contentType: 'image/png'
-            }
-            req.body.createdBy = req.user.userId
-            req.body.updatedBy = req.user.userId
-            const product = new Product(req.body);
+    //     if (err) {
+    //         // throw new InternalServerError('Unable to create product')
+    //         console.log(err)
+    //     }
+    //     else {
+    //         req.body.image = {
+    //             data: req.file.filename,
+    //             contentType: 'image/png'
+    //         }
+    //         req.body.createdBy = req.user.userId
+    //         req.body.updatedBy = req.user.userId
+    //         const product = new Product(req.body);
             
-            product.save()
-                .then(() => res
-                    .status(StatusCodes.CREATED)
-                    .json({ status: 'success', msg: 'Product created', product }))
-                .catch((err) => {
-                    // throw new InternalServerError('Unable to create product')
-                    console.log(err)
-                })
-        }
-    })
+    //         product.save()
+    //             .then(() => res
+    //                 .status(StatusCodes.CREATED)
+    //                 .json({ status: 'success', msg: 'Product created', product }))
+    //             .catch((err) => {
+    //                 // throw new InternalServerError('Unable to create product')
+    //                 console.log(err)
+    //             })
+    //     }
+    // })
 
-/*     // set createdBy and updatedBy to userID
+    // set createdBy and updatedBy to userID
     req.body.createdBy = req.user.userId
     req.body.updatedBy = req.user.userId
 
@@ -80,7 +80,7 @@ const createProduct =  (req, res) => {
     // send response
     res
         .status(StatusCodes.CREATED)
-        .json({ status: 'success', msg: 'Product created', product }) */
+        .json({ status: 'success', msg: 'Product created', product })
 
 }
 
