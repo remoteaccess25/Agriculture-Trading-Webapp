@@ -129,7 +129,7 @@ const token=Cookies.get("admin")
 }
   return (
     <>
-    <h1>{props.data._id}</h1>
+    
     <Link to={`/product/${props.name}/${props.data._id}`}>
      {/* {alert(props.name)} */}
      <div className="dummycards_div">

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./Home.css";
-
+import Cards from "../Components/Cards/Cards"
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -33,7 +33,7 @@ const navigate=useNavigate()
 
   const [search, setSearch] = useState("");
   const [searchdata, setSearchdata] = useState([]);
-  
+  const [showsearchData,setShowsearchData]=useState(false)  
 
 
 
@@ -42,13 +42,17 @@ const navigate=useNavigate()
 
 
     try {
-        const productName=search
-        console.log("product name==",productName)
+        // const productName=search
+        // console.log("product name==",productName)
       if(search!=""){
 
-        const res = await axios.get("http://localhost:8000/products",{productName});
+        const res = await axios.post("http://localhost:8000/products",
+        {"productName":search}
+        );
         
-        setSearchdata(res.data);
+        setSearchdata([res.data.products]);
+        setShowsearchData(true)
+        // console.log(searchdata)
       }else{
         return(
 
@@ -117,6 +121,33 @@ const navigate=useNavigate()
         />
         <button onClick={handelSearch}>SEARCH</button>
       </div>
+
+
+
+          {
+            showsearchData && <>
+            <button onClick={()=>{setShowsearchData(false)}}>Close</button>
+                  
+                <div className="show_search">
+                  {
+                    searchdata[0].map((item,index)=>{
+                      return(
+                        <div key={index} className="show">
+                          <Cards data={item}></Cards>
+
+                        </div>
+                      )
+                    })
+                  }
+
+
+                </div>
+              
+              </>
+
+
+
+          }
 
 
 
