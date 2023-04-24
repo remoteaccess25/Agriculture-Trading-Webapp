@@ -34,10 +34,28 @@ const navigate=useNavigate()
   const [search, setSearch] = useState("");
   const [searchdata, setSearchdata] = useState([]);
   
+
+
+
+
   const handelSearch = async () => {
+
+
     try {
-      const res = await axios.post("");
-      setSearchdata(res.data);
+        const productName=search
+        console.log("product name==",productName)
+      if(search!=""){
+
+        const res = await axios.get("http://localhost:8000/products",{productName});
+        
+        setSearchdata(res.data);
+      }else{
+        return(
+
+          <div>No input</div>
+        )
+        
+      }
       
     } catch (error) {
       console.log(error);
@@ -51,7 +69,7 @@ const navigate=useNavigate()
 
 
   //admin context
-  const {dispatch, email,password,token }=useContext(AdminContext)
+  // const {dispatch, email,password,token }=useContext(AdminContext)
 
   
   
@@ -87,6 +105,7 @@ const navigate=useNavigate()
 
   return (
     <>
+        {/* search menu */}
       <div className="search-div">
         <input
           className="home-search-box"
@@ -98,6 +117,13 @@ const navigate=useNavigate()
         />
         <button onClick={handelSearch}>SEARCH</button>
       </div>
+
+
+
+
+
+
+      {/* main div */}
 
       <div className="main-div">
         <div className="home_image1">

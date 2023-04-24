@@ -47,7 +47,7 @@ const createProduct =  async (req, res) => {
         }
         else {
             req.body.image = {
-                data: req.file.filename,
+                // data: req.file.filename,
                 contentType: 'image/png'
             }
             req.body.createdBy = req.user.userId
@@ -65,21 +65,18 @@ const createProduct =  async (req, res) => {
         }
     })
 
-<<<<<<< HEAD
     // set createdBy and updatedBy to userID
     req.body.createdBy = req.user.userId
     req.body.updatedBy = req.user.userId
     console.log("server body",req.headers)
     // create the new product
     const product = await Product.create(req.body)
-=======
     // // set createdBy and updatedBy to userID
     // req.body.createdBy = req.user.userId
     // req.body.updatedBy = req.user.userId
 
     // // create the new product
     // const product = await Product.create(req.body)
->>>>>>> 3a84b0b2436dbebe9d36c3fccc24501895aff96d
 
     // // throw error if unable to create product
     // if (!product) {

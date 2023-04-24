@@ -84,8 +84,7 @@ import ProductContextProvider from "./Components/context/Admin/Product";
 
         {/* navigate to create page for admin  private routes*/}
            
-           <Route path="/admin/create" element={<PrivateRoutes/>}>
-            
+           <Route path="/admin" element={<PrivateRoutes/>}>
            <Route path="/admin/create" element={<CreatePage/>}></Route>
             </Route>       
             

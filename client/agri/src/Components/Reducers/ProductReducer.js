@@ -2,6 +2,7 @@ const ProductReducer=(state,action)=>{
     switch(action.type){
 
         case "PRODUCTNAME":
+            
             return{
                 ...state,
                 productName:action.payload
@@ -48,6 +49,11 @@ const ProductReducer=(state,action)=>{
                                     ...state,
                                     recomended:action.payload
                                         }
+        case "IMAGE":
+            return{
+                ...state,
+                productImage:action.payload
+            }
 
         default:
             return{

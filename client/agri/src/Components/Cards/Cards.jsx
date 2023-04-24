@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Cards.css"
 import {AdminContext}from "../context/Admin/Admin"
 import { useContext } from 'react'
@@ -11,10 +11,32 @@ import { Link } from 'react-router-dom'
 export default function Cards(props) {
 
 
-  const {dispatch,isLogedIn ,token}=useContext(AdminContext)
+  const {dispatch,isLogedIn,token}=useContext(AdminContext)
 
-  const mycookies=Cookies.get("admin")
 
+  const [data,setData]=useState({
+    productName:"",
+    productType:"",
+    marketName:"",
+    city:"",
+    minPrice:Number,
+    maxPrice:Number,
+    managerName:"",
+    marketContact:Number,
+    recomended:true
+
+  })
+
+
+  const handelInputs=(e)=>{
+    
+    const name=e.target.name;
+    const value=e.target.value;
+    setData({...data,[name]:value})
+
+  }
+
+ 
 // console.log("token",token)
 const checkLogin=()=>{
   const mycookies=Cookies.get("admin")
@@ -55,6 +77,56 @@ const deleteProduct=async()=>{
 
 //  /admin/delete/:id 
 // console.log(props.data._id)
+
+
+
+
+//update product
+const [showUpdate,setShowUpdate]=useState(false)
+
+
+const handelUpdate=(e)=>{
+  e.preventDefault()
+
+  setShowUpdate(true)
+}
+
+
+
+
+
+
+
+const Update=async(e)=>{
+e.preventDefault()
+
+const token=Cookies.get("admin")
+    
+      alert(token)
+
+  try {
+    const id=props.data._id
+   
+
+    
+
+    
+
+    const result=await axios.patch(`http://localhost:8000/admin/update/${id}`,data,
+    {
+      headers: { authorization: `Bearer ${token}`}
+    }
+
+    )
+    
+
+
+    setShowUpdate(false)
+  } catch (error) {
+    console.log(error)
+  }
+
+}
   return (
     <>
     <h1>{props.data._id}</h1>
@@ -86,7 +158,49 @@ const deleteProduct=async()=>{
      </Link>
 
      {isLogedIn && 
-      <div className='admin_option'><button>update</button><button onClick={()=>deleteProduct()}>delete</button></div>
+      <div className='admin_option'><button onClick={handelUpdate}>update</button><button onClick={()=>deleteProduct()}>delete</button></div>
+      }
+
+
+      {
+        showUpdate && <>
+        
+        <form className='duumy' onSubmit={Update}>
+
+<input type="text" value={data.productName} name='productName'  placeholder='ProductName' onChange={handelInputs}/>
+
+
+<input type="text" value={data.productType} name='productType'  placeholder='ProductType' onChange={handelInputs}/>
+
+
+<input type="text" value={data.marketName} name='marketName'  placeholder='marketName' onChange={handelInputs}/>
+
+
+<input type="text" value={data.city} name='city'  placeholder='city' onChange={handelInputs}/>
+
+
+<input type='number' value={data.minPrice} name='minPrice'  placeholder='minPrice' onChange={handelInputs}/>
+
+
+<input type="number" value={data.maxPrice} name='maxPrice'  placeholder='maxPrice' onChange={handelInputs}/>
+
+
+<input type="text" value={data.managerName} name='managerName'  placeholder='managerName' onChange={handelInputs}/>
+
+
+<input type="number" value={data.marketContact} name='marketContact'  placeholder='marketContact' onChange={handelInputs}/>
+
+
+
+
+<label htmlFor="recomended">
+<input type="checkbox" name="recomended" value={data.recomended}  onChange={handelInputs}   />
+
+</label>
+<button type='submit'>Submmit</button>
+</form>
+        
+        </>
       }
 
     

@@ -24,11 +24,13 @@ const [rec,setRec]=useState(false)
 
 
   //image handeling
-  const [image,setImage]=useState("")
+  // const [image,setImage]=useState("")
   const handelImage=(e)=>{
-      console.log(e.target.value)
-      setImage(e.target.files[0])
-      console.log(image)
+      // console.log(e.target.value)
+      const image=e.target.files[0]
+      dispatch({type:"IMAGE",payload:image})
+      // setImage(e.target.files[0])
+      // console.log(image)
   }
 
 
@@ -50,20 +52,46 @@ const [rec,setRec]=useState(false)
 
 
       //form data for image
-      const formdata=new FormData()
-      FormData.append({"image":image})
+      const formData=new FormData();
+      
+      formData.append("productImage",productImage)
+
+      // formData.append("productName",productName)
+      // formData.append("productType",productType)
+      // formData.append("marketName",marketName)
+      // formData.append("city",city)
+      // formData.append("minPrice",minPrice)
+      // formData.append("maxPrice",maxPrice)
+      // formData.append("managerName",managerName)
+      // formData.append("marketContact",marketContact)
+      // formData.append("recomended",recomended)
+      
+      
+      
+      
+      
+      
+      console.log("form data presenting",[...formData])
     
-      const result=await axios.post("http://localhost:8000/admin/create",sendingData,{
-        headers: { authorization: `Bearer ${token}` },
+    
+    
+    
+      const result=await axios.post("http://localhost:8000/admin/create",(formData,sendingData),{
+        headers: { authorization: `Bearer ${token}`
+                // 'Content-Type': 'multipart/form-data'
+              },
         
   
       })
+     
+      
+      
 
 
-      console.log("create page response",result)
-      console.log("all data",productName,productType,marketName,
-      city,minPrice,maxPrice,managerName,marketContact)
-      console.log("recomended",recomended)
+      // console.log("create page response",result)
+      // console.log("all data",productName,productType,marketName,
+      // city,minPrice,maxPrice,managerName,marketContact)
+      // console.log("recomended",recomended)
 
     } catch (error) {
       console.log(error)
