@@ -130,9 +130,9 @@ const token=Cookies.get("admin")
   return (
     <>
     
-    <Link to={`/product/${props.name}/${props.data._id}`}>
      {/* {alert(props.name)} */}
      <div className="dummycards_div">
+    <Link to={`/product/${props.name}/${props.data._id}`}>
       
       <div className="cards_upper_div">
         <img className='cards_image' src={""} alt="" />
@@ -154,8 +154,8 @@ const token=Cookies.get("admin")
             see all
       </div>
      
-     </div>
      </Link>
+     </div>
 
      {isLogedIn && 
       <div className='admin_option'><button onClick={handelUpdate}>update</button><button onClick={()=>deleteProduct()}>delete</button></div>
