@@ -10,8 +10,12 @@
 }
 
 
-.All_Fruit_main_div{
-    border: 1px solid black;
+.recomended_main_div{
+    /* border: 1px solid black; */
     display: grid;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

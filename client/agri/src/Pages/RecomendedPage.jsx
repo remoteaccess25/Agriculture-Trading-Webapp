@@ -4,6 +4,7 @@ import Cards from '../Components/Cards/Cards'
 import {Vegicontext} from "../Components/context/vegetablecontext/VegitableContext"
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import "./Recomended.css"
 
 export default function RecomendedPage() {
 
@@ -73,13 +74,18 @@ const showData=()=>{
     <div className="recomended_heading">
       <h1>Our Recomended</h1>
     </div>
+    <div className="recomended_main_div">
 
-{
+    {
 
 showData()
 
 
 }
+
+    </div>
+
+
 
     </>
       

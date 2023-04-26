@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
-import Home1 from "../Images/home1.jpg"
+import Home1 from "../Images/Home1.png"
+import Home2 from "../Images/Home2.png"
 
+import {CiSearch} from "react-icons/ci"
 //importing admin data
 
-import { AdminContext } from "../Components/context/Admin/Admin";
 
 
 
@@ -111,6 +112,7 @@ const navigate=useNavigate()
     <>
         {/* search menu */}
       <div className="search-div">
+        <div className="searchBar_icon_mix_div">
         <input
           className="home-search-box"
           type="text"
@@ -118,8 +120,10 @@ const navigate=useNavigate()
           onChange={(e) => {
             setSearch(e.target.value);
           }}
-        />
-        <button onClick={handelSearch}>SEARCH</button>
+          />
+          <CiSearch onClick={handelSearch}/>
+          </div>
+        
       </div>
 
 
@@ -157,8 +161,10 @@ const navigate=useNavigate()
       {/* main div */}
 
       <div className="main-div">
+        
         <div className="home_image1">
-        <img className="image1" src={""} alt="home image 2" />
+          
+        <img className="image1" src={Home1} alt="home image 2" />
         </div>
        
         <div className="cards_div">
@@ -184,23 +190,27 @@ const navigate=useNavigate()
         
         </div>
 
-
-          {/* second home image */}
-          <div className="home_image2">
-
-          <img className="image2" src={""} alt="home image 2" />
-
-          </div>
-        
       </div>
 
+         
+        
+          {/* second home image */}
+      <div className="home_image2">
+
+<img className="image2" src={Home2} alt="home image 2" />
+
+</div>
 
 
 
       {/* create Page for Admin */}
+           <div className="Create_button">
             
-
            {showCreateButton()}
+            
+            </div> 
+
+          
 
 
 
