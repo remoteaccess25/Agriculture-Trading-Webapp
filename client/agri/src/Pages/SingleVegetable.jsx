@@ -2,7 +2,7 @@ import React, { useContext, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {Vegicontext}  from "../Components/context/vegetablecontext/VegitableContext"
-
+import "./SingleVegetable.css"
 export default function SingleVegetable() {
 
   const{id}=useParams()

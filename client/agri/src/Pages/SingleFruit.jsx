@@ -2,7 +2,7 @@ import React, { useContext, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {FruitContext}  from "../Components/context/fruitscontext/FruitsContext"
-
+import "./SingleFruit.css"
 export default function SingleFruit() {
 
   const{id}=useParams()
