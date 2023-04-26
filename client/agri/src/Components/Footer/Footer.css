@@ -1,5 +1,5 @@
 .footer_div{
-    border: 1px solid black;
+    border: 1px solid rgb(197, 197, 196);
     
    height: 18rem;
    width: 100%;
@@ -14,11 +14,10 @@
 .footer_inner_div{
     height: 18rem;
     width: 100%;
-    padding: 5rem;
+    padding: 2rem; 
     display: flex;
     align-items: center;
     justify-content:space-between ;
-
 }
 
 .div_1,.div_2,.div_3{
@@ -33,7 +32,6 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    
 }
 
 .div_2{
@@ -60,11 +58,7 @@
     width: 60%;
     height: 40px;
     border-radius: 10px;
-    background-color: black;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
-    margin: 2rem;
-    
-    
-
+    margin: 1rem;
 }

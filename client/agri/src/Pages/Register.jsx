@@ -90,7 +90,7 @@ export default function Register() {
             type="text"
             value={contactNum}
             required
-            placeholder="contact number"
+            placeholder="Contact number"
             onChange={(e) => {
               {dispatch({type:"CONTACT_NUM",payload:e.target.value})}
             }}
@@ -101,7 +101,7 @@ export default function Register() {
             type="text"
             value={accessKey}
             required
-            placeholder="AcessKey"
+            placeholder="Access Key"
             onChange={(e) => {
               {dispatch({type:"ACESS_KEY",payload:e.target.value})}
             }}
@@ -112,7 +112,7 @@ export default function Register() {
       </div>
             
            <div className="already_user">
-            <button onClick={ GoTOLogin}>Login</button>
+            <button className="loginn" onClick={ GoTOLogin}>Login</button>
            </div>
     </>
   );

@@ -5,16 +5,17 @@
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    
-
+    background-color: #9bff97;
+    /* background-color: #ECEEF0; */
 }
 
 form{
     
-    border: 0px solid black;
-    border-radius: 15px;
-    box-shadow: 10px 10px 20px 15px;
-    height: 440px;
+    /* border: 1px solid #CFD8DC; */
+    border-radius: 3px;
+    /* box-shadow: 10px 10px 20px 15px; */
+    background-color: white;
+    height: 600px;
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -27,12 +28,14 @@ form{
 
 
 input{
-    margin:12px  0px;
-    padding: 5px;
-    border: none;
-    box-shadow: 10px 10px 20px 5px;
-    border-radius: 5px;
+    margin: 11px  0px;
+    padding: 14px;
+    width: 300px;
+    border: 1px solid #CFD8DC;
+    /* box-shadow: 10px 10px 20px 5px; */
+    border-radius: 2px;
     padding-left:20px;
+    font-size: medium;
 }
 
 input:focus{
@@ -41,12 +44,34 @@ input:focus{
 }
 
 button{
-    margin: 20px 0px;
+    margin: 13px 0px;
     border: none;
-    border-radius: 10px;
-    background-image: linear-gradient(green,lightgreen);
-    padding: 10px;
-    font-weight: 600;
+    border-radius: 2px;
+    /* background-image: linear-gradient(green,lightgreen); */
+    /* background-color: #64747D; */
+    background-color: #2c7f29;
+    padding: 13px;
+    width: 300px;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.already_user{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    /* background-color: #9bff97; */
+}
+
+.loginn{
+    margin: 7px;
+    height: 45px;
+    width: 300px;
 }
 
 

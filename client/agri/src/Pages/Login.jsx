@@ -64,7 +64,7 @@ export default function Login() {
             type="text"
             value={email}
             required
-            placeholder="EMAIL"
+            placeholder="Email"
             onChange={(e) => {
               {dispatch({type:"EMAIL",payload:e.target.value})}
             }}

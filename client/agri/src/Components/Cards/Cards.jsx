@@ -138,20 +138,18 @@ const token=Cookies.get("admin")
         <img className='cards_image' src={""} alt="" />
         <div className="cards_info">
           <div className="product_info">
-          <h2>{props.data.productName}</h2>
-          <div className="min_price">Min Price: {props.data.minPrice}</div>
-          <div className="max_price">Max Price: {props.data.maxPrice}</div>
-          <div className="size">Size: {props.data.productSize}</div>
-          <div className="market">Market: {props.data.marketName}</div>
+          <h2 className="product_name">{props.data.productName}</h2>
+          <div className="min_price i">Min Price: {props.data.minPrice}</div>
+          <div className="max_price i">Max Price: {props.data.maxPrice}</div>
+          <div className="size i">Size: {props.data.productSize}</div>
+          <div className="market i">Market: {props.data.marketName}</div>
           </div>
-          
         </div>
-
       </div>
 
 
       <div className="cards_lower_div">
-            see all
+        see all
       </div>
      
      </div>

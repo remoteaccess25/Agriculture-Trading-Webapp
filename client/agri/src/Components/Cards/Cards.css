@@ -1,15 +1,22 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 .dummycards_div{
     /* border: 1px solid black; */
-    height: 14rem;
-    width: 80%;
+    height: 15rem;
+    width: 35%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    margin-left: 5.5rem;
+    /* justify-content: space-between; */
     flex-direction: column;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    border: none;
+    background-color: rgb(239, 239, 238);
+    border-radius: 12px;
+    border: 1px solid rgb(197, 197, 196);
+    position: relative;
 }
+
 
 .cards_upper_div{
     /* border: 1px solid red; */
@@ -22,20 +29,38 @@
 
 }
 .cards_image{
+    position: absolute;
+    top: 0.1rem;
+    left: 10px;
     border: 1px solid green;
-    height: 80%;
-    width: 40%;
+    /* width: 40%;
+    height: 8rem; */
+    height: 10rem;
+    /* width: auto; */
+    width: 10rem;
     margin: 1rem;
 }
 
 .cards_info{
-    margin-right: 3rem;
+    right: 0;
+    position: absolute;
+    margin-right: 9rem;
+}
+
+.product_name{
+    margin-top: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.i{
+    font-size: 1.2rem;
+    margin: 6px 0px;
 }
 
 .cards_lower_div{
-    width: 80%;
+    width: 100%;
     text-align: center;
     height: 45px;
     background: linear-gradient(90deg, #3BAF3D 0%, #5DC234 100%);
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 0px 0px 12px 12px;
 }

@@ -1,22 +1,17 @@
  .login{
-    
+    background-color: #9bff97;
     height: 100vh;
     width: 100vw;
     display: flex;
-    
     justify-content: center;
-    
-
 }
 
 @media  screen and (max-width: 650px) {
 .login{
     width: auto;
 }
-  
-
-
 }
+
 
 
 /*
