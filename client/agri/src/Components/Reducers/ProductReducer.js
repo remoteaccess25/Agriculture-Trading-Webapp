@@ -44,11 +44,7 @@ const ProductReducer=(state,action)=>{
                                     ...state,
                                     marketContact:action.payload
                                     }
-        case "RECOMENDED":
-                            return{
-                                    ...state,
-                                    recomended:action.payload
-                                        }
+        
         case "IMAGE":
             return{
                 ...state,

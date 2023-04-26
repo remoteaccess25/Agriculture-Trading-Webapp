@@ -37,7 +37,7 @@ useEffect(()=>{
 
 
 
-const  showSinglefruit=()=>{
+const  showSingleVegi=()=>{
   if(isLoadingVegi===false){
     
     if(VegetablePresent===true){
@@ -70,14 +70,27 @@ const  showSinglefruit=()=>{
        </div>
         )
       }
+      else{
+        return(
+          <div>...No data found</div>
+          )
+        }
       
     }
     else{
       return(
+        <>
         <div>...Loading</div>
-        )
-      }
+        </>
+      )
     }
+    
+    }
+
+
+    useEffect(()=>{
+      console.log("hello")
+    },[singleVegiData])
     
 
   return (
@@ -97,7 +110,7 @@ const  showSinglefruit=()=>{
   
             <div className="SV_div2">
             {
-      showSinglefruit()
+      showSingleVegi()
      } 
             </div>
 

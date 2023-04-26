@@ -3,7 +3,7 @@
     height: 100vh;
     width: 100vw;
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     justify-content: center;
     background-color: #9bff97;
     /* background-color: #ECEEF0; */
@@ -12,7 +12,21 @@
 
 }
 
-form{
+.logo_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    width: 300px;
+}
+
+
+.inputs_div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.refister_form{
     
     /* border: 1px solid #CFD8DC; */
     border-radius: 3px;
@@ -25,13 +39,12 @@ form{
     justify-content: center;
     
     align-items: center;
-    position: relative;
-    top: 60px;
+    margin: 100px;
 }
 
 
 
-input{
+.inputs{
     margin: 11px  0px;
     padding: 14px;
     width: 300px;
@@ -42,12 +55,12 @@ input{
     font-size: medium;
 }
 
-input:focus{
+.inputs:focus{
 
     outline: none;
 }
 
-button{
+.auth_button{
     margin: 13px 0px;
     border: none;
     border-radius: 2px;
@@ -61,7 +74,7 @@ button{
     color: white;
 }
 
-button:hover{
+.auth_button:hover{
     cursor: pointer;
 }
 
@@ -72,10 +85,11 @@ button:hover{
     /* background-color: #9bff97; */
 }
 
-.loginn{
+.login_button{
     margin: 7px;
     height: 45px;
     width: 300px;
+
 }
 
 .register_login_div{
@@ -84,17 +98,26 @@ button:hover{
     align-items: center;
 }
 
+.register_login_div a{
+    display: flex;
+    align-items: center;
+}
+
+
 
 @media  screen and (max-width: 650px) {
-    .register{
+    .inputs{
         width: auto;
     }
-    form{
-        background-color: aquamarine;
-       height: 350px;
-        width: 300px; 
-        
+
+    .refister_form{
+        width: auto;
+    }
+    .auth_button{
+        width: auto;
     }
 
+    }
+    
 
-}
+

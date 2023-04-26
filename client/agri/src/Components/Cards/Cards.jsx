@@ -83,11 +83,12 @@ const deleteProduct=async()=>{
 
 //update product
 const [showUpdate,setShowUpdate]=useState(false)
+const [backdrop,setBackdrop]=useState(false);
 
 
 const handelUpdate=(e)=>{
   e.preventDefault()
-
+setBackdrop(true)
   setShowUpdate(true)
 }
 
@@ -127,11 +128,21 @@ const token=Cookies.get("admin")
   }
 
 }
+
+
+
   return (
     <>
     
      {/* {alert(props.name)} */}
-     <div className="dummycards_div">
+
+
+{
+  
+}
+
+
+     <div className="dummycards_div" >
     <Link to={`/product/${props.name}/${props.data._id}`}>
       
       <div className="cards_upper_div">
@@ -176,7 +187,7 @@ const token=Cookies.get("admin")
       {
         showUpdate && <>
         
-        <form className='duumy' onSubmit={Update}>
+        <form className='righgtdrop' onSubmit={Update}>
 
 <input type="text" value={data.productName} name='productName'  placeholder='ProductName' onChange={handelInputs}/>
 

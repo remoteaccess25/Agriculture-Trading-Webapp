@@ -7,7 +7,7 @@ import Cookies from 'js-cookie'
 export default function CreatePage() {
 
 const {dispatch,productName,productType,marketName,
-  city,minPrice,maxPrice,managerName,marketContact,recomended,productImage
+  city,minPrice,maxPrice,managerName,marketContact,productImage
   
   }=useContext(ProductContext)
 
@@ -18,7 +18,7 @@ const {dispatch,productName,productType,marketName,
 
 
 //set temp recomended 
-const [rec,setRec]=useState(false)
+const [recomended,setRecomended]=useState(false)
 
 
 
@@ -34,6 +34,20 @@ const [rec,setRec]=useState(false)
   }
 
 
+
+// recomended
+const handelRecomended=(e)=>{
+console.log(e)
+if(e.target.checked===true  ){
+  setRecomended(true)
+}
+else{
+  setRecomended(false)
+}
+}
+
+
+
   const handelSubmit=async(e)=>{
     e.preventDefault();
     // setToken(localToken)
@@ -41,8 +55,10 @@ const [rec,setRec]=useState(false)
     
     try {
       //seting recomended to reducer
-      dispatch({type:"RECOMENDED",payload:rec})
+      
       alert(token)
+
+     
 
       const sendingData={
         productName,productType,marketName,
@@ -56,20 +72,6 @@ const [rec,setRec]=useState(false)
       
       formData.append("productImage",productImage)
 
-      // formData.append("productName",productName)
-      // formData.append("productType",productType)
-      // formData.append("marketName",marketName)
-      // formData.append("city",city)
-      // formData.append("minPrice",minPrice)
-      // formData.append("maxPrice",maxPrice)
-      // formData.append("managerName",managerName)
-      // formData.append("marketContact",marketContact)
-      // formData.append("recomended",recomended)
-      
-      
-      
-      
-      
       
       console.log("form data presenting",[...formData])
     
@@ -78,7 +80,7 @@ const [rec,setRec]=useState(false)
     
       const result=await axios.post("http://localhost:8000/admin/create",(formData,sendingData),{
         headers: { authorization: `Bearer ${token}`
-                // 'Content-Type': 'multipart/form-data'
+              
               },
         
   
@@ -136,8 +138,7 @@ const [rec,setRec]=useState(false)
 
 
          <label htmlFor="recomended">
-          <input type="checkbox" name="recomended" value={true}  onClick={(e)=>{setRec(e.target.value)}}   />
-          <input type="checkbox" name="recomended" value={false}  onClick={(e)=>{setRec(e.target.value)}}   />
+          <input type="checkbox" name="recomended"  onChange={handelRecomended} />
          </label>
 
 

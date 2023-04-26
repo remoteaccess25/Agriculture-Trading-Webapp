@@ -8,6 +8,7 @@ import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
 import Home1 from "../Images/Home1.png"
 import Home2 from "../Images/Home2.png"
+import pinapale from "../Images/pinapale.png"
 
 import {CiSearch} from "react-icons/ci"
 //importing admin data
@@ -112,7 +113,7 @@ const navigate=useNavigate()
     <>
         {/* search menu */}
       <div className="search-div">
-        <div className="searchBar_icon_mix_div">
+        {/* <div className="searchBar_icon_mix_div"> */}
         <input
           className="home-search-box"
           type="text"
@@ -121,8 +122,8 @@ const navigate=useNavigate()
             setSearch(e.target.value);
           }}
           />
-          <CiSearch onClick={handelSearch}/>
-          </div>
+          <CiSearch className="search_logo" onClick={handelSearch}/>
+          {/* </div> */}
         
       </div>
 
@@ -164,12 +165,15 @@ const navigate=useNavigate()
         
         <div className="home_image1">
           
-        <img className="image1" src={Home1} alt="home image 2" />
+        <img className="image1" src={Home1} alt="home image 1" />
         </div>
        
-        <div className="cards_div">
 
-         <Link to="/product/recomended/fruits">
+
+        <div className="cards_div">
+          
+
+         <Link className="home_anchor_images" to="/product/recomended/fruits">
          <div className="card_one">
           
               <img className="home_images" src={fruitsimage} alt="fruits image" />
@@ -179,7 +183,7 @@ const navigate=useNavigate()
           
           </Link>
           
-        <Link to="/product/recomended/vegetables">
+        <Link className="home_anchor_images" to="/product/recomended/vegetables">
 
         <div className="card_second">
             <img className="home_images" src={vegetableimage} alt="vegetables image" />
@@ -190,6 +194,11 @@ const navigate=useNavigate()
         
         </div>
 
+
+
+
+        
+
       </div>
 
          
@@ -198,13 +207,14 @@ const navigate=useNavigate()
       <div className="home_image2">
 
 <img className="image2" src={Home2} alt="home image 2" />
-
+<p className="image2_text">text here</p>
 </div>
 
 
 
       {/* create Page for Admin */}
            <div className="Create_button">
+            <img src={pinapale} alt="" />
             
            {showCreateButton()}
             

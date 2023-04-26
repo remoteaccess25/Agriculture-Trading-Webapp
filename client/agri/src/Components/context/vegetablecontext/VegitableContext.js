@@ -15,7 +15,8 @@ export function VegitableContextProvider({children}){
     recomendedVegetables:[],
     isLoadingVegi:true,
     VegetablePresent:false,
-    singleVegiData:[]
+    singleVegiData:[],
+    fullContainer:false,
 
    }
 

@@ -35,33 +35,36 @@ useEffect(()=>{
 
   
   
-  const  showSingleVegi=()=>{
+  const  showSingleFruit=()=>{
     if(isLoading===false){
       
       if(FruitPresent===true){
         return(
-          
-         <div>
-          {singleFruitData.product.productName}
-          <hr />
-          {singleFruitData.product.productType}
-          <hr />
-          {singleFruitData.product.productSize}
-          <hr />
-          {singleFruitData.product.marketName}
-          <hr />
-          {singleFruitData.product.city}
-          <hr />
-          {singleFruitData.product.minPrice}
-          <hr />
-          {singleFruitData.product.maxPrice}
-          <hr />
-          {singleFruitData.product.managerName}
-          <hr />
-          {singleFruitData.product.marketContact}
+          <div className='SF_alldata'>
+          <div className="SF_image">
+  
+          </div>
+          <div className="SF_info">
+          <p> Name :{singleFruitData.product.productName}</p>
+          <p> Type :{singleFruitData.product.productType}</p>
+          <p>Size :{singleFruitData.product.productSize}</p>
+          <p>Market :{singleFruitData.product.marketName}</p>
+          <p>City : {singleFruitData.product.city}</p>
+          <p>Min Price :{singleFruitData.product.minPrice}</p>
+          <p>Max Price :{singleFruitData.product.maxPrice}</p>
+          <p>Manager :{singleFruitData.product.managerName}</p>
+         <p>Market Contact :{singleFruitData.product.marketContact}</p>
          </div>
+     
+         </div>
+        
           )
         }
+        else{
+          return(
+            <div>...No data found</div>
+            )
+          }
         
       }
       else{
@@ -72,6 +75,10 @@ useEffect(()=>{
       }
       
       
+      useEffect(()=>{
+        console.log("hello")
+        
+      },[singleFruitData])
     
       
       return (
@@ -85,7 +92,7 @@ useEffect(()=>{
        
      {
        // singleFruitData.product.productName
-      showSingleVegi()
+      showSingleFruit()
      } 
     
 

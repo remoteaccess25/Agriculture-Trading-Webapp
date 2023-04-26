@@ -15,7 +15,8 @@ export function FruitsContextProvider({children}){
         recomendedFruits:[],
         isLoading:true,
         FruitPresent:false,
-        singleFruitData:[]
+        singleFruitData:[],
+        fullContainer:false
 
     }
 

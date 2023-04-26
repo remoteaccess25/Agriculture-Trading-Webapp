@@ -21,7 +21,8 @@ export default function Footer() {
         <div className="footer_logo_div">
           <img src={"footer logo"} alt="footer logo" />
         </div>
-        <p>A latform where farmers can get there useful market</p>
+        <p className="div1_text">A platform where farmers can get there useful market</p>
+        <p className="footer_after_1030px">Connect Us</p>
         <div className="footer_left_div_icon">
 
           <SiFacebook className="footer_icons"></SiFacebook>
@@ -41,10 +42,11 @@ export default function Footer() {
         
         <div className="div_3">
           <h3>Contact Information</h3>
-
-          <HiHome>Mumbai</HiHome>
-          <FiPhoneCall>+9123456674</FiPhoneCall>
-          <HiMail>info@harvesthub.com</HiMail>
+          <div className="div3_icon_div">
+          <HiHome className="footer_icons">Mumbai</HiHome>
+          <FiPhoneCall className="footer_icons">+9123456674</FiPhoneCall>
+          <HiMail className="footer_icons">info@harvesthub.com</HiMail>
+          </div>
         </div>
 
        </div>

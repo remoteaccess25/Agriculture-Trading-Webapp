@@ -31,7 +31,7 @@ switch(action.type){
 
 
     case "SET_SINGLE_FRUIT_INFO":
-
+    
        
         return{
             ...state,
