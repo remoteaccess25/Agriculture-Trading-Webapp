@@ -1,0 +1,10 @@
+.All_fruits_div{
+    border: 1px solid red;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+
+
+}

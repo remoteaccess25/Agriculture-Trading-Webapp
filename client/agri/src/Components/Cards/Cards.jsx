@@ -135,7 +135,13 @@ const token=Cookies.get("admin")
     <Link to={`/product/${props.name}/${props.data._id}`}>
       
       <div className="cards_upper_div">
-        <img className='cards_image' src={""} alt="" />
+
+        <div className="image_div">
+          
+          {/* {console.log("images",props.image.contentType)} */}
+        <img className='cards_image' src={props.image} alt="" />
+        </div>
+
         <div className="cards_info">
           <div className="product_info">
           <h2 className="product_name">{props.data.productName}</h2>
@@ -144,22 +150,33 @@ const token=Cookies.get("admin")
           <div className="size i">Size: {props.data.productSize}</div>
           <div className="market i">Market: {props.data.marketName}</div>
           </div>
+          
+          <p>{props.data.productName}</p>
+          <p className="min_price">Min Price: {props.data.minPrice}</p>
+          <p className="max_price">Max Price: {props.data.maxPrice}</p>
+          <p className="size">Size: {props.data.productSize}</p>
+          <p className="market">Market: {props.data.marketName}</p>
+
+
+          
+          
         </div>
       </div>
 
 
       <div className="cards_lower_div">
         see all
-      </div>
      
-     </Link>
-     </div>
+    
 
      {isLogedIn && 
-      <div className='admin_option'><button onClick={handelUpdate}>update</button><button onClick={()=>deleteProduct()}>delete</button></div>
+      <div className='admin_option'>
+        <button  onClick={handelUpdate}>update</button>
+        <button onClick={()=>deleteProduct()}>delete</button>
+        </div>
       }
 
-
+</div>
       {
         showUpdate && <>
         

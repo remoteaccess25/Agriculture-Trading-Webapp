@@ -8,6 +8,7 @@ export default function AllVegetables() {
 const { allVegetables,VegetablePresent,isLoadingVegi}=useContext(Vegicontext)
 // console.log("hello")
 // console.log("allvegis",allVegetables.products)
+console.log("all vegies",allVegetables)
 const showAllVegetables=()=>{
 
   if(isLoadingVegi===false ){
@@ -49,7 +50,7 @@ const showAllVegetables=()=>{
 
   return (
     <>
-    <div>AllVegis
+    <div className='All_Vegi_main_div'>AllVegis
 
 
      { showAllVegetables()}
