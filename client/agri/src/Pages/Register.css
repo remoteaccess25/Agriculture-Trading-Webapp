@@ -5,6 +5,7 @@
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    /* flex-direction: column; */
     
 
 }
@@ -19,6 +20,7 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
     align-items: center;
     position: relative;
     top: 60px;
@@ -47,6 +49,12 @@ button{
     background-image: linear-gradient(green,lightgreen);
     padding: 10px;
     font-weight: 600;
+}
+
+.register_login_div{
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 

@@ -1,20 +1,20 @@
 .dummycards_div{
-    /* border: 1px solid black; */
+    border: 1px solid black;
     height: 14rem;
-    width: 80%;
+    width:  100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
     background-color: whitesmoke;
     border-radius: 10px;
-    border: none;
+    /* border: none; */
 }
 
 .cards_upper_div{
     /* border: 1px solid red; */
     height: 80%;
-    width: 80%;
+    width: 100%;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;

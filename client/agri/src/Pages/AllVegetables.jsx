@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import {Vegicontext} from "../Components/context/vegetablecontext/VegitableContext"
 import Cards from '../Components/Cards/Cards'
-
+import  "./AllVegetable.css"
 export default function AllVegetables() {
 
 
@@ -19,7 +19,7 @@ const showAllVegetables=()=>{
         allVegetables.products.map((item)=>{
           return(
             
-            <div key={item._id}>
+            <div key={item._id} className='All_Vegetable_div'>
               <Cards name={"vegetables"} data={item}></Cards>
         
 
