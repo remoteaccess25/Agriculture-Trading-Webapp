@@ -1,0 +1,47 @@
+.Single_Vegetable_main_div{
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+}
+
+.SV_div1{
+     border: 1px solid black;
+     height: 400px;
+     width: 100%;
+}
+.SV_div2{
+     border: 1px solid black;
+     height: 500px;
+     width: 100%;
+    
+}
+.SV_image{
+    border: 1px solid black;
+     height: 400px;
+     width: 50%;
+      
+}
+.SV_info{
+     border: 1px solid black;
+     height: 400px;
+     width: 50%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+      
+}
+
+.SV_alldata{
+     border: 1px solid black;
+     height: 400px;
+     width: 100%;
+     display: flex;
+}
+
+
+.map_div{
+     border: 1px solid black;
+     height: 400px;
+     width: 100%;
+}

@@ -45,7 +45,7 @@ const showAllFruits=()=>{
 
   return (
     <>
-    <div>AllFruits
+    <div className='All_Fruit_main_div'>AllFruits
 
 
      { showAllFruits()}

@@ -10,12 +10,18 @@
     justify-content: center;
 }
 
-
-.home-search-box{
+.searchBar_icon_mix_div{
     width: 50vw;
     margin-right: 2rem;
     text-align: center;
 }
+
+/* 
+.home-search-box{
+    width: 50vw;
+    margin-right: 2rem;
+    text-align: center;
+} */
 
 
 
@@ -27,6 +33,10 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
+   background-image: url(../Images//Home_left.jpg); 
+   background-repeat: no-repeat;
+   background-size: 100%;
+ 
    
 }
 
@@ -35,14 +45,23 @@
     height: 20rem;
     width: 100%;
 }
+
+.image1{
+    height: 20rem;
+    width: 100%;
+}
+
+
 .cards_div{
     /* border: 2px solid red; */
     height: 20rem;
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 2rem;
+    /* justify-content: space-between; */
+    margin: 2em;
+    
+
 }
 
 
@@ -63,13 +82,26 @@
     margin: 12rem;
    
 
+   
+
  }
+
+ .card_one{
+    position: relative;
+    left: 400px;
+ }
+ .card_second{
+    position: relative;
+    left: 100px;
+ }
+
 
  .image_name{
     /* border: 1px solid greenyellow; */
     align-items: center;
     text-align: center;
-    background-color: whitesmoke;
+    
+    background-color: antiquewhite;
     border-radius: 1rem;
     height: 3rem;
     width: 100%;
@@ -78,12 +110,42 @@
 
  /* home_image2 */
 
- .home_image2,.home_image1{
-    border: 1px solid black;
-    height: 15rem;
+ .home_image1{
+     height: 15rem;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 3rem;
+    
+   
+    }
+    
+    
+.home_image2{
+     /* border: 1px solid black; */
+    height: 30rem;
     width: 100%;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
+    margin-bottom: 5rem;
+ }
+
+ .image2{
+    height: 20rem;
+    width: 50%;
+ }
+
+
+
+ .Create_button{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
+    padding: 5em;
+    background-color: whitesmoke;
+
+
  }
