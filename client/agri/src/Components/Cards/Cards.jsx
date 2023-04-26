@@ -143,13 +143,6 @@ const token=Cookies.get("admin")
         </div>
 
         <div className="cards_info">
-          <div className="product_info">
-          <h2 className="product_name">{props.data.productName}</h2>
-          <div className="min_price i">Min Price: {props.data.minPrice}</div>
-          <div className="max_price i">Max Price: {props.data.maxPrice}</div>
-          <div className="size i">Size: {props.data.productSize}</div>
-          <div className="market i">Market: {props.data.marketName}</div>
-          </div>
           
           <p>{props.data.productName}</p>
           <p className="min_price">Min Price: {props.data.minPrice}</p>
@@ -161,12 +154,15 @@ const token=Cookies.get("admin")
           
           
         </div>
+
       </div>
 
 
       <div className="cards_lower_div">
-        see all
+            <p>View all</p>
+      </div>
      
+     </Link>
     
 
      {isLogedIn && 
