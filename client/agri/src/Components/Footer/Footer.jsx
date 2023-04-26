@@ -34,7 +34,7 @@ export default function Footer() {
         
         <div className="div_2">
           <h2>Quick Links</h2>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/about">About Us</Link>
           <Link to="/contact">Contact</Link>
         </div>

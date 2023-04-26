@@ -1,11 +1,10 @@
-*{
-    font-family: 'Poppins', sans-serif;
-}
-
 .dummycards_div{
     /* border: 1px solid black; */
     height: 15rem;
     width: 35%;
+    border: 1px solid black;
+    height: 14rem;
+    width:  100%;
     display: flex;
     align-items: center;
     margin-left: 5.5rem;
@@ -15,13 +14,16 @@
     border-radius: 12px;
     border: 1px solid rgb(197, 197, 196);
     position: relative;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    /* border: none; */
 }
 
 
 .cards_upper_div{
     /* border: 1px solid red; */
     height: 80%;
-    width: 80%;
+    width: 100%;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;

@@ -7,6 +7,9 @@
     justify-content: center;
     background-color: #9bff97;
     /* background-color: #ECEEF0; */
+    /* flex-direction: column; */
+    
+
 }
 
 form{
@@ -20,6 +23,7 @@ form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
     align-items: center;
     position: relative;
     top: 60px;
@@ -72,6 +76,12 @@ button:hover{
     margin: 7px;
     height: 45px;
     width: 300px;
+}
+
+.register_login_div{
+    display: flex;
+    text-align: center;
+    align-items: center;
 }
 
 

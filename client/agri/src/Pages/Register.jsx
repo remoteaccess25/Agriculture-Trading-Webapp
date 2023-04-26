@@ -54,60 +54,76 @@ export default function Register() {
     <>
       <div className="register">
         <form onSubmit={Register}>
-                  <input
+          <input
             type="text"
             value={name}
             required
             placeholder="Name"
             onChange={(e) => {
-              {dispatch({type:"NAME",payload:e.target.value})}
+              {
+                dispatch({ type: "NAME", payload: e.target.value });
+              }
             }}
           />
 
-         
           <input
             type="email"
             value={email}
             required
             placeholder="Email"
             onChange={(e) => {
-              {dispatch({type:"EMAIL",payload:e.target.value})}
+              {
+                dispatch({ type: "EMAIL", payload: e.target.value });
+              }
             }}
           />
 
-         
           <input
             type="password"
             value={password}
             required
             placeholder="Password"
             onChange={(e) => {
-              {dispatch({type:"PASSWORD",payload:e.target.value})}
+              {
+                dispatch({ type: "PASSWORD", payload: e.target.value });
+              }
             }}
           />
 
-         <input
+          <input
             type="text"
             value={contactNum}
             required
             placeholder="Contact number"
             onChange={(e) => {
-              {dispatch({type:"CONTACT_NUM",payload:e.target.value})}
+              {
+                dispatch({ type: "CONTACT_NUM", payload: e.target.value });
+              }
             }}
           />
 
-         
           <input
             type="text"
             value={accessKey}
             required
             placeholder="Access Key"
             onChange={(e) => {
-              {dispatch({type:"ACESS_KEY",payload:e.target.value})}
+              {
+                dispatch({ type: "ACESS_KEY", payload: e.target.value });
+              }
             }}
           />
 
           <button type="submit">Register</button>
+
+          <div className="already_user">
+            <div className="register_login_div">
+              <a href="/login">
+                <p>already user? |</p>
+              </a>
+              <h2>Login</h2>
+            </div>
+          </div>
         </form>
       </div>
             
