@@ -128,3 +128,72 @@ a{
     background-color: green;
 }
 
+/* drop  */
+
+.drop{
+    display: flex;
+    height: 300px;
+    width: 800px;
+    /* border: 1px solid red;*/
+    background-color: rgb(11, 34, 73);
+    border-radius: 1em;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-around;
+
+}
+
+.close{
+    display: none;
+}
+.close_drop_btn{
+    height: 20px;
+    width: 60px;
+    background-color: red;
+    border-radius: 1em;
+    border: none;
+    color: black;
+}
+
+
+.udpadte_inputs{
+    height: 20px;
+    width: 300px;
+    padding: 10px;
+    border-radius:1em ;
+}
+
+
+.update_submit{
+    height: 20px;
+    width: 80px;
+    background-color: green;
+    border-radius: 1em;
+    border: none;
+    color: black;
+}
+
+
+.update_btn_div{
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
+}
+
+
+
+
+
+@media screen and   (max-width:950px) { 
+    .drop{
+        width: auto;
+    }
+
+
+    .udpadte_inputs{
+        width: auto;
+    }
+}

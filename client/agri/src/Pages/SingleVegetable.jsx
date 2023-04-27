@@ -44,9 +44,7 @@ const  showSingleVegi=()=>{
       return(
         
        <div className='SV_alldata'>
-        <div className="SV_image">
-
-        </div>
+     
         <div className="SV_info">
         <p> Name :{singleVegiData.product.productName}</p>
         <p> Type :{singleVegiData.product.productType}</p>
@@ -58,6 +56,10 @@ const  showSingleVegi=()=>{
         <p>Manager :{singleVegiData.product.managerName}</p>
        <p>Market Contact :{singleVegiData.product.marketContact}</p>
        </div>
+
+       <div className="SV_image">
+       <img className='image1' src="" alt="image1" />
+      </div>
         
         
        
@@ -97,14 +99,17 @@ const  showSingleVegi=()=>{
 
     <>
     <div className="Single_Vegetable_main_div">
+      
     <div className="SV_div1">
       <div className="SV_image_div">
+        <img className='image1' src="" alt="image1" />
 
       </div>
       <div className="SV_content_div">
+        <div className="SV1_inner_contetnt">
         <p>For more such products </p>
         <p>Stay Updated</p>
-       
+        </div>
       </div>
     </div>
   
@@ -118,7 +123,10 @@ const  showSingleVegi=()=>{
 
 
             <div className="map_div">
-              map
+              
+              <div className="inner_map_div">
+                    map
+              </div>
             </div>
     
 

@@ -142,7 +142,7 @@ const token=Cookies.get("admin")
 }
 
 
-     <div className="dummycards_div" >
+     <div className={showUpdate ?"close" :"dummycards_div"} >
     <Link to={`/product/${props.name}/${props.data._id}`}>
       
       <div className="cards_upper_div">
@@ -186,41 +186,50 @@ const token=Cookies.get("admin")
 </div>
       {
         showUpdate && <>
+
+
         
-        <form className='righgtdrop' onSubmit={Update}>
+        <form  className = {showUpdate?"drop" : "none"} onSubmit={Update}>
 
-<input type="text" value={data.productName} name='productName'  placeholder='ProductName' onChange={handelInputs}/>
-
-
-<input type="text" value={data.productType} name='productType'  placeholder='ProductType' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="text" value={data.productName} name='productName'  placeholder='ProductName' onChange={handelInputs}/>
 
 
-<input type="text" value={data.marketName} name='marketName'  placeholder='marketName' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="text" value={data.productType} name='productType'  placeholder='ProductType' onChange={handelInputs}/>
 
 
-<input type="text" value={data.city} name='city'  placeholder='city' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="text" value={data.marketName} name='marketName'  placeholder='marketName' onChange={handelInputs}/>
 
 
-<input type='number' value={data.minPrice} name='minPrice'  placeholder='minPrice' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="text" value={data.city} name='city'  placeholder='city' onChange={handelInputs}/>
 
 
-<input type="number" value={data.maxPrice} name='maxPrice'  placeholder='maxPrice' onChange={handelInputs}/>
+<input className='udpadte_inputs' type='number' value={data.minPrice} name='minPrice'  placeholder='minPrice' onChange={handelInputs}/>
 
 
-<input type="text" value={data.managerName} name='managerName'  placeholder='managerName' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="number" value={data.maxPrice} name='maxPrice'  placeholder='maxPrice' onChange={handelInputs}/>
 
 
-<input type="number" value={data.marketContact} name='marketContact'  placeholder='marketContact' onChange={handelInputs}/>
+<input className='udpadte_inputs' type="text" value={data.managerName} name='managerName'  placeholder='managerName' onChange={handelInputs}/>
+
+
+<input className='udpadte_inputs' type="number" value={data.marketContact} name='marketContact'  placeholder='marketContact' onChange={handelInputs}/>
 
 
 
 
 <label htmlFor="recomended">
-<input type="checkbox" name="recomended" value={data.recomended}  onChange={handelInputs}   />
+<input className='udpadte_inputs' type="checkbox" name="recomended" value={data.recomended}  onChange={handelInputs}   />
 
 </label>
-<button  type='submit'>Submmit</button>
+
+<div className="update_btn_div">
+<button className='update_submit' type='submit'>Submmit</button>
+<button className='close_drop_btn' onClick={()=>{setShowUpdate(false)}}>Close</button>
+</div>
 </form>
+
+
+
         
         </>
       }

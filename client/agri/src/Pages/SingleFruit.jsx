@@ -40,11 +40,9 @@ useEffect(()=>{
       
       if(FruitPresent===true){
         return(
-          <div className='SF_alldata'>
-          <div className="SF_image">
-  
-          </div>
-          <div className="SF_info">
+          <div className='SV_alldata'>
+         
+          <div className="SV_info">
           <p> Name :{singleFruitData.product.productName}</p>
           <p> Type :{singleFruitData.product.productType}</p>
           <p>Size :{singleFruitData.product.productSize}</p>
@@ -55,6 +53,9 @@ useEffect(()=>{
           <p>Manager :{singleFruitData.product.managerName}</p>
          <p>Market Contact :{singleFruitData.product.marketContact}</p>
          </div>
+         <div className="SV_image">
+         <img className='image1' src="" alt="image1" />
+           </div>
      
          </div>
         
@@ -84,25 +85,50 @@ useEffect(()=>{
       return (
 
     <>
-    <div>SingleFruits</div>
-    <h1>{id}</h1>
 
 
- 
-       
-     {
-       // singleFruitData.product.productName
-      showSingleFruit()
-     } 
+
+
+<div className="Single_Vegetable_main_div">
+      
+      <div className="SV_div1">
+        <div className="SV_image_div">
+          <img className='image1' src="" alt="image1" />
+  
+        </div>
+        <div className="SV_content_div">
+          <div className="SV1_inner_contetnt">
+          <p>For more such products </p>
+          <p>Stay Updated</p>
+          </div>
+        </div>
+      </div>
     
+              <div className="SV_div2">
+              {
+        showSingleFruit()
+       } 
+              </div>
+  
+  
+  
+  
+              <div className="map_div">
+                
+                <div className="inner_map_div">
+                      map
+                </div>
+              </div>
+      
+  
+  
+      </div>
 
-   
-   
-
-    
 
 
-    
+
+
+
     </>
   )
 }
