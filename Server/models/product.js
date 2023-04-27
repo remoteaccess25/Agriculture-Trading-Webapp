@@ -7,7 +7,6 @@ const productSchema = new mongoose.Schema({
         required: [true, 'Product name must be provided'],
         trim: true
     },
-    
     productType: {
         type: String,
         required: [true, 'Product type must be provided'],
@@ -16,7 +15,6 @@ const productSchema = new mongoose.Schema({
             message: '{VALUE} is not supported'
         },
     },
-
     productSize: {
         type: String,
         emun: {
@@ -60,17 +58,12 @@ const productSchema = new mongoose.Schema({
     createdBy: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
-        // required:[true,'Please provide user']
+        required:[true,'Please provide user']
     },
     updatedBy: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
-        // required: [true, 'Please provide user']
-    },
-    image: {
-        // type:String
-        data: Buffer,
-        contentType: String
+        required: [true, 'Please provide user']
     }
 
 },{timestamps:true})
