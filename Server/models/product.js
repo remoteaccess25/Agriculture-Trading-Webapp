@@ -68,6 +68,7 @@ const productSchema = new mongoose.Schema({
         // required: [true, 'Please provide user']
     },
     image: {
+        // type:String
         data: Buffer,
         contentType: String
     }

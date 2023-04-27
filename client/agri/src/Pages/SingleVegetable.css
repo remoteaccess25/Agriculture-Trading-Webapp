@@ -8,6 +8,19 @@
      border: 1px solid black;
      height: 400px;
      width: 100%;
+     display: flex;
+}
+
+.SV_image_div{
+     border: 1px solid black;
+     height: 400px;
+     width: 40%;
+
+}
+.SV_content_div{
+     border: 1px solid red;
+     height: 400px;
+     width: 60%;
 }
 .SV_div2{
      border: 1px solid black;

@@ -155,7 +155,7 @@ const token=Cookies.get("admin")
 
         <div className="cards_info">
           
-          <p>{props.data.productName}</p>
+          <p className='product_name'>{props.data.productName}</p>
           <p className="min_price">Min Price: {props.data.minPrice}</p>
           <p className="max_price">Max Price: {props.data.maxPrice}</p>
           <p className="size">Size: {props.data.productSize}</p>
@@ -170,7 +170,7 @@ const token=Cookies.get("admin")
 
 
       <div className="cards_lower_div">
-            <p>View all</p>
+            <div>View all</div>
       </div>
      
      </Link>
@@ -178,8 +178,8 @@ const token=Cookies.get("admin")
 
      {isLogedIn && 
       <div className='admin_option'>
-        <button  onClick={handelUpdate}>update</button>
-        <button onClick={()=>deleteProduct()}>delete</button>
+        <button className='admin_button' onClick={handelUpdate}>update</button>
+        <button className='admin_button' onClick={()=>deleteProduct()}>delete</button>
         </div>
       }
 
@@ -219,7 +219,7 @@ const token=Cookies.get("admin")
 <input type="checkbox" name="recomended" value={data.recomended}  onChange={handelInputs}   />
 
 </label>
-<button type='submit'>Submmit</button>
+<button  type='submit'>Submmit</button>
 </form>
         
         </>

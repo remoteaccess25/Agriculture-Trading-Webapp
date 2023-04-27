@@ -40,12 +40,15 @@ const navigate=useNavigate()
 
 
 
-  const handelSearch = async () => {
+  const handelSearch = async (e) => {
 
 
     try {
         // const productName=search
         // console.log("product name==",productName)
+        if(e.key === 'Enter'){
+
+       
       if(search!=""){
 
         const res = await axios.post("http://localhost:8000/products",
@@ -60,7 +63,7 @@ const navigate=useNavigate()
 
           <div>No input</div>
         )
-        
+      }
       }
       
     } catch (error) {
@@ -122,7 +125,8 @@ const navigate=useNavigate()
             setSearch(e.target.value);
           }}
           />
-          <CiSearch className="search_logo" onClick={handelSearch}/>
+          
+          <CiSearch type="submit" className="search_logo" onClick={handelSearch}/>
           {/* </div> */}
         
       </div>

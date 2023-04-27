@@ -1,11 +1,44 @@
-/* .create_form_div{
-    height: 100vh;
-    padding: 10rem;
+.create_form_div{
+    border: 1px solid black;
+    height: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgreen;
 }
-.create_div{
-    height: 100vh;
-} */
 
-.duumy{
-    height: 100vh;
+.create_form{
+    background-color: white;
+    border-radius: 1em;
+    height: 800px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.recomended{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.recomended_checkbox{
+    margin: 25px;
+}
+
+.submit_button{
+    padding: 10px;
+    border-radius: 1em;
+    border: none;
+    background-color:black;
+    color: whitesmoke;
+    cursor: pointer;
+
+}
+
+.submit_button:active{
+    color: red;
 }
