@@ -57,6 +57,7 @@ const navigate=useNavigate()
         
         setSearchdata([res.data.products]);
         setShowsearchData(true)
+        setSearch("")
         // console.log(searchdata)
       }else{
         return(
