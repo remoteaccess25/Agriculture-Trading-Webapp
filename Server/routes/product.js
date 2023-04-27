@@ -1,21 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
-const { getAllFruits,getFruitsRec,getFruit } = require('../controllers/fruits')
+const { getAllProducts, createProduct, deleteProduct, updateProduct,getProduct } = require('../controllers/pruducts')
 
-// const admin = require('../controllers/auth');
+router.route('/').get(getAllProducts).post(createProduct)
+router.route('/:id').delete(deleteProduct).patch(updateProduct).get(getProduct)
 
-// router.route('/create').get(admin.createProduct)
-// router.route('/update').get(admin.updateProduct)
-// router.route('/delete').get(admin.deleteProduct)
+// router.get('/',getAllProducts)
 
-
-// router.route('/').get(getAllProducts)/* .post(createProduct) */
-router.route('/fruits').get(getAllFruits)/* .delete(deleteProduct).patch(updateProduct) */
-router.route('/fruits/:id').get(getFruit)/* .delete(deleteProduct).patch(updateProduct) */
-router.route('/recomended/fruits').get(getFruitsRec)/* .delete(deleteProduct).patch(updateProduct) */
-
-
-
+// router.get('/', (req, res) => {
+//     res.send('aai ghal')
+// })
 
 module.exports = router

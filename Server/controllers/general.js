@@ -2,8 +2,6 @@ const Product = require('../models/product')
 const { BadRequestError, InternalServerError, NotFoundError } = require('../errors/errors')
 const { getProduct } = require('./utils');
 const { StatusCodes } = require('http-status-codes');
-const create = require('./multer-storage');
-
 
 
 // search bar - searching product by name
@@ -37,56 +35,24 @@ const searchProduct = async (req, res) => {
 
 // create new entry (product) - authenticated only
 // url - /admin/create
-const createProduct =  async (req, res) => {
-
-    create(req, res, (err) => {
-
-        if (err) {
-            // throw new InternalServerError('Unable to create product')
-            console.log(err)
-        }
-        else {
-            req.body.image = {
-                // data: req.file.filename,
-                contentType: 'image/png'
-            }
-            req.body.createdBy = req.user.userId
-            req.body.updatedBy = req.user.userId
-            const product = new Product(req.body);
-            
-            product.save()
-                .then(() => res
-                    .status(StatusCodes.CREATED)
-                    .json({ status: 'success', msg: 'Product created', product }))
-                .catch((err) => {
-                    // throw new InternalServerError('Unable to create product')
-                    console.log(err)
-                })
-        }
-    })
+const createProduct = async (req, res) => {
 
     // set createdBy and updatedBy to userID
     req.body.createdBy = req.user.userId
     req.body.updatedBy = req.user.userId
-    console.log("server body",req.headers)
+
     // create the new product
     const product = await Product.create(req.body)
-    // // set createdBy and updatedBy to userID
-    // req.body.createdBy = req.user.userId
-    // req.body.updatedBy = req.user.userId
 
-    // // create the new product
-    // const product = await Product.create(req.body)
+    // throw error if unable to create product
+    if (!product) {
+        throw new InternalServerError('Unable to create product')
+    }
 
-    // // throw error if unable to create product
-    // if (!product) {
-    //     throw new InternalServerError('Unable to create product')
-    // }
-
-    // // send response
-    // res
-    //     .status(StatusCodes.CREATED)
-    //     .json({ status: 'success', msg: 'Product created', product })
+    // send response
+    res
+        .status(StatusCodes.CREATED)
+        .json({ status: 'success', msg: 'Product created', product })
 
 }
 
