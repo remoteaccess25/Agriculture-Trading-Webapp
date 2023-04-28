@@ -1,11 +1,4 @@
-/* *{
-    font-family: sans-serif;
-    font-weight: 200;
-} */
 
-/* .logout_button{
-
-} */
 
 .nav_div{
     /* border: 1px solid black; */
@@ -49,9 +42,6 @@
     margin-top: -6px;
 }
 
-/* .show_hide{
-    
-} */
 
 .anchor{ 
     color: black;
@@ -70,6 +60,16 @@
     color: red;
 }
 
+
+
+
+.logout_button{
+    padding: 5px;
+    border: none;
+    background-color: black;
+    color: red;
+    border-radius: 1em;
+}
 
 @media  screen and (max-width: 1000px) {
     /* .nav_div{

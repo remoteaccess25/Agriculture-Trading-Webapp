@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import {Vegicontext}  from "../Components/context/vegetablecontext/VegitableContext"
 import "./SingleVegetable.css"
+import background1 from "../Images/background1.png"
 
 
 export default function SingleVegetable() {
@@ -22,6 +23,7 @@ const getSingleVegiInfo=async()=>{
         
       
         dispatch({type:"SET_SINGLE_VEGI_INFO",payload:result.data})
+        console.log("data::::",result.data)
   } catch (error) {
       console.log(error)
   }
@@ -99,21 +101,44 @@ const  showSingleVegi=()=>{
 
     <>
     <div className="Single_Vegetable_main_div">
+    
       
     <div className="SV_div1">
-      <div className="SV_image_div">
-        <img className='image1' src="" alt="image1" />
 
+      <div className="back_white_image">
+
+      </div>
+      <div className="back_image_div">
+        <img className='back_image' src={background1} alt="" />
+      </div>
+      <div className="content_div">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat explicabo atque corporis earum iusto, non iste ab illum natus veniam.
+
+
+
+      </div>
+
+
+
+      {/* <div className="SV_image_div">
+      
       </div>
       <div className="SV_content_div">
         <div className="SV1_inner_contetnt">
         <p>For more such products </p>
         <p>Stay Updated</p>
         </div>
-      </div>
+      </div> */}
+
+
+
+
+
+
     </div>
   
             <div className="SV_div2">
+              {/* <div className="back_white_image_right"></div> */}
             {
       showSingleVegi()
      } 
@@ -122,13 +147,13 @@ const  showSingleVegi=()=>{
 
 
 
-            <div className="map_div">
+            {/* <div className="map_div">
               
               <div className="inner_map_div">
                     map
               </div>
             </div>
-    
+     */}
 
 
     </div>

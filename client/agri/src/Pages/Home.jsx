@@ -8,7 +8,7 @@ import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
 import Home1 from "../Images/Home1.png"
 import Home2 from "../Images/Home2.png"
-import pinapale from "../Images/pinapale.png"
+// import pinapale from "../Images/pinapale.png"
 
 import {CiSearch} from "react-icons/ci"
 //importing admin data
@@ -219,7 +219,7 @@ const navigate=useNavigate()
 
       {/* create Page for Admin */}
            <div className="Create_button">
-            <img src={pinapale} alt="" />
+            {/* <img src={pinapale} alt="" /> */}
             
            {showCreateButton()}
             

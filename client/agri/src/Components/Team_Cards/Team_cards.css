@@ -1,0 +1,96 @@
+.teamcard_main_div{
+    /* border: 1px solid black; */
+    border: none;
+    border-radius: 1em;
+    background-color: whitesmoke;
+    box-shadow: 1px 1px 1px black;
+    height: 250px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.teamcard_upper_div{
+    padding: 5px;
+    /* border: 1px solid red; */
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.teamcard_left_div{
+    /* border: 1px solid green; */
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.teamcard_left_div h1{
+    padding: 5px;
+    text-align: center;
+    border-bottom: 3px solid black;
+    width: 100%;
+}
+
+.teamcard_right_div{
+    /* border: 1px solid blue; */
+    height: 100%;
+    width: 40%;
+    padding: 10px;
+
+}
+
+.teamcard_image{
+    /* border: 1px solid grey; */
+    height: 200px;
+    width: 300px;
+}
+
+.teamcard_lower_div{
+    /* border: 1px solid violet; */
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.teamcard_icons{
+    /* border: 1px solid yellow; */
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+}
+
+
+@media screen and (max-width:800px )  {
+
+    .teamcard_main_div{
+        width: auto;
+
+    }
+
+    .teamcard_upper_div{
+        width: auto;
+    }
+
+    .teamcard_left_div{
+        width: auto;
+    }
+
+
+    .teamcard_right_div{
+        width: auto;
+    }
+    
+}

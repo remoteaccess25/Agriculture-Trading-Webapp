@@ -98,7 +98,7 @@ const show_register=()=>{
                 <Link className='anchor' to="/products/vegetables">Vegitables</Link>
                 <Link className='anchor' to="/products/fruits">Fruits</Link>
                 <Link className='anchor' to="/about">About</Link>
-                <Link className='anchor' to="/contact">Contact</Link>
+                {/* <Link className='anchor' to="/contact">Contact</Link> */}
                 
                 <GiSwordsEmblem  className='show_hide' onClick={show_register}></GiSwordsEmblem>
                 {/* <Link to="/register">Register</Link>
