@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,11 @@ export default function Login() {
 
   const { dispatch, email, password, token } = useContext(AdminContext);
 
+  useEffect(()=>{
+    console.log(token,email,password)
+    console.log(localStorage.getItem("token"))
+  })
+
   //cookies
   // const [cookies, setCookie, removeCookie] = useCookies(['admin']);
 
@@ -26,17 +31,18 @@ export default function Login() {
       });
 
       console.log("login data", response);
-
       if (response.status === 200) {
         //storing to cookies
         dispatch({ type: "TOKEN", payload: response.data.token });
-        dispatch({ type: "LOGIN" });
-        localStorage.setItem("token", token);
 
+        dispatch({ type: "LOGIN" });
+        localStorage.setItem("token", response.data.token);
+        console.log("token set",token)
         //storing email to local storage
         localStorage.setItem("email", email);
         // setCookie("admin",{token,email})
         Cookies.set("admin", token, email);
+
         navigate("/");
       }
     } catch (error) {

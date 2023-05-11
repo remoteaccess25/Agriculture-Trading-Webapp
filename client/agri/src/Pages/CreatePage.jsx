@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./CreatePage.css"
 import axios from "axios"
 import { ProductContext } from '../Components/context/Admin/Product'
 import Cookies from 'js-cookie'
+import { AdminContext } from "../Components/context/Admin/Admin";
+
 
 export default function CreatePage() {
 
@@ -11,11 +13,13 @@ const {dispatch,productName,productType,marketName,
   
   }=useContext(ProductContext)
 
-
+  const {  email, password, token } = useContext(AdminContext);
 // const [token,setToken]=useState("")
 
 // const localToken=localStorage.getItem("token")
-
+useEffect(()=>{
+  console.log(email)
+})
 
 //set temp recomended 
 const [recomended,setRecomended]=useState(false)

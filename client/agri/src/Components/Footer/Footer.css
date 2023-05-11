@@ -8,6 +8,9 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    /* background-color: rgb(206, 230, 230); */
+    background: #f7f7f7;
+     background-image: url(https://arena.km.ua/wp-content/uploads/3538533.jpg);
 
     
 }

@@ -2,11 +2,11 @@
 
 /* cards css */
 
-*{
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
+} */
 a{
     color: black;
 }
@@ -14,14 +14,17 @@ a{
 
 
 .dummycards_div{
-    border: 1px solid red;
-    margin: 10px;
+    border: 1px solid black;
+    border-radius: 2em;
+   
     height: 290px;
     width: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-size: larger;
+    background: transparent;
+    
 
 }
 
@@ -67,6 +70,7 @@ a{
     text-align: center;
     border-radius: 1em;
     color: red;
+
 }
 
 .cards_info{
@@ -92,15 +96,15 @@ a{
     width: 250px;
  } 
 
-
+/* 
  .cards_lower_div{
     /* border: 1px solid red; */
-    margin-top:15px;
+    /* margin-top:15px;
     width: 580px;
     height: 30px;
+     */
     
-    
- }
+ /* } */
 
   .cards_lower_div p{
     width: 100%;
@@ -146,6 +150,7 @@ a{
 
 .close{
     display: none;
+    
 }
 .close_drop_btn{
     height: 20px;
@@ -187,6 +192,11 @@ a{
 
 
 
+.viewallHeading{
+    color: red;
+}
+
+
 @media screen and   (max-width:950px) { 
     .drop{
         width: auto;
@@ -196,4 +206,7 @@ a{
     .udpadte_inputs{
         width: auto;
     }
+}
+.admin_button{
+    cursor: not-allowed;
 }

@@ -30,7 +30,7 @@ const AdminReducer=(state,action)=>{
                 }
 
         case "TOKEN":
-            console.log("reducer token",action.payload)
+            console.log("reducer",action.payload)
                 return{
                 ...state,
                 token:action.payload

@@ -35,10 +35,11 @@ const createProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
     const productID = req.params.id
     const product = await Product.findOneAndDelete({ _id: productID })
-    if (!product) {
-        return res.status(400).json({ stauts: 'failed', msg: 'Product not found' })
-    }
+    if (product) {
     res.status(200).json({stauts:'success',msg:'Product deleted sucessfully'})
+
+    }
+    return res.status(400).json({ stauts: 'failed', msg: 'Product not found' })
     
 }
 

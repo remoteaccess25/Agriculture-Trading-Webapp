@@ -5,13 +5,38 @@
     display: flex;
     /* align-items: center;*/
      justify-content: center;
-
+    
 
 }
 
 
 .All_Fruit_main_div{
-    border: 1px solid black;
-    display: grid;
+    /* border: 1px solid black; */
+
+    display: flex;
+    flex-direction: column;
     width: 100%;
+margin-bottom: 30px;
+    /* background-image: url("https://www.shutterstock.com/image-photo/summer-holiday-concept-abstract-blur-blue-422467099");
+    background-repeat: no-repeat;
+    background-size: contain; */
+    /* background-image: linear-gradient(black,grey,white); */
+}
+
+.All_Fruit_main_div h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+width: 100%;
+padding: 2em;
+}
+
+
+.all_fruits_grid_div{
+    
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 3em;
 }

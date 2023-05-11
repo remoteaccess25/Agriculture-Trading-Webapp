@@ -5,14 +5,14 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
-import CreatePage from "./Pages/CreatePage"
+import CreatePage from "./Pages/CreatePage";
 
 import { AdminContextProvider } from "./Components/context/Admin/Admin";
 
 import Navbar from "./Components/Navbar/Navbar";
 
 import { VegitableContextProvider } from "./Components/context/vegetablecontext/VegitableContext";
-import {FruitsContextProvider} from "./Components/context/fruitscontext/FruitsContext"
+import { FruitsContextProvider } from "./Components/context/fruitscontext/FruitsContext";
 import SingleFruit from "./Pages/SingleFruit";
 import SingleVegetable from "./Pages/SingleVegetable";
 import Footer from "./Components/Footer/Footer";
@@ -25,27 +25,25 @@ import RecomendedPage from "./Pages/RecomendedPage";
 
 import PrivateRoutes from "./Pages/PrivateRoutes/PrivateRoutes";
 
-
 //product context
 import ProductContextProvider from "./Components/context/Admin/Product";
 
- function App() {
-
+function App() {
   // const { isLogedIn }=useContext(AdminContext)
 
-    // const myCookies=Cookies.get("admin")
+  // const myCookies=Cookies.get("admin")
 
-// const privateRoutes=()=>{
+  // const privateRoutes=()=>{
 
-//   if(myCookies!==undefined){
+  //   if(myCookies!==undefined){
 
-//     return(
+  //     return(
 
-// <Route path="/admin/create" element={<CreatePage/>}></Route>
+  // <Route path="/admin/create" element={<CreatePage/>}></Route>
 
-//     )
+  //     )
 
-//   }
+  //   }
   // else{
   //   return(
   //     // alert("unauthorized user")
@@ -54,48 +52,58 @@ import ProductContextProvider from "./Components/context/Admin/Product";
   //   )
   // }
 
-
-// }
-
+  // }
 
   return (
     <>
-    <AdminContextProvider>
-    <ProductContextProvider>
-    <VegitableContextProvider>
-    <FruitsContextProvider>
-      <Navbar></Navbar>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        {/* <Route path="/contact" element={<Contact/>}></Route> */}
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/register" element={<Register/>}></Route>
-       
-        <Route path="/product/recomended/:name" element={<RecomendedPage/>}></Route>
-        <Route path="/product/recomended/:name" element={<RecomendedPage/>}></Route>
+      <AdminContextProvider>
+        <ProductContextProvider>
+          <VegitableContextProvider>
+            <FruitsContextProvider>
+              <Navbar></Navbar>
+              <Routes>
+                <Route path="/" element={<Home />}></Route>
+                {/* <Route path="/contact" element={<Contact/>}></Route> */}
+                <Route path="/about" element={<About />}></Route>
+                <Route path="/login" element={<Login />}></Route>
+                <Route path="/register" element={<Register />}></Route>
 
-        <Route path="/product/fruits/:id" element={<SingleFruit/>}></Route>
-        <Route path="/product/vegetables/:id" element={<SingleVegetable/>}></Route>
+                <Route
+                  path="/product/recomended/:name"
+                  element={<RecomendedPage />}
+                ></Route>
+                <Route
+                  path="/product/recomended/:name"
+                  element={<RecomendedPage />}
+                ></Route>
 
-        <Route path="/products/fruits" element={<AllFruits/>}></Route>
-        <Route path="/products/vegetables" element={<AllVegetables/>}></Route>
+                <Route
+                  path="/product/fruits/:id"
+                  element={<SingleFruit />}
+                ></Route>
+                <Route
+                  path="/product/vegetables/:id"
+                  element={<SingleVegetable />}
+                ></Route>
 
+                <Route path="/products/fruits" element={<AllFruits />}></Route>
+                <Route
+                  path="/products/vegetables"
+                  element={<AllVegetables />}
+                ></Route>
 
-        {/* navigate to create page for admin  private routes*/}
-           
-           <Route path="/admin" element={<PrivateRoutes/>}>
-           <Route path="/admin/create" element={<CreatePage/>}></Route>
-            </Route>       
-            
-        {/* <Route path="/admin/create" element={<CreatePage/>}></Route> */}
+                {/* navigate to create page for admin  private routes*/}
 
-      </Routes>
-      <Footer></Footer>
-    
-      </FruitsContextProvider>
-      </VegitableContextProvider>
-      </ProductContextProvider>
+                <Route path="/admin" element={<PrivateRoutes />}>
+                  <Route path="/admin/create" element={<CreatePage />}></Route>
+                </Route>
+
+                {/* <Route path="/admin/create" element={<CreatePage/>}></Route> */}
+              </Routes>
+              <Footer></Footer>
+            </FruitsContextProvider>
+          </VegitableContextProvider>
+        </ProductContextProvider>
       </AdminContextProvider>
     </>
   );

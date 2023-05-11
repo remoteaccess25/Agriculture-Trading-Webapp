@@ -4,11 +4,45 @@
     width: 100%;
     display: flex;
     /* /* align-items: center; */
+
     justify-content: center; 
+   
 }
 
 .All_Vegi_main_div{
     border: 1px solid black;
-    display: grid;
     width: 100%;
+
+    /* display: grid;
+    justify-content: center;
+    place-items:center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 10; */
+
+    background-image:url("../Images//grains.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+.All_Vegi_main_div h1{
+    margin-bottom: 10px;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.all_vegi_grid_div{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    place-items:center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    grid-gap: 3em;
 }

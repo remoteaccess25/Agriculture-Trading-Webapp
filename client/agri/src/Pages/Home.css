@@ -64,8 +64,14 @@
 
 
 .search_logo{
-    position: relative;
-    right: 20px;
+    position: absolute;
+    left: 700px;
+    top: 230px;
+    padding: 10px;
+    background-color:white;
+    border-radius: 1em;
+    color: black;
+
 }
 
 
@@ -245,6 +251,7 @@
     justify-content: center;
     height: 100px;
     padding: 5em;
+    width: 100%;
     /* background-color: whitesmoke; */
 
 

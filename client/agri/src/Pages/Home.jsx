@@ -1,17 +1,19 @@
-import React, {  useState } from "react";
+import React, {  useEffect, useState,useContext } from "react";
 import "./Home.css";
 import Cards from "../Components/Cards/Cards"
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useFetcher } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
 import Home1 from "../Images/Home1.png"
 import Home2 from "../Images/Home2.png"
 // import pinapale from "../Images/pinapale.png"
+import { AdminContext } from "../Components/context/Admin/Admin";
 
-import {CiSearch} from "react-icons/ci"
-//importing admin data
+
+// import {CiSearch} from "react-icons/ci"
+// //importing admin data
 
 
 
@@ -27,18 +29,21 @@ export default function Home() {
 const navigate=useNavigate()
 
 
+const { dispatch, email, password, token } = useContext(AdminContext);
 //cookies
 // const [cookies, setCookie, removeCookie] = useCookies(['admin']);
 
 
-
+useEffect(()=>{
+  console.log("home",token)
+})
 
   const [search, setSearch] = useState("");
   const [searchdata, setSearchdata] = useState([]);
   const [showsearchData,setShowsearchData]=useState(false)  
 
 
-
+ 
 
   const handelSearch = async (e) => {
 
@@ -49,11 +54,12 @@ const navigate=useNavigate()
         if(e.key === 'Enter'){
 
        
+          const sd=search.trim()
       if(search!=""){
 
-        const res = await axios.post("http://localhost:8000/products",
-        {"productName":search}
+        const res = await axios.post("http://localhost:8000/products",{"productName":sd}
         );
+        console.log("response",res)
         
         setSearchdata([res.data.products]);
         setShowsearchData(true)
@@ -127,8 +133,9 @@ const navigate=useNavigate()
           }}
           />
           
-          <CiSearch type="submit" className="search_logo" onClick={handelSearch}/>
+          {/* <CiSearch type="submit" className="search_logo" onClick={handelSearch}>Search </CiSearch> */}
           {/* </div> */}
+          <button className="search_logo"  onClick={handelSearch} >Search</button>
         
       </div>
 
@@ -212,7 +219,14 @@ const navigate=useNavigate()
       <div className="home_image2">
 
 <img className="image2" src={Home2} alt="home image 2" />
-<p className="image2_text">text here</p>
+<p className="image2_text">
+
+
+<h1>text here</h1>
+
+
+
+</p>
 </div>
 
 

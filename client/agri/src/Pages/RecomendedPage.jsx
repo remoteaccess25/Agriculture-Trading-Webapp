@@ -30,7 +30,9 @@ const showData=()=>{
         recomendedFruits.products.map((item)=>{
           return(
             <div key={item._id} >
-              <Link to={`/product/fruits/${item._id}`}><Cards name={"fruits"} data= {item}></Cards></Link>
+              {/* <Link to={`/product/fruits/${item._id}`}> */}
+                <Cards name={"fruits"} data= {item}/>
+                  {/* </Cards></Link> */}
               
              
             </div>
@@ -75,13 +77,17 @@ const showData=()=>{
       <h1>Our Recomended</h1>
     </div>
     <div className="recomended_main_div">
+<div className="recomended_grid_div">
 
-    {
+{
 
 showData()
 
 
 }
+
+</div>
+   
 
     </div>
 
