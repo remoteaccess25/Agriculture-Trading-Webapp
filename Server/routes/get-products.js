@@ -10,7 +10,7 @@ const {searchProduct} = require('../controllers/general');
 
 
 // search bar
-router.route('/').post(searchProduct)
+router.route('/').get(searchProduct)
 
 // routes for fruits 
 router.route('/fruits').get(getAllFruits) // all fruits will be sent
