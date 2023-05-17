@@ -58,14 +58,20 @@ const productSchema = new mongoose.Schema({
     createdBy: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
-        required:[true,'Please provide user']
+        required: [true, 'Please provide user']
     },
     updatedBy: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: [true, 'Please provide user']
-    }
+    }/* ,
+    image: {
+        data: Buffer,
+        contentType: String,
+        required:[true,'Please provide image']
+    } */
 
-},{timestamps:true})
+}, { timestamps: true })
 
 module.exports = mongoose.model('Product', productSchema)
+

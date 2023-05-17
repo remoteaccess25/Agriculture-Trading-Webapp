@@ -11,20 +11,21 @@ const register = async (req, res) => {
     }
 
     // delete the accessKey from the body..
-    
+
     // delete req.body.accessKey // not needed as we creating user with mongoose schema
 
     // create user
     const user = await User.create({ ...req.body })
 
     // create JWT
-    const token = user.createJWT()
+    // const token = user.createJWT()
 
     // console.log(user)
 
     // send response
     res.status(StatusCodes.CREATED)
-        .json({ user: { name: user.name }, token })
+        .json({ user: { name: user.name }, acessGranted: true })
+    // .redirect()
 }
 
 const login = async (req, res) => {
