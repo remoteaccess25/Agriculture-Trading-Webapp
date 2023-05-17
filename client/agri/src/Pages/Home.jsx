@@ -149,7 +149,7 @@ useEffect(()=>{
 
           {
             showsearchData && <>
-            <button onClick={()=>{setShowsearchData(false)}}>Close</button>
+            <button className="search_close" onClick={()=>{setShowsearchData(false)}}>Close</button>
                   
                 <div className="show_search">
                   {
