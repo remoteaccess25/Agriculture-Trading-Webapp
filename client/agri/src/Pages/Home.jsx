@@ -49,14 +49,18 @@ useEffect(()=>{
 
 
     try {
+
+
+      alert("searching start")
+
         // const productName=search
         // console.log("product name==",productName)
-        if(e.key === 'Enter'){
+        // if(e.key === 'Enter'){
 
        
           const sd=search.trim()
       if(search!=""){
-
+        
         const res = await axios.post("http://localhost:8000/products",{"productName":sd}
         );
         console.log("response",res)
@@ -71,7 +75,7 @@ useEffect(()=>{
           <div>No input</div>
         )
       }
-      }
+      // }
       
     } catch (error) {
       console.log(error);
@@ -129,7 +133,9 @@ useEffect(()=>{
           type="text"
           placeholder="Search"
           onChange={(e) => {
+           
             setSearch(e.target.value);
+           
           }}
           />
           
