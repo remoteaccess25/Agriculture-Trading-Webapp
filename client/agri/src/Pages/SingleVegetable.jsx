@@ -48,7 +48,7 @@ export default function SingleVegetable() {
             </div>
 
             <div className="SV_image">
-              <img className="image1" src="" alt="image1" />
+              <img className="image1" src={singleVegiData.product.image} alt="image1" />
             </div>
           </div>
         );

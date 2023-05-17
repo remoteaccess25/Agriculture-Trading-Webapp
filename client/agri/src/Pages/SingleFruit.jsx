@@ -46,7 +46,7 @@ export default function SingleFruit() {
               <p>Market Contact :{singleFruitData.product?.marketContact}</p>
             </div>
             <div className="SV_image">
-              <img className="image1" src="" alt="image1" />
+              <img className="image1" src={singleFruitData.product.image} alt="image1" />
             </div>
           </div>
         );
