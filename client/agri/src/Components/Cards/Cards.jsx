@@ -109,7 +109,7 @@ export default function Cards(props) {
           <div className="cards_upper_div">
             <div className="image_div">
               {/* {console.log("images",props.image.contentType)} */}
-              <img className="cards_image" src={`http://localhost:8000/uploads/${props.data.productName}`} alt="" />
+              <img className="cards_image" src={props.data.image} alt="" />
             </div>
 
             <div className="cards_info">

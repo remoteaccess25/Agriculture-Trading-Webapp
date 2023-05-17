@@ -27,10 +27,29 @@ const getAllVegetables = async (req, res) => {
         throw new BadRequestError('Product not found')
     }
 
-    // send the response 
-    res
+
+    
+    if (products.length > 0) {
+        const productsWithImages = products.map(product => {
+          const productWithImage = product.toObject();
+          // Assuming the image filenames are stored in the "image" property of each product
+          productWithImage.image = `${req.protocol}://${req.get('host')}/uploads/${product.image}`;
+          return productWithImage;
+        });
+        
+        res
         .status(StatusCodes.OK)
-        .json({ stauts: 'success', products, nbHits: products.length })
+        .json({ stauts: 'success', products:productsWithImages, nbHits: products.length })
+
+
+    }
+
+
+
+    
+
+    // send the response 
+   
 }
 
 
@@ -50,10 +69,19 @@ const getVegetable = async (req, res) => {
         throw new BadRequestError('Product not found')
     }
 
+    if (product) {
+        const productWithImage = product.toObject();
+      
+        productWithImage.image = `${req.protocol}://${req.get('host')}/uploads/${product.image}`;
+        res.status(StatusCodes.OK) .json({ stauts: 'success', product:productWithImage  })
+      }
+
+
+
+
+
     // send response if the product is found
-    res
-        .status(StatusCodes.OK)
-        .json({ stauts: 'success', product })
+    
 }
 
 
@@ -77,10 +105,21 @@ const getVegetablesRec = async (req, res) => {
 
     const products = await getProduct(find, sort)
 
-    // send response
-    res
+
+
+    if (products.length > 0) {
+        const productsWithImages = products.map(product => {
+          const productWithImage = product.toObject();
+          // Assuming the image filenames are stored in the "image" property of each product
+          productWithImage.image = `${req.protocol}://${req.get('host')}/uploads/${product.image}`;
+          return productWithImage;
+        });
+        
+        // send response
+        res
         .status(StatusCodes.OK)
-        .json({ stauts: 'success', products, nbHits: products.length })
+        .json({ stauts: 'success', products:productsWithImages, nbHits: products.length })
+    }
 }
 
 

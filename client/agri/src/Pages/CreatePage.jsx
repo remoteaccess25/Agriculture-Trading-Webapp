@@ -73,8 +73,20 @@ else{
 
       //form data for image
       const formData=new FormData();
+      formData.append("productName",productName)
+      formData.append("productType",productType)
+      formData.append("marketName",marketName)
+      formData.append("city",city)
+      formData.append("minPrice",minPrice)
+      formData.append("maxPrice",maxPrice)
+      formData.append("managerName",managerName)
+      formData.append("marketContact",marketContact)
+      formData.append("recomended",recomended)
+    
+
       
-      formData.append("productImage",productImage)
+      formData.append("image",productImage)
+      console.log("frontend image",productImage)
 
       
       console.log("form data presenting",[...formData])
@@ -82,7 +94,7 @@ else{
     
     
     
-      const result=await axios.post("http://localhost:8000/admin/create",(formData,sendingData),{
+      const result=await axios.post("http://localhost:8000/admin/create",(formData),{
         headers: { authorization: `Bearer ${token}`
               
               },

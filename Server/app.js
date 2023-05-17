@@ -20,6 +20,20 @@ const authenticateUser = require('./middleware/auth');
 // require connection to the database(MONGO DB)
 const conncetDB = require('./db/connect')
 
+
+
+
+
+
+// Serve static files from the "uploads" folder
+app.use('/uploads', express.static('uploads'));
+
+
+
+
+
+
+
 // Require Routes
 const authRoute = require('./routes/auth');
 const productsRoute = require('./routes/get-products')

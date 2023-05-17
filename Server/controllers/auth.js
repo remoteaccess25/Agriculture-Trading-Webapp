@@ -17,12 +17,7 @@ const register = async (req, res) => {
     // create user
     const user = await User.create({ ...req.body })
 
-    // create JWT
-    // const token = user.createJWT()
-
-    // console.log(user)
-
-    // send response
+  
     res.status(StatusCodes.CREATED)
         .json({ user: { name: user.name }, acessGranted: true })
     // .redirect()
@@ -52,9 +47,7 @@ const login = async (req, res) => {
     // create token
     const token = user.createJWT()
 
-    // console.log(user)
 
-    // send response
     res
         .status(StatusCodes.OK)
         .json({ user: { name: user.name }, token })
