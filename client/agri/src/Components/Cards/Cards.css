@@ -1,31 +1,27 @@
-
-
-/* cards css */
-
-/* *{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-} */
-
-
-
 a{
     color: black;
 }
 
-
+.name_image{
+    /* background-color: #DD706E; */
+    border-radius: 50%;
+    height: 400px;
+}
 
 .dummycards_div{
     border: 1px solid black;
-    border-radius: 2em;
+    border-radius: 40px;
+    background-color: white;
     height: 290px;
     width: 600px;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-size: larger;
-    
+    overflow: hidden;
+    background-image: url(../../Images/card_background.png);
+    background-size: 580px;
+    background-repeat: no-repeat;
     /* background: transparent; */
     /* background-color: #4FD938; */
     /* background-image: linear-gradient(#4FD938,green); */
@@ -67,17 +63,13 @@ a{
     font-weight: bolder;
     color: black;
     margin-bottom: 15px;
+    margin-left: 5px;
 }
 
 
 .cards_lower_div{
-    width: 100%;
-    padding: 8px;
-    background-color: rgb(12, 14, 12);
+    padding: 4px;
     text-align: center;
-    border-radius: 1em;
-    color: red;
-
 }
 
 .cards_info{
@@ -102,24 +94,6 @@ a{
     height: 180px;
     width: 250px;
  } 
-
-/* 
- .cards_lower_div{
-    /* border: 1px solid red; */
-    /* margin-top:15px;
-    width: 580px;
-    height: 30px;
-     */
-    
- /* } */
-
-  .cards_lower_div p{
-    width: 100%;
-    display: flex;
-    background-color: green;
-    align-items: center;
-    justify-content: center;
-  }
 
 
 .admin_option {
@@ -200,7 +174,8 @@ a{
 
 
 .viewallHeading{
-    color: red;
+    color: #DD706E;
+    border: 1px solid #DD706E;
 }
 
 
