@@ -55,7 +55,7 @@ const About = () => {
 {/* onkar div */}
         <div className="onakr_div  " data-aos={"fade-right"}
             data-aos-delay={"700"}>
-          <Team_cards name={"Onkar"} linkdinLink={"https://www.linkedin.com/in/onkar-kakade-465bb5229"} instaLink={"https://instagram.com/onkar_kakade29"}/>
+          <Team_cards para={""} name={"Onkar"} linkdinLink={"https://www.linkedin.com/in/onkar-kakade-465bb5229"} instaLink={"https://instagram.com/onkar_kakade29"}/>
         </div>
 
 
