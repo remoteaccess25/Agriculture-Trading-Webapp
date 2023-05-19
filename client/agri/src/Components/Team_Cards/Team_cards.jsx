@@ -13,7 +13,7 @@ export default function Team_cards(props) {
     <div className="teamcard_upper_div">
     <div className="teamcard_left_div">
         <h1>{props.name}</h1>
-        <p>
+        <p className="textof">
             {props.para}
         </p>
     </div>
