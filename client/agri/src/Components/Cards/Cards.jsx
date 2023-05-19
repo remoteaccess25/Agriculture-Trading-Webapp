@@ -6,7 +6,6 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 export default function Cards(props) {
   const { dispatch, isLogedIn, token } = useContext(AdminContext);
 
@@ -114,33 +113,33 @@ export default function Cards(props) {
               {/* {console.log("images",props.image.contentType)} */}
               <img className="cards_image" src={props.data.image} alt="" />
             </div>
+            {/* <div className="adbtns"> */}
+              {isLogedIn && (
+                <div className="admin_option">
+                  <button className="admin_button" onClick={handelUpdate}>
+                    update
+                  </button>
+                  <button className="admin_button" onClick={() => deleteProduct()}>
+                    delete
+                  </button>
+                </div>
+              )}
+            {/* </div> */}
           </div>
-        <div className="info_price">
-          <div className="cards_info">
-            <p className="min_price">Min Price: {props.data.minPrice}</p>
-            <p className="max_price">Max Price: {props.data.maxPrice}</p>
-            <p className="size">Size: {props.data.productSize}</p>
-            <p className="market">Market: {props.data.marketName}</p>
-          </div>
-          <div className="cards_lower_div">
-            <Link to={`/product/${props.name}/${props.data._id}`}>
-              <div className="viewallHeading">View all</div>
-            </Link>
+          <div className="info_price">
+            <div className="cards_info">
+              <p className="min_price in">Min Price: {props.data.minPrice}</p>
+              <p className="max_price in">Max Price: {props.data.maxPrice}</p>
+              <p className="size in">Size: {props.data.productSize}</p>
+              <p className="market in">Market: {props.data.marketName}</p>
+            </div>
+            <div className="cards_lower_div">
+              <Link to={`/product/${props.name}/${props.data._id}`}>
+                <div className="viewallHeading">View all</div>
+              </Link>
+            </div>
           </div>
         </div>
-        </div>
-
-        
-        {isLogedIn && (
-          <div className="admin_option">
-            <button className="admin_button" onClick={handelUpdate}>
-              update
-            </button>
-            <button className="admin_button" onClick={() => deleteProduct()}>
-              delete
-            </button>
-          </div>
-        )}
       </div>
       {showUpdate && (
         <>

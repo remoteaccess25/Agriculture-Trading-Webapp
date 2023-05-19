@@ -32,7 +32,7 @@ const storage = multer.diskStorage({
       cb(null, true);
     },
     limits: {
-      fileSize: 1000000, // 1MB file size limit
+      fileSize: 20000000, // 1MB file size limit
     },
   });
   
