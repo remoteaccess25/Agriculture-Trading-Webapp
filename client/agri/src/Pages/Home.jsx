@@ -99,9 +99,9 @@ useEffect(()=>{
   const showCreateButton=()=>{
 
     const mycookies=Cookies.get("admin")
-    // console.log("mycookies",mycookies)
+    console.log("mycookies",mycookies)
 
-    if(mycookies!==undefined){
+    if(mycookies!==undefined ){
 
       return(
          <div className="cretae_divert">
@@ -223,22 +223,7 @@ useEffect(()=>{
       </div>
 
          
-        
-          {/* second home image */}
-      {/* <div className="home_image2"> */}
-        
-{/* 
-<img className="image2" src={Home2} alt="home image 2" />
-<p className="image2_text">
-
-
-Fresh from the fields <br/>
-farm to table deals
-
-
-
-</p>
-</div> */}
+      
 
 
 <div className="home_image1">

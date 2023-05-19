@@ -25,21 +25,13 @@ export default function AllFruits() {
     }
   };
 
-  useEffect(()=>{
-
-  },[allFruits])
+  useEffect(() => {}, [allFruits]);
 
   return (
     <>
       <div className="All_Fruit_main_div">
-        <h1>  Fruits</h1>
-        <div className="all_fruits_grid_div">
-
-        {showAllFruits()}
-        </div>
-        
-      
-        
+        <h1> Fruits</h1>
+        <div className="all_fruits_grid_div">{showAllFruits()}</div>
       </div>
     </>
   );

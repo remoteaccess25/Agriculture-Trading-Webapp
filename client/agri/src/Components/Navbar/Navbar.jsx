@@ -15,75 +15,6 @@ import Cookies from "js-cookie";
 export default function Navbar() {
 
 
-//below nav function
-
-// const showBelowNav=()=>{
-  
-//   return(
-//     <>
-
-//     <div className="nav_below">
-
-
-//     <div className="logo_div_below">
-//             <Link to="/">
-//                 <Logo></Logo>
-            
-//             </Link>
-//           </div>
-
-//           <ul>
-//             <Link className="anchor" to="/">
-//               Home
-//             </Link>
-//             <Link className="anchor" to="/products/vegetables">
-//               Vegitables
-//             </Link>
-//             <Link className="anchor" to="/products/fruits">
-//               Fruits
-//             </Link>
-//             <Link className="anchor" to="/about">
-//               About
-//             </Link>
-//             {/* <Link className='anchor' to="/contact">Contact</Link> */}
-
-//             <GiSwordsEmblem
-//               className="show_hide"
-//               onClick={show_register}
-//             ></GiSwordsEmblem>
-           
-
-//             {/* log out button */}
-
-//             {showLogout()}
-//           </ul>
-
-
-//     </div>
-    
-    
-//     </>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -101,6 +32,7 @@ export default function Navbar() {
   const logOut = () => {
     Cookies.remove("admin");
     localStorage.removeItem("email");
+    localStorage.removeItem("token")
 
     dispatch({ type: "LOGOUT" });
 
@@ -151,10 +83,8 @@ export default function Navbar() {
 
             <GiSwordsEmblem  className="show_hide"
            onClick={show_register}></GiSwordsEmblem>
-
-
-
-           
+             {/* <Link className="anchor"  to="/register">Register</Link> */}
+               
 
             {/* log out button */}
 

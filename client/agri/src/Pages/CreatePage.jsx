@@ -13,7 +13,7 @@ const {dispatch,productName,productType,marketName,
   
   }=useContext(ProductContext)
 
-  const {  email, password, token } = useContext(AdminContext);
+  const {  email } = useContext(AdminContext);
 // const [token,setToken]=useState("")
 
 // const localToken=localStorage.getItem("token")
@@ -55,7 +55,8 @@ else{
   const handelSubmit=async(e)=>{
     e.preventDefault();
     // setToken(localToken)
-    const token=Cookies.get("admin")
+    // const token=Cookies.get("admin")
+    const token=localStorage.getItem("token")
     
     try {
       //seting recomended to reducer
@@ -146,7 +147,7 @@ else{
           <input className='inputs'  type="text" value={managerName} name='managerName' required placeholder='managerName' onChange={(e)=>{dispatch({type:"MANAGERNAME",payload:e.target.value})}}/>
 
 
-          <input className='inputs'  type="number" value={marketContact} name='marketContact' required placeholder='marketContact' onChange={(e)=>{dispatch({type:"MARKETCONTACT",payload:e.target.value})}}/>
+          <input className='inputs'  type="number" value={marketContact} name='marketContact' maxLength={10} required placeholder='marketContact' onChange={(e)=>{dispatch({type:"MARKETCONTACT",payload:e.target.value})}}/>
 
          
 

@@ -1,77 +1,66 @@
-.All_fruits_div{
-    /* border: 1px solid red; */
-    height: 300px;
-    width: 100%;
-    display: flex;
-    /* align-items: center;*/
-     justify-content: center;
-    
-
+.All_fruits_div {
+  /* border: 1px solid red; */
+  height: 300px;
+  width: 100%;
+  display: flex;
+  /* align-items: center;*/
+  justify-content: center;
 }
 
+.All_Fruit_main_div {
+  /* border: 1px solid black; */
 
-.All_Fruit_main_div{
-    /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-margin-bottom: 30px;
-padding-bottom: 50px;
+  background-image: url("../Images/grains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 
-background-image:url("../Images/grains.jpg");
-background-repeat: no-repeat;
-background-size:cover;
-background-attachment: fixed;
-
-    /* background-image: url("https://www.shutterstock.com/image-photo/summer-holiday-concept-abstract-blur-blue-422467099");
+  /* background-image: url("https://www.shutterstock.com/image-photo/summer-holiday-concept-abstract-blur-blue-422467099");
     background-repeat: no-repeat;
     background-size: contain; */
-    /* background-image: linear-gradient(black,grey,white); */
+  /* background-image: linear-gradient(black,grey,white); */
 }
 
-.All_Fruit_main_div h1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-width: 100%;
-padding: 2em;
+.All_Fruit_main_div h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2em;
 }
 
+.all_fruits_grid_div {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  grid-gap: 3em;
+}
 
-.all_fruits_grid_div{
-    
+@media screen and (max-width: 1300px) {
+  .all_fruits_grid_div {
     width: 100%;
     display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: auto auto;
+    place-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 3em;
-}
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
 
+  .drop {
+    width: auto;
+  }
 
-
-
-
-@media screen and (max-width:1300px) {
-    
-    .all_fruits_grid_div {
-        width: 100%;
-        display: grid;
-        place-items: center;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr;
-        grid-gap: 3em;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .drop{
-        width: auto;
-    }
-
-
-    .udpadte_inputs{
-        width: auto;
-    }
+  .udpadte_inputs {
+    width: auto;
+  }
 }
