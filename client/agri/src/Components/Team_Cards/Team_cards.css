@@ -56,8 +56,10 @@
 
 .teamcard_image{
     /* border: 1px solid grey; */
-    height: 100px;
+    height: 110px;
     width: 150px;
+    border-radius: 50%; 
+    margin-right: 10px;
 }
 
 .teamcard_lower_div{

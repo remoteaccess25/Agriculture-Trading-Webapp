@@ -6,6 +6,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Team_cards from "../Components/Team_Cards/Team_cards";
 import about_image from "../Images/about_image.png";
+import abhinav from "../Images/abhinav.jpg";
+import aditya from "../Images/aditya.jpg";
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -66,6 +68,7 @@ const About = () => {
             <div className="padekar_div" data-aos={"fade-right"}>
               <Team_cards
                 name={"Aditya"}
+                image={aditya} 
                 para={
                   "He is responsible for the backend part of the project i.e serverside with nodejs"
                 }
@@ -136,6 +139,7 @@ const About = () => {
             {/* abhinav div */}
             <div className="abhinav_div" data-aos={"fade-left"}>
               <Team_cards
+                image={abhinav}
                 name={"Abhinav"}
                 para={
                   "He is responsibel for the desing part of the project i.e with figma/css/reactjs"
