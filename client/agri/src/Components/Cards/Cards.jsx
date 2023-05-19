@@ -6,7 +6,6 @@ import Cookies from "js-cookie";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 export default function Cards(props) {
   const { dispatch, isLogedIn, token } = useContext(AdminContext);
 
@@ -115,23 +114,17 @@ export default function Cards(props) {
               <img className="cards_image" src={props.data?.image} alt="" />
             </div>
           </div>
-        <div className="info_price">
+        
           <div className="cards_info">
-            <p className="min_price">Min Price: {props.data?.minPrice}</p>
-            <p className="max_price">Max Price: {props.data?.maxPrice}</p>
-            <p className="size">Size: {props.data?.productSize}</p>
-            <p className="market">Market: {props.data?.marketName}</p>
-          </div>
+            <p className="min_price">Min Price: {props.data.minPrice}</p>
+            <p className="max_price">Max Price: {props.data.maxPrice}</p>
+            <p className="size">Size: {props.data.productSize}</p>
+            <p className="market">Market: {props.data.marketName}</p>
           <div className="cards_lower_div">
             <Link to={`/product/${props.name}/${props.data._id}`}>
               <div className="viewallHeading">View all</div>
             </Link>
-          </div>
-        </div>
-        </div>
-
-        
-        {isLogedIn && (
+             {isLogedIn && (
           <div className="admin_option">
             <button className="admin_button" onClick={handelUpdate}>
               update
@@ -141,6 +134,13 @@ export default function Cards(props) {
             </button>
           </div>
         )}
+          </div>
+        </div>
+          </div>
+        
+
+        
+       
       </div>
       {showUpdate && (
         <>
@@ -246,6 +246,46 @@ export default function Cards(props) {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // return (
 //   <>

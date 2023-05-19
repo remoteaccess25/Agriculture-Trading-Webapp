@@ -7,9 +7,7 @@ import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
 import Home1 from "../Images/Home1.png"
-import Home2 from "../Images/Home2.png"
-import home3 from "../Images/home3.jpg"
-import bringal from "../Images/brinjal.jpg"
+import Image5 from "../Images/image5.jpg"
 // import pinapale from "../Images/pinapale.png"
 import { AdminContext } from "../Components/context/Admin/Admin";
 
@@ -145,8 +143,7 @@ useEffect(()=>{
           }}
           />
           
-          {/* <CiSearch type="submit" className="search_logo" onClick={handelSearch}>Search </CiSearch> */}
-          {/* </div> */}
+         
           <button className="search_logo"  onClick={handelSearch} >Search</button>
         
       </div>
@@ -187,10 +184,10 @@ useEffect(()=>{
 
       <div className="main-div">
         
-        <div className="home_image1">
+        {/* <div className="home_image1">
           
         <img className="image1" src={Home1} alt="home image 1" />
-        </div>
+        </div> */}
        
 
 
@@ -246,7 +243,7 @@ farm to table deals
 
 
 <div className="home_image1">
-          <img className="image1" src={image5} alt="" />
+          <img className="image1" src={Image5} alt="" />
           
         </div>
 

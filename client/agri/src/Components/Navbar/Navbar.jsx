@@ -17,55 +17,54 @@ export default function Navbar() {
 
 //below nav function
 
-const showBelowNav=()=>{
+// const showBelowNav=()=>{
   
-  return(
-    <>
+//   return(
+//     <>
 
-    <div className="nav_below">
+//     <div className="nav_below">
 
 
-    <div className="logo_div_below">
-            <Link to="/">
-                <Logo></Logo>
+//     <div className="logo_div_below">
+//             <Link to="/">
+//                 <Logo></Logo>
             
-            </Link>
-          </div>
+//             </Link>
+//           </div>
 
-          <ul>
-            <Link className="anchor" to="/">
-              Home
-            </Link>
-            <Link className="anchor" to="/products/vegetables">
-              Vegitables
-            </Link>
-            <Link className="anchor" to="/products/fruits">
-              Fruits
-            </Link>
-            <Link className="anchor" to="/about">
-              About
-            </Link>
-            {/* <Link className='anchor' to="/contact">Contact</Link> */}
+//           <ul>
+//             <Link className="anchor" to="/">
+//               Home
+//             </Link>
+//             <Link className="anchor" to="/products/vegetables">
+//               Vegitables
+//             </Link>
+//             <Link className="anchor" to="/products/fruits">
+//               Fruits
+//             </Link>
+//             <Link className="anchor" to="/about">
+//               About
+//             </Link>
+//             {/* <Link className='anchor' to="/contact">Contact</Link> */}
 
-            <GiSwordsEmblem
-              className="show_hide"
-              onClick={show_register}
-            ></GiSwordsEmblem>
-            {/* <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link> */}
+//             <GiSwordsEmblem
+//               className="show_hide"
+//               onClick={show_register}
+//             ></GiSwordsEmblem>
+           
 
-            {/* log out button */}
+//             {/* log out button */}
 
-            {showLogout()}
-          </ul>
+//             {showLogout()}
+//           </ul>
 
 
-    </div>
+//     </div>
     
     
-    </>
-  )
-}
+//     </>
+//   )
+// }
 
 
 
@@ -114,7 +113,8 @@ const showBelowNav=()=>{
     if (myCookies !== undefined) {
       return (
         <button className="logout_button" onClick={logOut}>
-          <RiLogoutCircleRLine></RiLogoutCircleRLine>
+          {/* <RiLogoutCircleRLine></RiLogoutCircleRLine> */}
+          LogOut
         </button>
       );
     }
@@ -149,9 +149,12 @@ const showBelowNav=()=>{
             </Link>
             {/* <Link className='anchor' to="/contact">Contact</Link> */}
 
-         
-             <Link className="anchor" id="regis" to="/register">Register</Link>
-               
+            <GiSwordsEmblem  className="show_hide"
+           onClick={show_register}></GiSwordsEmblem>
+
+
+
+           
 
             {/* log out button */}
 

@@ -17,6 +17,13 @@
     flex-direction: column;
     width: 100%;
 margin-bottom: 30px;
+padding-bottom: 50px;
+
+background-image:url("../Images/grains.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+background-attachment: fixed;
+
     /* background-image: url("https://www.shutterstock.com/image-photo/summer-holiday-concept-abstract-blur-blue-422467099");
     background-repeat: no-repeat;
     background-size: contain; */
@@ -39,4 +46,32 @@ padding: 2em;
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
     grid-gap: 3em;
+}
+
+
+
+
+
+@media screen and (max-width:1300px) {
+    
+    .all_fruits_grid_div {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 3em;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .drop{
+        width: auto;
+    }
+
+
+    .udpadte_inputs{
+        width: auto;
+    }
 }

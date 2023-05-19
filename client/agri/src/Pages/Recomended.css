@@ -19,6 +19,14 @@
     justify-content: center;
     padding-left: 75px;
     margin-bottom: 5em;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+    background-image:url("../Images/grains.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+
 }
 
 .recomended_heading{
@@ -27,6 +35,8 @@
     align-items: center;
     justify-content: center;
     padding: 3em;
+    background-color: rgb(239, 245, 243);
+    margin-bottom: 20px;
 }
 
 
@@ -36,4 +46,24 @@
     grid-template-rows: auto auto;
     grid-template-columns: auto auto;
     grid-gap: 3em;
+}
+
+
+
+
+@media screen and (max-width:1300px) {
+    
+    .recomended_grid_div {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 3em;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+  
 }
