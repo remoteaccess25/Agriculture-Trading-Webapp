@@ -109,18 +109,18 @@ export default function Cards(props) {
       <div className={showUpdate ? "close" : "dummycards_div"}>
         <div className="cards_upper_div">
           <div className="name_image">
-            <p className="product_name">{props.data.productName}</p>
+            <p className="product_name">{props.data?.productName}</p>
             <div className="image_div">
               {/* {console.log("images",props.image.contentType)} */}
-              <img className="cards_image" src={props.data.image} alt="" />
+              <img className="cards_image" src={props.data?.image} alt="" />
             </div>
           </div>
         <div className="info_price">
           <div className="cards_info">
-            <p className="min_price">Min Price: {props.data.minPrice}</p>
-            <p className="max_price">Max Price: {props.data.maxPrice}</p>
-            <p className="size">Size: {props.data.productSize}</p>
-            <p className="market">Market: {props.data.marketName}</p>
+            <p className="min_price">Min Price: {props.data?.minPrice}</p>
+            <p className="max_price">Max Price: {props.data?.maxPrice}</p>
+            <p className="size">Size: {props.data?.productSize}</p>
+            <p className="market">Market: {props.data?.marketName}</p>
           </div>
           <div className="cards_lower_div">
             <Link to={`/product/${props.name}/${props.data._id}`}>

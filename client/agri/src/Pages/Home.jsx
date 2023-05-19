@@ -6,10 +6,14 @@ import { Link, useFetcher } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
-import Home1 from "../Images/Home1.png"
+import image5 from "../Images/image5.jpg"
 import Home2 from "../Images/Home2.png"
 // import pinapale from "../Images/pinapale.png"
 import { AdminContext } from "../Components/context/Admin/Admin";
+
+
+
+
 
 
 // import {CiSearch} from "react-icons/ci"
@@ -180,11 +184,9 @@ useEffect(()=>{
       {/* main div */}
 
       <div className="main-div">
+
         
-        <div className="home_image1">
-          
-        <img className="image1" src={Home1} alt="home image 1" />
-        </div>
+        
        
 
 
@@ -223,8 +225,9 @@ useEffect(()=>{
          
         
           {/* second home image */}
-      <div className="home_image2">
-
+      {/* <div className="home_image2"> */}
+        
+{/* 
 <img className="image2" src={Home2} alt="home image 2" />
 <p className="image2_text">
 
@@ -234,21 +237,31 @@ useEffect(()=>{
 
 
 </p>
-</div>
+</div> */}
 
 
 
 
+<div className="home_image1">
+          <img className="image1" src={image5} alt="" />
+          
+        </div>
 
-      {/* create Page for Admin */}
-           <div className="Create_button">
+
+  {/* create Page for Admin */}
+  <div className="Create_button">
             {/* <img src={pinapale} alt="" /> */}
             
            {showCreateButton()}
             
             </div> 
 
+
+    
+
           
+
+
 
 
 

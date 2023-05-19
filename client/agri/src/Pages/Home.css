@@ -5,10 +5,12 @@
     /* border: 1px solid black; */
     height: 200px;
     width: 100%;
-    display: flex;
+    
     align-items: center;
     justify-content: center;
-    background-color: black;
+    display: flex;
+ flex-direction: column;
+    
 
 }
 
@@ -19,8 +21,9 @@
  width: 40%;
  border-radius: 1em;
  border: none;
- background-color: whitesmoke;
+ background-color: rgb(204, 194, 194);
  outline: none;
+ 
  /* position: relative; */
 
 }
@@ -34,13 +37,15 @@
 
 
 .search_logo{
-    position: absolute;
+    /* position: absolute; */
+    margin: 20px;
     left: 700px;
     top: 230px;
     padding: 10px;
-    background-color:white;
+    background-color:black;
+    
     border-radius: 1em;
-    color: black;
+    color:red;
 
 }
 
@@ -52,7 +57,7 @@
 
 .main-div{
     /* padding: 100px; */
-    height: 800px;
+    height: 1000px;
     width: 100%;
    display: flex;
    flex-direction: column;
@@ -60,7 +65,8 @@
    justify-content: center;
    background-image: url(../Images//Home_left.jpg); 
    background-repeat: no-repeat;
-   background-size: 100%;
+   /* background-size: 100%; */
+   background-size: cover;
    
  
    
@@ -70,12 +76,14 @@
     /* border: 5px solid black; */
     height: 20rem;
     width: 100%;
+    margin-top: 10px;
     
 }
 
 .image1{
     height: 20rem;
     width: 100%;
+    
 }
 
 
@@ -127,22 +135,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   .card_one,.card_second{
     /* border: 1px solid green; */
     height: 13rem;
@@ -179,7 +171,7 @@
 
  /* home_image2 */
 
- .home_image1{
+ /* .home_image1{
      height: 15rem;
      width: 100%;
      display: flex;
@@ -188,7 +180,7 @@
      margin-bottom: 3rem;
     
    
-    }
+    } */
     
     
 .home_image2{
@@ -197,7 +189,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     margin-bottom: 5rem;
     justify-content: space-between;
  }

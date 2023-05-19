@@ -13,6 +13,81 @@ import { AdminContext } from "../../Components/context/Admin/Admin";
 import Cookies from "js-cookie";
 
 export default function Navbar() {
+
+
+//below nav function
+
+const showBelowNav=()=>{
+  
+  return(
+    <>
+
+    <div className="nav_below">
+
+
+    <div className="logo_div_below">
+            <Link to="/">
+                <Logo></Logo>
+            
+            </Link>
+          </div>
+
+          <ul>
+            <Link className="anchor" to="/">
+              Home
+            </Link>
+            <Link className="anchor" to="/products/vegetables">
+              Vegitables
+            </Link>
+            <Link className="anchor" to="/products/fruits">
+              Fruits
+            </Link>
+            <Link className="anchor" to="/about">
+              About
+            </Link>
+            {/* <Link className='anchor' to="/contact">Contact</Link> */}
+
+            <GiSwordsEmblem
+              className="show_hide"
+              onClick={show_register}
+            ></GiSwordsEmblem>
+            {/* <Link to="/register">Register</Link>
+                <Link to="/login">Login</Link> */}
+
+            {/* log out button */}
+
+            {showLogout()}
+          </ul>
+
+
+    </div>
+    
+    
+    </>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   const navigate = useNavigate();
   const show_register = () => {
     navigate("/register");
@@ -39,7 +114,8 @@ export default function Navbar() {
     if (myCookies !== undefined) {
       return (
         <button className="logout_button" onClick={logOut}>
-          <RiLogoutCircleRLine></RiLogoutCircleRLine>
+          {/* <RiLogoutCircleRLine></RiLogoutCircleRLine> */}
+          Logout
         </button>
       );
     }
@@ -87,6 +163,20 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
+
+
+
+
+
+{/* //for below 700px */}
+
+
+{/* {showBelowNav()} */}
+
+
+
+
+
     </>
   );
 }
