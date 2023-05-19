@@ -16,10 +16,6 @@ import { AdminContext } from "../Components/context/Admin/Admin";
 
 
 
-// import {CiSearch} from "react-icons/ci"
-// //importing admin data
-
-
 
 
 //cookies
@@ -131,7 +127,7 @@ useEffect(()=>{
     <>
         {/* search menu */}
       <div className="search-div">
-        {/* <div className="searchBar_icon_mix_div"> */}
+        
         <input
           className="home-search-box"
           type="text"
@@ -152,7 +148,9 @@ useEffect(()=>{
 
           {
             showsearchData && <>
-            <button onClick={()=>{setShowsearchData(false)}}>Close</button>
+            <div className="show_close_div">
+
+            <button  className="closeSearch" onClick={()=>{setShowsearchData(false)}}>Close</button>
                   
                 <div className="show_search">
                   {
@@ -167,6 +165,7 @@ useEffect(()=>{
                   }
 
 
+                  </div>
                 </div>
               
               </>

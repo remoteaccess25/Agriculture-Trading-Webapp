@@ -183,18 +183,6 @@
     
  }
 
- /* home_image2 */
-
- /* .home_image1{
-     height: 15rem;
-     width: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 3rem;
-    
-   
-    } */
     
     
 .home_image2{
@@ -217,7 +205,7 @@
     color: #000000;
     font-size: larger;
     margin-right: 200px;
-   /* Adjust the left position as needed */
+   
    
     font-size: 50px;
     
@@ -246,16 +234,28 @@
     background-color: black;
     color: red;
  }
-/* 
- .Create_button img{
-    height: 100px;
-    width: 110px;
-    /* animation-name: rotate;
-    animation-iteration-count: infinite; */
-    
- /* }  */
 
- 
+ .show_close_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+ }
+
+
+.closeSearch{
+    background-color: black;
+    color: red;
+    padding: 6px;
+    border-radius: 1em;
+}
+
+ /*search show part*/
+ .show_search{
+    /* width: 100%; */
+    padding: 25px;
+ }
  
 
 
