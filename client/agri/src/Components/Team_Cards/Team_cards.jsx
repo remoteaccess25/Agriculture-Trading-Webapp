@@ -13,8 +13,8 @@ export default function Team_cards(props) {
     <div className="teamcard_upper_div">
     <div className="teamcard_left_div">
         <h1>{props.name}</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, delectus.
-            Lorem ipsum, dolor si
+        <p className="textof">
+            {props.para}
         </p>
     </div>
     <div className="teamcard_right_div">

@@ -6,8 +6,10 @@ import { Link, useFetcher } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
-import Home1 from "../Images/Home1.png"
+import filling from "../Images/filling.png"
 import Home2 from "../Images/Home2.png"
+import home3 from "../Images/home3.jpg"
+import bringal from "../Images/brinjal.jpg"
 // import pinapale from "../Images/pinapale.png"
 import { AdminContext } from "../Components/context/Admin/Admin";
 
@@ -149,7 +151,7 @@ useEffect(()=>{
 
           {
             showsearchData && <>
-            <button className="search_close" onClick={()=>{setShowsearchData(false)}}>Close</button>
+            <button onClick={()=>{setShowsearchData(false)}}>Close</button>
                   
                 <div className="show_search">
                   {
@@ -183,12 +185,11 @@ useEffect(()=>{
         
         <div className="home_image1">
           
-        <img className="image1" src={Home1} alt="home image 1" />
+       <p className="textoff">  Market Mastery Made Easy: <br/>Your One-Stop App for All<br /> Market Info! </p>
         </div>
        
 
 
-            
         <div className="cards_div">
           
 
@@ -229,14 +230,13 @@ useEffect(()=>{
 <p className="image2_text">
 
 
-<h1>text here</h1>
+Fresh from the fields <br/>
+farm to table deals
 
 
 
 </p>
 </div>
-
-
 
 
 

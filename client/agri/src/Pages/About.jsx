@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./About.css";
+import Home2 from "../Images/Home2.png"
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -24,11 +25,12 @@ const About = () => {
     <div className="about_div1">
       <div className="about_left_div">
         <div className="context_div1">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, ipsam.
+           
+Welcome to Team Harvest Hub! We are a dynamic and innovative group dedicated to revolutionizing the way we approach agriculture and food production.
 
         </div>
         <div className="context_div2">
-           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam, ab?
+           Together we strive for the better quality of life of the farmers... 
         </div>
         
       </div>
@@ -55,13 +57,13 @@ const About = () => {
 {/* onkar div */}
         <div className="onakr_div  " data-aos={"fade-right"}
             data-aos-delay={"700"}>
-          <Team_cards name={"Onkar"} linkdinLink={"https://www.linkedin.com/in/onkar-kakade-465bb5229"} instaLink={"https://instagram.com/onkar_kakade29"}/>
+          <Team_cards image={Home2} para={"He is responsible for the frontend part of the project i.e creating the whole project structure with reactjs "} name={"Onkar"} linkdinLink={"https://www.linkedin.com/in/onkar-kakade-465bb5229"} instaLink={"https://instagram.com/onkar_kakade29"}/>
         </div>
 
 
 {/* padekar div */}
         <div className="padekar_div" data-aos={"fade-right"}>
-        <Team_cards name={"Aditya"} linkdinLink={"https://www.linkedin.com/in/aditya-padekar-296522224"} instaLink={"https://instagram.com/adityapadekar"}/>
+        <Team_cards name={"Aditya"}para={"He is responsible for the backend part of the project i.e serverside with nodejs"} linkdinLink={"https://www.linkedin.com/in/aditya-padekar-296522224"} instaLink={"https://instagram.com/adityapadekar"}/>
         </div>
       </div>
 
@@ -92,7 +94,7 @@ const About = () => {
 
         {/* pratikdiv */}
           <div className="pratik_div" data-aos={"fade-left"}>
-          <Team_cards name={"Pratik"} linkdinLink={"https://www.linkedin.com/in/pratik-pawar-40975524b"} instaLink={"https://instagram.com/pratik_0309"}/>
+          <Team_cards name={"Pratik"} para={"He is reponsible for the design part of the project i.e with figma/css/reactjs"} linkdinLink={"https://www.linkedin.com/in/pratik-pawar-40975524b"} instaLink={"https://instagram.com/pratik_0309"}/>
           </div>
 
 
@@ -100,7 +102,7 @@ const About = () => {
 
           {/* abhinav div */}
           <div className="abhinav_div"  data-aos={"fade-left"}>
-          <Team_cards name={"Abhinav"} linkdinLink={"https://www.linkedin.com/in/abhinav-zilkarwar-85611022b"} instaLink={"https://instagram.com/abhiz_2803"}/>
+          <Team_cards name={"Abhinav"} para={"He is responsibel for the desing part of the project i.e with figma/css/reactjs"} linkdinLink={"https://www.linkedin.com/in/abhinav-zilkarwar-85611022b"} instaLink={"https://instagram.com/abhiz_2803"}/>
           </div>
       </div>
 
@@ -116,6 +118,9 @@ const About = () => {
 
 
 </div>
+
+
+
 
 
 

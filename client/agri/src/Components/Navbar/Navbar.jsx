@@ -39,7 +39,8 @@ export default function Navbar() {
     if (myCookies !== undefined) {
       return (
         <button className="logout_button" onClick={logOut}>
-          <RiLogoutCircleRLine></RiLogoutCircleRLine>
+        <h1>logout</h1>
+         
         </button>
       );
     }
@@ -64,7 +65,7 @@ export default function Navbar() {
               Home
             </Link>
             <Link className="anchor" to="/products/vegetables">
-              Vegitables
+              Vegetables
             </Link>
             <Link className="anchor" to="/products/fruits">
               Fruits
@@ -74,12 +75,9 @@ export default function Navbar() {
             </Link>
             {/* <Link className='anchor' to="/contact">Contact</Link> */}
 
-            <GiSwordsEmblem
-              className="show_hide"
-              onClick={show_register}
-            ></GiSwordsEmblem>
-            {/* <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link> */}
+         
+             <Link className="anchor" id="regis" to="/register">Register</Link>
+               
 
             {/* log out button */}
 
