@@ -22,6 +22,11 @@
     justify-content: space-around;
 }
 
+.textof{
+    margin-left: 20px;
+
+    color: black;
+}
 .teamcard_left_div{
     /* border: 1px solid green; */
     height: 100%;
@@ -51,8 +56,8 @@
 
 .teamcard_image{
     /* border: 1px solid grey; */
-    height: 200px;
-    width: 300px;
+    height: 100px;
+    width: 150px;
 }
 
 .teamcard_lower_div{

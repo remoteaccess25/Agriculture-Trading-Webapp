@@ -1,5 +1,35 @@
 
 
+/* .search-div{
+    /* border: 2px solid black; */
+
+    /* height: 10rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; */
+/* }
+.home-search-box{
+    position: relative;
+}
+
+.searchBar_icon_mix_div{
+    width: 50vw;
+    margin-right: 2rem;
+    text-align: center;
+} */ 
+
+
+/* 
+.home-search-box{
+    width: 50vw;
+    margin-right: 2rem;
+    text-align: center;
+} */
+
+
+
 /* search bar */
 .search-div{
     /* border: 1px solid black; */
@@ -8,22 +38,19 @@
     
     align-items: center;
     justify-content: center;
-    display: flex;
- flex-direction: column;
-    
+    background-color: black;
 
 }
 
 
 .home-search-box{
  /* border: 1px solid black; */
- padding: 10px;
- width: 40%;
- border-radius: 1em;
+ width: 500px; /* Adjust the width as needed */
+ padding: 5px;
+ padding-bottom: 10px;
  border: none;
- background-color: rgb(204, 194, 194);
+ background-color: whitesmoke;
  outline: none;
- 
  /* position: relative; */
 
 }
@@ -37,15 +64,13 @@
 
 
 .search_logo{
-    /* position: absolute; */
-    margin: 20px;
+    position: absolute;
     left: 700px;
     top: 230px;
     padding: 10px;
-    background-color:black;
-    
+    background-color:white;
     border-radius: 1em;
-    color:red;
+    color: black;
 
 }
 
@@ -71,17 +96,28 @@
  
    
 }
-
+.textoff{
+    margin-top: 70px;
+    margin-left: 40px;
+    color: #FFFFFF;
+    font-size: larger;
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust the left position as needed */
+    transform: translate(0, -50%);
+    font-size: 30px;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 .home_image1{
     /* border: 5px solid black; */
     height: 20rem;
     width: 100%;
-    margin-top: 10px;
     
 }
 
 .image1{
-    height: 20rem;
+    height: auto;
     width: 100%;
     
 }
@@ -200,8 +236,14 @@
  }
 
  .image2_text{
-    width: 50%;
+    color: #000000;
     font-size: larger;
+    margin-right: 200px;
+   /* Adjust the left position as needed */
+   
+    font-size: 50px;
+    
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
  }
 
 
@@ -226,27 +268,16 @@
     background-color: black;
     color: red;
  }
+/* 
+ .Create_button img{
+    height: 100px;
+    width: 110px;
+    /* animation-name: rotate;
+    animation-iteration-count: infinite; */
+    
+ /* }  */
 
- .search_close{
-    border: none;
-    margin: 50px;
-    padding: 10px;
-    border-radius: 1em;
-    color: white;
-    background-color: black;
- }
-
-
-
-
-
- .show_search{
-    /* border: 1px solid red; */
-    width: 100%;
-    height: auto;
-    padding: 30px;
- }
-
+ 
  
 
 

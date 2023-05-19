@@ -114,8 +114,7 @@ const showBelowNav=()=>{
     if (myCookies !== undefined) {
       return (
         <button className="logout_button" onClick={logOut}>
-          {/* <RiLogoutCircleRLine></RiLogoutCircleRLine> */}
-          Logout
+          <RiLogoutCircleRLine></RiLogoutCircleRLine>
         </button>
       );
     }
@@ -140,7 +139,7 @@ const showBelowNav=()=>{
               Home
             </Link>
             <Link className="anchor" to="/products/vegetables">
-              Vegitables
+              Vegetables
             </Link>
             <Link className="anchor" to="/products/fruits">
               Fruits
@@ -150,12 +149,9 @@ const showBelowNav=()=>{
             </Link>
             {/* <Link className='anchor' to="/contact">Contact</Link> */}
 
-            <GiSwordsEmblem
-              className="show_hide"
-              onClick={show_register}
-            ></GiSwordsEmblem>
-            {/* <Link to="/register">Register</Link>
-                <Link to="/login">Login</Link> */}
+         
+             <Link className="anchor" id="regis" to="/register">Register</Link>
+               
 
             {/* log out button */}
 
