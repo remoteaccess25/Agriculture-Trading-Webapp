@@ -8,6 +8,7 @@ import Team_cards from "../Components/Team_Cards/Team_cards";
 import about_image from "../Images/about_image.png";
 import abhinav from "../Images/abhinav.jpg";
 import aditya from "../Images/aditya.jpg";
+import pratik from  "../Images/pratik.jpg";
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -126,6 +127,7 @@ const About = () => {
             <div className="pratik_div" data-aos={"fade-left"}>
               <Team_cards
                 name={"Pratik"}
+                image={pratik}
                 para={
                   "He is reponsible for the design part of the project i.e with figma/css/reactjs"
                 }
