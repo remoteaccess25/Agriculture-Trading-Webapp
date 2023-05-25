@@ -144,7 +144,7 @@ const About = () => {
                 image={abhinav}
                 name={"Abhinav"}
                 para={
-                  "He is responsibel for the desing part of the project i.e with figma/css/reactjs"
+                  "He is responsible for the desing part of the project i.e with figma/css/reactjs"
                 }
                 linkdinLink={
                   "https://www.linkedin.com/in/abhinav-zilkarwar-85611022b"
