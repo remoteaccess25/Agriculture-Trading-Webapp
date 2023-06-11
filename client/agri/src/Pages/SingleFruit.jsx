@@ -19,7 +19,7 @@ export default function SingleFruit() {
 
       // console.log("single products",result.data)
 
-      await dispatch({ type: "SET_SINGLE_FRUIT_INFO", payload: result.data });
+      await dispatch({ type: "SET_SINGLE_FRUIT_INFO", payload: result?.data });
     } catch (error) {
       console.log(error);
     }
@@ -35,18 +35,18 @@ export default function SingleFruit() {
         return (
           <div className="SV_alldata">
             <div className="SV_info">
-              <p> Name :{singleFruitData.product?.productName}</p>
-              <p> Type :{singleFruitData.product?.productType}</p>
-              <p>Size :{singleFruitData.product?.productSize}</p>
-              <p>Market :{singleFruitData.product?.marketName}</p>
-              <p>City : {singleFruitData.product?.city}</p>
-              <p>Min Price :{singleFruitData.product?.minPrice}</p>
-              <p>Max Price :{singleFruitData.product?.maxPrice}</p>
-              <p>Manager :{singleFruitData.product?.managerName}</p>
-              <p>Market Contact :{singleFruitData.product?.marketContact}</p>
+              <p> Name :{singleFruitData?.product?.productName}</p>
+              <p> Type :{singleFruitData?.product?.productType}</p>
+              <p>Size :{singleFruitData?.product?.productSize}</p>
+              <p>Market :{singleFruitData?.product?.marketName}</p>
+              <p>City : {singleFruitData?.product?.city}</p>
+              <p>Min Price :{singleFruitData?.product?.minPrice}</p>
+              <p>Max Price :{singleFruitData?.product?.maxPrice}</p>
+              <p>Manager :{singleFruitData?.product?.managerName}</p>
+              <p>Market Contact :{singleFruitData?.product?.marketContact}</p>
             </div>
             <div className="SV_image">
-              <img className="image1" src={singleFruitData.product.image} alt="image1" />
+              <img className="image1" src={singleFruitData?.product?.image} alt="image1" />
             </div>
           </div>
         );

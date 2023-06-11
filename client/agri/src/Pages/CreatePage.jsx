@@ -65,11 +65,11 @@ else{
 
      
 
-      const sendingData={
-        productName,productType,marketName,
-        city,minPrice,maxPrice,managerName,
-        marketContact,recomended
-      }
+      // const sendingData={
+      //   productName,productType,marketName,
+      //   city,minPrice,maxPrice,managerName,
+      //   marketContact,recomended
+      // }
 
 
       //form data for image

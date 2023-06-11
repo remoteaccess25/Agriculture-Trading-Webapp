@@ -28,7 +28,7 @@ const showData=()=>{
       return(
         
         
-        recomendedFruits.products.map((item)=>{
+        recomendedFruits?.products?.map((item)=>{
           return(
             <div key={item._id} >
              
@@ -49,7 +49,7 @@ const showData=()=>{
     
     return(
        
-      recomendedVegetables.products.map((item)=>{
+      recomendedVegetables?.products?.map((item)=>{
             return(
                 <div key={item._id} >
                   <Link  to={`/product/vegetables/${item._id}`}><Cards name={"vegetables"} data= {item}></Cards></Link>

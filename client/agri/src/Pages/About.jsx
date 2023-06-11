@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./About.css";
-import Home2 from "../Images/Home2.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -9,6 +8,8 @@ import about_image from "../Images/about_image.png";
 import abhinav from "../Images/abhinav.jpg";
 import aditya from "../Images/aditya.jpg";
 import pratik from  "../Images/pratik.jpg";
+import Onkar from "../Images/Onkar.jpeg"
+
 const About = () => {
   useEffect(() => {
     AOS.init({
@@ -53,7 +54,7 @@ const About = () => {
               data-aos-delay={"700"}
             >
               <Team_cards
-                image={Home2}
+                image={Onkar}
                 para={
                   "He is responsible for the frontend part of the project i.e creating the whole project structure with reactjs "
                 }

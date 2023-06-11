@@ -19,8 +19,8 @@ export default function SingleVegetable() {
 
       // console.log("single products",result.data)
 
-        dispatch({ type: "SET_SINGLE_VEGI_INFO", payload: result.data });
-      console.log("data::::", result.data);
+        dispatch({ type: "SET_SINGLE_VEGI_INFO", payload: result?.data });
+      // console.log("data::::", result?.data);
     } catch (error) {
       console.log(error);
     }
@@ -36,19 +36,19 @@ export default function SingleVegetable() {
         return (
           <div className="SV_alldata">
             <div className="SV_info">
-              <p> Name :{singleVegiData.product?.productName}</p>
-              <p> Type :{singleVegiData.product?.productType}</p>
-              <p>Size :{singleVegiData.product?.productSize}</p>
-              <p>Market :{singleVegiData.product?.marketName}</p>
-              <p>City : {singleVegiData.product?.city}</p>
-              <p>Min Price :{singleVegiData.product?.minPrice}</p>
-              <p>Max Price :{singleVegiData.product?.maxPrice}</p>
-              <p>Manager :{singleVegiData.product?.managerName}</p>
-              <p>Market Contact :{singleVegiData.product?.marketContact}</p>
+              <p> Name :{singleVegiData?.product?.productName}</p>
+              <p> Type :{singleVegiData?.product?.productType}</p>
+              <p>Size :{singleVegiData?.product?.productSize}</p>
+              <p>Market :{singleVegiData?.product?.marketName}</p>
+              <p>City : {singleVegiData?.product?.city}</p>
+              <p>Min Price :{singleVegiData?.product?.minPrice}</p>
+              <p>Max Price :{singleVegiData?.product?.maxPrice}</p>
+              <p>Manager :{singleVegiData?.product?.managerName}</p>
+              <p>Market Contact :{singleVegiData?.product?.marketContact}</p>
             </div>
 
             <div className="SV_image">
-              <img className="image1" src={singleVegiData.product.image} alt="image1" />
+              <img className="image1" src={singleVegiData?.product?.image} alt="image1" />
             </div>
           </div>
         );

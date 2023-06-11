@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "react-script": "^2.0.5"
+  },
+  "scripts": {
+    
+    "build": "react-scripts build"
+    
+  }
+}

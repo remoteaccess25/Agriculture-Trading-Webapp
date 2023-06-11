@@ -11,7 +11,7 @@ export default function AllVegetables() {
   const showAllVegetables = () => {
     if (isLoadingVegi === false) {
       if (VegetablePresent === true) {
-        return allVegetables.products.map((item) => {
+        return allVegetables?.products?.map((item) => {
           return (
             <div key={item._id} className="All_Vegetable_div">
               <Cards name={"vegetables"} data={item}></Cards>
