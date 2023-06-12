@@ -1,6 +1,7 @@
 import { createContext, useEffect, useReducer} from "react";
 import {fruitReducer} from "../../Reducers/FruitReducer"
 import axios from "axios"
+// import dotenv from "dotenv-webpack"
  
 
 export const FruitContext=createContext(null)
@@ -26,8 +27,10 @@ export function FruitsContextProvider({children}){
     const getallRecomendedFruits=async()=>{
 
         try {
+
+            console.log("url:->",process.env)
             
-            const res=await axios.get("http://localhost:8000/products/recomended/fruits")
+            const res=await axios.get(`${process.env.REACT_APP_API_KEY}/products/recomended/fruits`)
             const  allFruits=res.data
 
             // console.log("all fruits",allFruits)
@@ -48,7 +51,7 @@ export function FruitsContextProvider({children}){
 
         try {
             
-            const res=await axios.get("http://localhost:8000/products/fruits")
+            const res=await axios.get(`${process.env.REACT_APP_API_KEY}/products/fruits`)
             const  allFruits=res.data
 
             // console.log("getallfruits",allFruits)

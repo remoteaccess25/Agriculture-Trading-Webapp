@@ -56,11 +56,10 @@ else{
     e.preventDefault();
     // setToken(localToken)
     // const token=Cookies.get("admin")
-    const token=localStorage.getItem("token")
     
     try {
       //seting recomended to reducer
-      
+    const token=localStorage.getItem("token")     
       alert(token)
 
      
@@ -94,14 +93,20 @@ else{
     
     
     
+      
     
-      const result=await axios.post("http://localhost:8000/admin/create",(formData),{
-        headers: { authorization: `Bearer ${token}`
+      const result=await axios.post(`${process.env.REACT_APP_API_KEY}/admin/create`,(formData),{
+        headers: { authorization: `Bearer ${token}`}
               
-              },
+              ,
         
-  
+            
       })
+
+              
+    
+
+      
      
       
       

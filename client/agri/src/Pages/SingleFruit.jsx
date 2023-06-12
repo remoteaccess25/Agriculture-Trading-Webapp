@@ -14,7 +14,7 @@ export default function SingleFruit() {
   const getSingleFruitInfo = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:8000/products/fruits/${id}`
+        `${process.env.REACT_APP_API_KEY}/products/fruits/${id}`
       );
 
       // console.log("single products",result.data)

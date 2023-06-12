@@ -14,7 +14,7 @@ export default function SingleVegetable() {
   const getSingleVegiInfo = async () => {
     try {
       const result = await axios.get(
-        `http://localhost:8000/products/vegetables/${id}`
+        `${process.env.REACT_APP_API_KEY}/products/vegetables/${id}`
       );
 
       // console.log("single products",result.data)

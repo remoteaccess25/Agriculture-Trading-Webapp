@@ -33,6 +33,7 @@ export default function Navbar() {
     Cookies.remove("admin");
     localStorage.removeItem("email");
     localStorage.removeItem("token")
+    localStorage.removeItem("role")
 
     dispatch({ type: "LOGOUT" });
 

@@ -23,7 +23,7 @@ export default function Register() {
 
    
     try {
-      const response = await axios.post("http://localhost:8000/register", {
+      const response = await axios.post(`${process.env.REACT_APP_API_KEY}/register`, {
         name,
         email,
         password,

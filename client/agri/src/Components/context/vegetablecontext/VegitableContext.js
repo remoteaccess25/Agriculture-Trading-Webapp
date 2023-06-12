@@ -26,7 +26,7 @@ const getallRecomendedVegi=async()=>{
 
 
     try {
-        const res=await axios.get("http://localhost:8000/products/recomended/vegetables")
+        const res=await axios.get(`${process.env.REACT_APP_API_KEY}/products/recomended/vegetables`)
     const allvegi=res.data
     
     // console.log("rec vegetables",allvegi)
@@ -45,7 +45,7 @@ const getallvegi=async()=>{
 
 
     try {
-        const res=await axios.get("http://localhost:8000/products/vegetables")
+        const res=await axios.get(`${process.env.REACT_APP_API_KEY}/products/vegetables`)
     const allvegi=res.data
     
    

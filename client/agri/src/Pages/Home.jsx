@@ -6,7 +6,7 @@ import { Link, useFetcher } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import fruitsimage from "../Images/fruits.jpg"
 import vegetableimage from "../Images/vegetables.jpg"
-import Home1 from "../Images/Home1.png"
+// import Home1 from "../Images/Home1.png"
 import Image5 from "../Images/image5.jpg"
 // import pinapale from "../Images/pinapale.png"
 import { AdminContext } from "../Components/context/Admin/Admin";
@@ -61,7 +61,7 @@ useEffect(()=>{
           const sd=search.trim()
       if(search!=""){
         
-        const res = await axios.post("http://localhost:8000/products",{"productName":sd}
+        const res = await axios.post(`${process.env.REACT_APP_API_KEY}/products`,{"productName":sd}
         );
         console.log("response",res)
         
